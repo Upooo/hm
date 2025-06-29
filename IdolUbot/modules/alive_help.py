@@ -179,7 +179,7 @@ async def user_help(client, message):
             )
         else:
             await message.reply(
-                f"<b>⌭ No module found <code>{module}</code></b>"
+                f"<b>no module found <code>{module}</code></b>"
             )
 
 @PY.INLINE("^user_help")
@@ -188,7 +188,7 @@ async def user_help_inline(client, inline_query):
     msg = f"""
 <blockquote><b>commands menu!</b><blockquote>
 <blockquote>
-    <b>ᴜsᴇʀ: <a href=tg://user?id={callback_query.from_user.id}>{callback_query.from_user.first_name} {callback_query.from_user.last_name or ''}</a></b>
+    <b>ᴜsᴇʀ: <a href=tg://user?id={inline_query.from_user.id}>{inline_query.from_user.first_name} {inline_query.from_user.last_name or ''}</a></b>
     <b>ᴘʀᴇꜰɪxᴇs: {' '.join(SH)}</b>
 </blockquote>
 """
