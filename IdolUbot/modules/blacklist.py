@@ -15,6 +15,7 @@ __HELP__ = """
 from IdolUbot import *
 
 @PY.UBOT("addbl")
+@PY.IDOL("caddbl")
 @PY.TOP_CMD
 async def _(client, message):
     prs = await EMO.PROSES(client)
@@ -44,6 +45,7 @@ async def _(client, message):
 
 
 @PY.UBOT("unbl")
+@PY.IDOL("cunbl")
 @PY.TOP_CMD
 async def _(client, message):
     prs = await EMO.PROSES(client)

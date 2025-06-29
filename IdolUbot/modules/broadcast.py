@@ -88,6 +88,7 @@ async def limit_cmd(client, message):
 gcast_progress = []
 
 @PY.UBOT("bc|gks")
+@PY.IDOL("cbc|cgks")
 @PY.TOP_CMD
 async def gcast_handler(client, message):
     global gcast_progress
@@ -147,6 +148,7 @@ async def gcast_handler(client, message):
     return await message.reply(_gcs)
 
 @PY.UBOT("stopg")
+@PY.IDOL("cstopg")
 @PY.TOP_CMD
 async def stopg_handler(client, message):
     sks = await EMO.BERHASIL(client)

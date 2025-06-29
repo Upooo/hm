@@ -32,6 +32,7 @@ perintah :
 
 
 @PY.UBOT("kickme")
+@PY.IDOL("ckickme")
 @PY.TOP_CMD
 @PY.GROUP
 async def _(client, message):
@@ -51,6 +52,7 @@ async def _(client, message):
 
 
 @PY.UBOT("join")
+@PY.IDOL("cjoin")
 @PY.TOP_CMD
 async def _(client, message):
     sks = await EMO.BERHASIL(client)
@@ -112,7 +114,8 @@ async def _(client, message):
         f"{sks}berhaꜱil keluar dari {done} channel\n{ggl}gagal keluar dari {er} channel"
     )
 
-@PY.UBOT("leaveallmute")
+@PY.UBOT("leaveallmute|lvallmute")
+@PY.IDOL("cleaveallmute")
 @PY.TOP_CMD
 async def _(client, message):
     sks = await EMO.BERHASIL(client)
