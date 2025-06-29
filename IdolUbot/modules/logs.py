@@ -102,10 +102,10 @@ async def logs_toggle(client, message):
                 )
                 group_id = created.id
 
-                await client.add_chat_members(group_id, "idolubot")
+                await client.add_chat_members(group_id, "v1idolubot")
                 await client.promote_chat_member(
                     chat_id=group_id,
-                    user_id="idolubot",
+                    user_id="v1idolubot",
                     privileges=ChatPrivileges(
                         can_manage_chat=True,
                         can_post_messages=True,
