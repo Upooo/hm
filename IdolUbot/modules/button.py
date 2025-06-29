@@ -7,7 +7,7 @@ from pyrogram.types import (
     Message,
     InlineQuery,
 )
-from IdolUbot import PY
+from IdolUbot import *
 
 __MODULE__ = "button"
 __HELP__ = """
@@ -58,7 +58,7 @@ async def cmd_button(client: Client, message: Message):
 
     try:
         result = await client.get_inline_bot_results(
-            client.me.username, f"get_button {id(message)}"
+            bot.me.username, f"get_button {id(message)}"
         )
         msg = message.reply_to_message or message
         await client.send_inline_bot_result(
