@@ -28,7 +28,6 @@ async def _(client, message):
     pantek = await STR.PONG(client)
     ngentod = await STR.OWNER(client)
     kontol = await STR.UBOT(client)
-    devs = await STR.DEVS(client)
     babi = client.me.is_premium
     if babi:
         _ping = f"""
