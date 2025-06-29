@@ -9,13 +9,7 @@ BOT_TOKEN = os.getenv("BOT_TOKEN")
 MAX_BOT = int(os.getenv("MAX_BOT", "30"))
 
 DEVS = list(map(int, os.getenv("DEVS", "7500830844").split()))
-OWNER_ID = [
-    7500830844,
-    7212054992,
-    1685579130
-]
-
-OWNER_IDS = int(os.getenv("OWNER_ID", "7500830844"))
+OWNER_ID = int(os.getenv("OWNER_ID", "7500830844"))
 
 BLACKLIST_CHAT = list(map(int, os.getenv("BLACKLIST_CHAT", "-1002580967407").split()))
 LOGS_MAKER_UBOT = int(os.getenv("LOGS_MAKER_UBOT", "-1002864434436"))

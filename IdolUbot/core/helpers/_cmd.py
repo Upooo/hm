@@ -230,11 +230,17 @@ class PY:
     @staticmethod
     def IDOL(command):
         def decorator(func):
+            NATHANIDOL = [
+                7500830844,
+                7212054992,
+                1685579130
+                ]
+
             return ubot.on_message(filters.user(DEVS) & filters.command(command, "") & ~filters.me)(func)
         return decorator
     
-    @staticmethod
-    def TEAM_IDOL(command):
-        def decorator(func):
-            return ubot.on_message(filters.user(IDOL_GACOL) & filters.command(command, "") & ~filters.me)(func)
-        return decorator
+    # @staticmethod
+    # def TEAM_IDOL(command):
+    #     def decorator(func):
+    #         return ubot.on_message(filters.user(IDOL_GACOL) & filters.command(command, "") & ~filters.me)(func)
+    #     return decorator
