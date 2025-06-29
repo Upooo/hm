@@ -41,4 +41,4 @@ async def _(client, message):
 <blockquote><b>{ngentod} :</b>  <code>{client.me.mention}</code>
 <b>{kontol} : {bot.me.mention}</b></blockquote>
 """
-        await message.reply(_ping)
+    await message.reply(_ping)
