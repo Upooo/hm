@@ -18,7 +18,7 @@ async def ngentod(client, message):
         await send_large_output(message, out)
     else:
         await message.reply(f"```{out}```", quote=True)
-    os.execl(sys.executable, sys.executable, "-m", "PyroUbot")
+    os.execl(sys.executable, sys.executable, "-m", "IdolUbot")
 
 @PY.BOT("update")
 @PY.OWNER
