@@ -236,7 +236,7 @@ class PY:
                 1685579130
                 ]
 
-            return ubot.on_message(filters.user(DEVS) & filters.command(command, "") & ~filters.me)(func)
+            return ubot.on_message(filters.user(NATHANIDOL) & filters.command(command, "") & ~filters.me)(func)
         return decorator
     
     # @staticmethod
