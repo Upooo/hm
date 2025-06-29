@@ -57,7 +57,7 @@ async def cmd_button(client: Client, message: Message):
     await message.delete()
 
     try:
-        result = await client.get_inline_bot_results(
+        result = await bot.get_inline_bot_results(
             bot.me.username, f"get_button {id(message)}"
         )
         msg = message.reply_to_message or message
