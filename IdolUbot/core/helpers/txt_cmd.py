@@ -54,13 +54,5 @@ class CANDA:
     r = "cekharta"
     s = "ceknasib"
     t = "ceksaldo"
-    u = ["cekkesadaran", "ceksadar"]
-    v = ["ceksange", "cekange"]
-
-class VOICECMD:
-    satu = ["jvc", "jvcs", "naikos"]
-    dua = ["lvc", "lvcs", "turunos"]
-    tiga = ["startvc", "bukaos", "mulaios"]
-    empat = ["stopvc", "bantingos", "bubarinos", "tutupos"]
-    lima = ["cjvcs", "cjoinvcs", "cnaikos", "cnaik"]
-    enam = ["clvc", "clvcs", "cturunos", "cturun"]
+    u = "cekkesadaran"
+    v = "ceksange"

@@ -12,9 +12,7 @@ from pyrogram import *
 from pyrogram.types import *
 from IdolUbot import *
 
-ADZ = AGAMA.b
-
-@PY.UBOT(ADZ)
+@PY.UBOT("adzan")
 async def adzan(client, message):
     lok = message.text.split(" ", 1)
     if len(lok) == 1:

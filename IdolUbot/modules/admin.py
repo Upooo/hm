@@ -41,7 +41,6 @@ from pyrogram.errors.exceptions.bad_request_400 import (
 
 from IdolUbot import *
 
-LCKCMDS = ADMINCMD.i + ADMINCMD.j
 LCKS = ADMINCMD.k
 BABUGCE = ADMINCMD.a + ADMINCMD.b + ADMINCMD.c + ADMINCMD.g + ADMINCMD.h
 
@@ -115,8 +114,8 @@ async def tg_lock(
             else f"<blockquote><b>ᴛᴇʀʙᴜᴋᴀ ᴜɴᴛᴜᴋ ɴᴏɴ-ᴀᴅᴍɪɴ!\nᴛɪᴘᴇ : {parameter}\nɢʀᴜᴘ : {message.chat.title}</b></blockquote>"
         )
     )
-
-@PY.UBOT(LCKCMDS)
+    
+@PY.UBOT("lock|unlock")
 @PY.TOP_CMD
 @PY.GROUP
 async def _(client, message):
@@ -171,7 +170,7 @@ async def _(client, message):
         )
 
 
-@PY.UBOT(LCKS)
+@PY.UBOT("locks")
 @PY.TOP_CMD
 @PY.GROUP
 async def _(client, message):
@@ -183,7 +182,7 @@ async def _(client, message):
     await message.reply(perms)
 
 
-@PY.UBOT(BABUGCE)
+@PY.UBOT("kick|ban|mute|unmute|unban|usir|bisu|tendang")
 @PY.TOP_CMD
 @PY.GROUP
 async def _(client, message):
@@ -192,7 +191,7 @@ async def _(client, message):
     bcs = await EMO.BROADCAST(client)
     tion = await EMO.MENTION(client)
     ktrng = await EMO.BL_KETERANGAN(client)
-    if message.command[0] == "kick":
+    if message.command[0] == "kick|tendang":
         user_id, reason = await extract_user_and_reason(message)
         if not user_id:
             return await message.reply_text(f"<blockquote><b>{ggl}{message.text.split()[0]} [username/user_id/reply]</b></blockquote>")
@@ -220,7 +219,7 @@ async def _(client, message):
             await message.chat.unban_member(user_id)
         except Exception as error:
             await message.reply(error)
-    elif message.command[0] == "ban":
+    elif message.command[0] == "ban|usir":
         user_id, reason = await extract_user_and_reason(message)
         if not user_id:
             return await message.reply_text(f"<blockquote><b>{ggl}{message.text.split()[0]} [username/user_id/reply]</b></blockquote>")
@@ -246,7 +245,7 @@ async def _(client, message):
             await message.reply(msg_ban)
         except Exception as error:
             await message.reply(error)
-    elif message.command[0] == "mute":
+    elif message.command[0] == "mute|bisu":
         user_id, reason = await extract_user_and_reason(message)
         if not user_id:
             return await message.reply_text(f"<blockquote><b>{ggl}{message.text.split()[0]} [username/user_id/reply]")

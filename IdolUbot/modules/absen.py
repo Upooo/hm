@@ -14,16 +14,13 @@ from pyrogram.types import (InlineKeyboardMarkup, InlineQueryResultArticle,     
 from datetime import datetime
 import pytz
 
-ABS = ABSENCMD.a
-UNABS = ABSENCMD.b
-
 hadir_list = []
 
 def get_hadir_list():
     return "\n".join([f"<blockquote><b>👤 {user['mention']} - {user['jam']}</blockquote></b>" for user in hadir_list])
 
 
-@PY.UBOT(ABS)
+@PY.UBOT("absen")
 @PY.TOP_CMD
 async def absen_command(c, m):
     ggl = await EMO.GAGAL(c)
@@ -46,7 +43,7 @@ async def absen_command(c, m):
     except Exception as e:
         await m.reply(f"<blockquote><b>{ggl}terjadi kesalahan: {e}</b></blockquote>")
 
-@PY.UBOT(UNABS)
+@PY.UBOT("delabsen")
 @PY.TOP_CMD
 async def clear_absen_command(c, m):
     hadir_list.clear()

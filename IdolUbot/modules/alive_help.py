@@ -179,7 +179,7 @@ async def user_help(client, message):
             )
         else:
             await message.reply(
-                f"<blockquote><b>no module found <code>{module}</code></b></blockquote>"
+                f"<b>⌭ No module found <code>{module}</code></b>"
             )
 
 @PY.INLINE("^user_help")

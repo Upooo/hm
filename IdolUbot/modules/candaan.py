@@ -108,7 +108,7 @@ async def cekkhodam(client, message):
     except Exception as e:
         await message.edit(f"❌ Error: {e}")
 
-@PY.UBOT(CANDA.b)
+@PY.UBOT("cekganteng|cekgtg")
 @PY.TOP_CMD
 async def cekgtg(client, message):
     try:
@@ -137,7 +137,7 @@ async def cekgtg(client, message):
     except Exception as e:
         await message.edit(f"❌ Error: {e}")
 
-@PY.UBOT(CANDA.c)
+@PY.UBOT("cekcantik|cekcntk")
 @PY.TOP_CMD
 async def cekcantik(client, message):
     try:
@@ -166,7 +166,7 @@ async def cekcantik(client, message):
     except Exception as e:
         await message.edit(f"❌ Error: {e}")
 
-@PY.UBOT(CANDA.d)
+@PY.UBOT("cekkontol|cekkntl")
 @PY.TOP_CMD
 async def cekkntl(client, message):
     try:
@@ -209,7 +209,7 @@ async def cekkntl(client, message):
     except Exception as e:
         await message.edit(f"❌ Error: {e}")
 
-@PY.UBOT(CANDA.e)
+@PY.UBOT("cekmemek|cekmmk")
 @PY.TOP_CMD
 async def cekmmk(client, message):
     try:
@@ -273,7 +273,7 @@ async def _(client, message):
     except Exception as e:
         await message.reply_text(f"<blockquote><b>⚠️ ᴛᴇʀᴊᴀᴅɪ ᴋᴇꜱᴀʟᴀʜᴀɴ ꜱᴀᴀᴛ ᴍᴇɴɢᴀᴍʙɪʟ ᴅᴀᴛᴀ :</b>\n<code>{str(e)}</code></blockquote>")
         
-@PY.UBOT(CANDA.g)
+@PY.UBOT("tf|transfer")
 @PY.TOP_CMD
 async def fake_transfer(client, message):
     if not message.reply_to_message:
@@ -305,7 +305,7 @@ async def fake_transfer(client, message):
 """
     await message.reply(hasil)
 
-@PY.UBOT(CANDA.e)
+@PY.UBOT("cekimut|cekcute")
 @PY.TOP_CMD
 async def cekimut(client, message):
     try:
@@ -342,7 +342,7 @@ async def cekimut(client, message):
     except Exception as e:
         await message.edit(f"❌ Error: {e}")
 
-@PY.UBOT(CANDA.i)
+@PY.UBOT("cekbh")
 @PY.TOP_CMD
 async def cekmmk(client, message):
     try:
@@ -374,7 +374,7 @@ async def cekmmk(client, message):
     except Exception as e:
         await message.edit(f"❌ Error: {e}")
 
-@PY.UBOT(CANDA.j)
+@PY.UBOT("ceksempak|cekcangcut")
 @PY.TOP_CMD
 async def ceksmpk(client, message):
     try:
@@ -406,7 +406,7 @@ async def ceksmpk(client, message):
     except Exception as e:
         await message.edit(f"❌ Error: {e}")
 
-@PY.UBOT(CANDA.u)
+@PY.UBOT("cekkesadaran")
 @PY.TOP_CMD
 async def cekksdran(client, message):
     try:
@@ -432,7 +432,7 @@ async def cekksdran(client, message):
     except Exception as e:
         await message.edit(f"❌ Error: {e}")
 
-@PY.UBOT(CANDA.v)
+@PY.UBOT("ceksange")
 @PY.TOP_CMD
 async def cekksnge(client, message):
     try:

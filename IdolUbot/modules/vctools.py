@@ -35,7 +35,7 @@ def nat_argsvc(message):
     return None
 
 
-@PY.UBOT(VOICECMD.tiga)
+@PY.UBOT("startvc|mulaios")
 @PY.TOP_CMD
 @PY.GROUP
 async def startvc_userbot(client, message: Message):
@@ -68,7 +68,7 @@ async def startvc_userbot(client, message: Message):
     except Exception as e:
         await msg.edit(f"<blockquote><b>{ggl}ɢᴀɢᴀʟ ᴍᴇᴍᴜʟᴀɪ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ :\n</b></blockquote><blockquote><code>{e}</code></blockquote>")
 
-@PY.UBOT(VOICECMD.empat)
+@PY.UBOT("stopvc|stopos")
 @PY.TOP_CMD
 @PY.GROUP
 async def stopvc_userbot(client, message: Message):
@@ -86,8 +86,8 @@ async def stopvc_userbot(client, message: Message):
     except Exception as e:
         await msg.edit(f"<blockquote><b>{ggl}ɢᴀɢᴀʟ ᴍᴇɴɢʜᴇɴᴛɪᴋᴀɴ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ :\n</b></blockquote><blockquote><code>{e}</code></blockquote>")
 
-@PY.UBOT(VOICECMD.satu)
-@PY.IDOL(VOICECMD.lima)
+@PY.UBOT("jvc|naik|jvcs")
+@PY.IDOL("cjvc|cnaik|cjvcs")
 @PY.TOP_CMD
 @PY.GROUP
 async def join_vc(client, message: Message):
@@ -134,8 +134,8 @@ async def join_vc(client, message: Message):
     except Exception as e:
         await mex.edit(f"<blockquote><b>{ggl} ɢᴀɢᴀʟ :</b></blockquote>\n<blockquote><code>{e}</code></blockquote>")
 
-@PY.UBOT(VOICECMD.dua)
-@PY.IDOL(VOICECMD.enam)
+@PY.UBOT("lvc|turun|lvcs")
+@PY.IDOL("clvc|cturun|clvcs")
 @PY.TOP_CMD
 @PY.GROUP
 async def leave_vc(client, message: Message):

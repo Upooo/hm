@@ -33,9 +33,7 @@ URLS = {
     "cicho": "https://api.botcahx.eu.org/api/anime/chiho?apikey=moire",
     "sasuke": "https://api.botcahx.eu.org/api/anime/sasuke?apikey=moire"
 }
-ANMK = ANIMEK.a + ANIMEK.b
-
-@PY.UBOT(ANMK)
+@PY.UBOT("wall|waifu")
 async def anime_cmd(client, message):
     msg = await message.reply("<b>ᴛᴜɴɢɢᴜ sᴇʙᴇɴᴛᴀʀ...</b>", quote=True)
     if message.command[0] == "wall":
