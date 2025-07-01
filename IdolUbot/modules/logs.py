@@ -139,7 +139,7 @@ async def send_log(client, message, is_dm=False):
 
     if is_dm:
         log_text = f"""
-<blockquote><b><u>📨 ɴᴏᴛɪғɪᴄᴀᴛɪᴏɴ ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛs</u></b></blockquote>
+<blockquote><b><u>📨 ɴᴏᴛɪғɪᴄᴀᴛɪᴏɴ ᴘʀɪᴠᴀᴛᴇ</u></b></blockquote>
 
 <blockquote><b>• ғʀᴏᴍ :</b> {user_name}
 <b>• ᴜsᴇʀ ɪᴅ :</b> {user.id}</blockquote>
@@ -152,15 +152,13 @@ async def send_log(client, message, is_dm=False):
         buttons = [[InlineKeyboardButton("📩 ᴏᴘᴇɴ ᴍᴇssᴀɢᴇ", url=f"tg://openmessage?user_id={user.id}&message_id={message.id}")]]
     else:
         log_text = f"""
-<blockquote><b><u>📨 ɴᴏᴛɪғɪᴄᴀᴛɪᴏɴ ɢʀᴏᴜᴘ ᴄʜᴀᴛs</u></b></blockquote>
+<blockquote><b><u>📨 ɴᴏᴛɪғɪᴄᴀᴛɪᴏɴ ɢʀᴏᴜᴘ</u></b></blockquote>
 
 <blockquote><b>• ɢʀᴏᴜᴘ :</b> {chat_title}
 <b>• ɢʀᴏᴜᴘ ɪᴅ :</b> {message.chat.id}</blockquote>
-
 <blockquote><b>• ғʀᴏᴍ :</b> {user_name}
 <b>• ᴜsᴇʀ ɪᴅ :</b> {user.id}</blockquote>
-
-<blockquote><b>• ᴍᴇssᴀɢᴇ :</b>\n {msg_text}
+<blockquote><b>• ᴍᴇssᴀɢᴇ :</b> {msg_text}
 <b>• ᴛʏᴘᴇ : {msg_type}</b></blockquote>
 
 <blockquote><b>• ᴅᴀᴛᴇ : {waktu}</b></blockquote>
