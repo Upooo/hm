@@ -192,7 +192,7 @@ async def user_help_inline(client, inline_query):
             HELP_COMMANDS[module_name] = imported_module
 
     SH = await ubot.get_prefix(inline_query.from_user.id)
-    msg = f"""<blockquote><b>ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs.</b><blockquote>
+    msg = f"""<blockquote><b>ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs.</b></blockquote>
 <blockquote>    <b>ᴜsᴇʀ : <a href=tg://user?id={inline_query.from_user.id}>{inline_query.from_user.first_name} {inline_query.from_user.last_name or ''}</a></b>
     <b>ᴘʀᴇꜰɪx : {' '.join(SH)}</b>
     <b>ᴍᴏᴅᴜʟᴇ : {len(HELP_COMMANDS)}</b></blockquote>
@@ -222,7 +222,7 @@ async def help_callback(client, callback_query):
     tutup_match = re.match(r"help_tutup\((.+?)\)", callback_query.data)
     back_match = re.match(r"help_back", callback_query.data)
     SH = await ubot.get_prefix(callback_query.from_user.id)
-    top_text = f"""<blockquote><b>ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs.</b><blockquote>
+    top_text = f"""<blockquote><b>ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs.</b></blockquote>
 <blockquote>    <b>ᴜsᴇʀ : <a href=tg://user?id={callback_query.from_user.id}>{callback_query.from_user.first_name} {callback_query.from_user.last_name or ''}</a></b>
     <b>ᴘʀᴇꜰɪx : {' '.join(SH)}</b>
     <b>ᴍᴏᴅᴜʟᴇ : {len(HELP_COMMANDS)}</b></blockquote>
