@@ -23,6 +23,7 @@ __HELP__ = """
 """
 
 @PY.BOT("prem")
+@PY.IDOL
 @PY.SELLER
 @PY.ADMIN
 async def _(client, message):

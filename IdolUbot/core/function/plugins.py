@@ -32,9 +32,12 @@ async def loadPlugins():
             [
                 [
                     InlineKeyboardButton("ᴜsᴇʀʙᴏᴛ", url="t.me/idolubot"),
+                    InlineKeyboardButton("ᴜsᴇʀʙᴏᴛ", url="t.me/v1idolubot"),
+                ],
+                [
                     InlineKeyboardButton("ᴄʜᴀɴɴᴇʟ", url="https://t.me/xnxxnathan"),
                 ],
-            ]
+            ],
         ),
     )
     

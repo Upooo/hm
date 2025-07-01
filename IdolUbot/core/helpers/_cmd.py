@@ -126,18 +126,28 @@ class PY:
     @staticmethod
     def UBOT(command, sudo=True):  # Default sudo=True
         def wrapper(func):
-            sudo_command = ubot.cmd_prefix(command) if sudo else ubot.cmd_prefix(command) & filters.me
+            command_filter = ubot.cmd_prefix(command)
+            # sudo_command = ubot.cmd_prefix(command) if sudo else ubot.cmd_prefix(command) & filters.me
 
-            @ubot.on_message(sudo_command)
+            @ubot.on_message(command_filter)
             async def wrapped_func(client, message):
+                sender_id = None
+                if message.from_user:
+                    sender_id = message.from_user.id
+                elif message.sender_chat:
+                    sender_id = client.me.id
+                else:
+                    return
                 if sudo:
                     sudo_id = await get_list_from_vars(client.me.id, "SUDO_USER", "ID_NYA")
                     if client.me.id not in sudo_id:
                         sudo_id.append(client.me.id)
-                    if message.from_user.id in sudo_id:
-                        return await func(client, message)
+                    if sender_id not in sudo_id:
+                        return
                 else:
-                    return await func(client, message)
+                    if sender_id != client.me.id:
+                        return
+                return await func(client, message)
 
             return wrapped_func
 

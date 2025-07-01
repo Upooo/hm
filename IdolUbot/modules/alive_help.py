@@ -184,18 +184,24 @@ async def user_help(client, message):
 
 @PY.INLINE("^user_help")
 async def user_help_inline(client, inline_query):
+    modules = loadModule()
+    for mod in modules:
+        imported_module = importlib.import_module(f"IdolUbot.modules.{mod}")
+        module_name = getattr(imported_module, "__MODULE__", "").replace(" ", "_").lower()
+        if module_name:
+            HELP_COMMANDS[module_name] = imported_module
+
     SH = await ubot.get_prefix(inline_query.from_user.id)
-    msg = f"""
-<blockquote><b>commands menu!</b><blockquote>
-<blockquote>
-    <b>ᴜsᴇʀ: <a href=tg://user?id={inline_query.from_user.id}>{inline_query.from_user.first_name} {inline_query.from_user.last_name or ''}</a></b>
-    <b>ᴘʀᴇꜰɪxᴇs: {' '.join(SH)}</b>
-</blockquote>
+    msg = f"""<blockquote><b>ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs.</b><blockquote>
+<blockquote>    <b>ᴜsᴇʀ : <a href=tg://user?id={inline_query.from_user.id}>{inline_query.from_user.first_name} {inline_query.from_user.last_name or ''}</a></b>
+    <b>ᴘʀᴇꜰɪx : {' '.join(SH)}</b>
+    <b>ᴍᴏᴅᴜʟᴇ : {HELP_COMMANDS}</b></blockquote>
+<blockquote><b>powered by : @nathanidol</b></blockquote>
 """
     results = [InlineQueryResultArticle(
         title="Help Menu!",
         reply_markup=InlineKeyboardMarkup(paginate_modules(0, HELP_COMMANDS, "help")),
-        input_message_content=InputTextMessageContent(msg),
+        input_message_content=InpuxtTextMessageContent(msg),
     )]
     await client.answer_inline_query(inline_query.id, cache_time=60, results=results)
 
@@ -216,12 +222,11 @@ async def help_callback(client, callback_query):
     tutup_match = re.match(r"help_tutup\((.+?)\)", callback_query.data)
     back_match = re.match(r"help_back", callback_query.data)
     SH = await ubot.get_prefix(callback_query.from_user.id)
-    top_text = f"""
-<blockquote><b>commands menu!</b><blockquote>
-<blockquote>
-    <b>ᴜsᴇʀ: <a href=tg://user?id={callback_query.from_user.id}>{callback_query.from_user.first_name} {callback_query.from_user.last_name or ''}</a></b>
-    <b>ᴘʀᴇꜰɪxᴇs: {' '.join(SH)}</b>
-</blockquote>
+    top_text = f"""<blockquote><b>ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs.</b><blockquote>
+<blockquote>    <b>ᴜsᴇʀ : <a href=tg://user?id={inline_query.from_user.id}>{inline_query.from_user.first_name} {inline_query.from_user.last_name or ''}</a></b>
+    <b>ᴘʀᴇꜰɪx : {' '.join(SH)}</b>
+    <b>ᴍᴏᴅᴜʟᴇ : {HELP_COMMANDS}</b></blockquote>
+<blockquote><b>powered by : @nathanidol</b></blockquote>
 """
 
     if mod_match:
@@ -230,7 +235,7 @@ async def help_callback(client, callback_query):
         button = [[InlineKeyboardButton("↩️", callback_data="help_back")]]
         await callback_query.edit_message_text(
             text=text 
-            + '\n<blockquote><u><b>by : @nathanidol</b></u></blockquote>',
+            + '\n<blockquote><u><b>powered by : @nathanidol</b></u></blockquote>',
             reply_markup=InlineKeyboardMarkup(button),
             disable_web_page_preview=True,
         )
