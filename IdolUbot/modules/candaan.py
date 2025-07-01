@@ -188,13 +188,13 @@ async def cekkntl(client, message):
         if user_id == OWNER_ID:
             return await message.edit(f"""
 <blockquote><b>ʜᴀsɪʟ ᴄᴇᴋ ᴋᴏɴᴛᴏʟ :</b></blockquote>
-<blockquote><>
-ɴᴀᴍᴀ : {nama}. (ᴏᴡɴᴇʀ)
+<blockquote><b>
+ɴᴀᴍᴀ : {nama} (ᴏᴡɴᴇʀ)
 ᴡᴀʀɴᴀ ᴋᴏɴᴛᴏʟ : pink
 ᴡᴀʀɴᴀ ᴊᴇᴍʙᴜᴛ : normal
 ᴜᴋᴜʀᴀɴ ᴋᴏɴᴛᴏʟ : 23cm
 ᴄɪʀɪ ᴄɪʀɪɴʏᴀ : gede ber otot
-</blockquote>
+<b></blockquote>
 <blockquote><b>ɴᴇxᴛ ᴄᴇᴋ sɪᴀᴘᴀ ʟᴀɢɪ?</b></blockquote>
 """)
         # elif user_id == SAIKO_SAHABAT:
