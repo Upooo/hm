@@ -134,34 +134,39 @@ async def send_log(client, message, is_dm=False):
     msg_type = "text" if not message.media else str(message.media)
     user_name = f"{user.first_name} {user.last_name or ''}" if user else "Tidak diketahui"
 
-    msg_text = message.text or "[Non-text]"
+    msg_text = message.text or ""
     chat_title = message.chat.title if message.chat else "Unknown Chat"
 
     if is_dm:
         log_text = f"""
-💬 Private Chat Log
+<blockquote><b><u>📨 ɴᴏᴛɪғɪᴄᴀᴛɪᴏɴ ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛs</u></b></blockquote>
 
-• From: {user_name}
-• User ID: {user.id}
-• Message: {msg_text}
-• Type: {msg_type}
-• Date: {waktu}
+<blockquote><b>• ғʀᴏᴍ :</b> {user_name}</blockquote>
+<blockquote><b>• ᴜsᴇʀ ɪᴅ :</b> {user.id}</blockquote>
+
+<blockquote><b>• ᴍᴇssᴀɢᴇ :</b>\n{msg_text}</blockquote>
+<blockquote><b>• ᴛʏᴘᴇ :</b> {msg_type}</blockquote>
+
+<blockquote><b>• ᴅᴀᴛᴇ :</b> <code>{waktu}</code></blockquote>
 """
-        buttons = [[InlineKeyboardButton("📩 Buka Pesan", url=f"tg://openmessage?user_id={user.id}&message_id={message.id}")]]
+        buttons = [[InlineKeyboardButton("📩 ᴏᴘᴇɴ ᴍᴇssᴀɢᴇ", url=f"tg://openmessage?user_id={user.id}&message_id={message.id}")]]
     else:
         log_text = f"""
-📨 Mention/Reply Log
+📨 ɴᴏᴛɪғɪᴄᴀᴛɪᴏɴ ɢʀᴏᴜᴘ ᴄʜᴀᴛs
 
-• Group: {chat_title}
-• Group ID: {message.chat.id}
-• From: {user_name}
-• User ID: {user.id}
-• Message: {msg_text}
-• Type: {msg_type}
-• Date: {waktu}
+<blockquote><b>• ɢʀᴏᴜᴘ :</b>\n {chat_title}</blockquote>
+<blockquote><b>• ɢʀᴏᴜᴘ ɪᴅ :</b> {message.chat.id}</blockquote>
+
+<blockquote><b>• ғʀᴏᴍ :</b> {user_name}</blockquote>
+<blockquote><b>• ᴜsᴇʀ ɪᴅ :</b> {user.id}</blockquote>
+
+<blockquote><b>• ᴍᴇssᴀɢᴇ :</b>\n {msg_text}</blockquote>
+<blockquote><b>• ᴛʏᴘᴇ :</b> {msg_type}</blockquote>
+
+<blockquote><b>• ᴅᴀᴛᴇ :</b> <code>{waktu}</code></blockquote>
 """
         msg_link = message.link if hasattr(message, "link") else None
-        buttons = [[InlineKeyboardButton("📌 Go to Message", url=msg_link)]] if msg_link else []
+        buttons = [[InlineKeyboardButton("📩 ᴏᴘᴇɴ ᴍᴇssᴀɢᴇ", url=msg_link)]] if msg_link else []
 
     try:
         if message.media:

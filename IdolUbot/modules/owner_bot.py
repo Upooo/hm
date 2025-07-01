@@ -38,9 +38,6 @@ from IdolUbot.config import OWNER_ID
 from IdolUbot import *
 
 @PY.UBOT("prem")
-@PY.IDOL
-@PY.SELLER
-@PY.ADMIN
 async def _(client, message):
     prs = await EMO.PROSES(client)
     ggl = await EMO.GAGAL(client)
