@@ -195,7 +195,7 @@ async def user_help_inline(client, inline_query):
     msg = f"""<blockquote><b>ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs.</b><blockquote>
 <blockquote>    <b>ᴜsᴇʀ : <a href=tg://user?id={inline_query.from_user.id}>{inline_query.from_user.first_name} {inline_query.from_user.last_name or ''}</a></b>
     <b>ᴘʀᴇꜰɪx : {' '.join(SH)}</b>
-    <b>ᴍᴏᴅᴜʟᴇ : {HELP_COMMANDS}</b></blockquote>
+    <b>ᴍᴏᴅᴜʟᴇ : {len(HELP_COMMANDS)}</b></blockquote>
 <blockquote><b>powered by : @nathanidol</b></blockquote>
 """
     results = [InlineQueryResultArticle(
@@ -225,7 +225,7 @@ async def help_callback(client, callback_query):
     top_text = f"""<blockquote><b>ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs.</b><blockquote>
 <blockquote>    <b>ᴜsᴇʀ : <a href=tg://user?id={callback_query.from_user.id}>{callback_query.from_user.first_name} {callback_query.from_user.last_name or ''}</a></b>
     <b>ᴘʀᴇꜰɪx : {' '.join(SH)}</b>
-    <b>ᴍᴏᴅᴜʟᴇ : {HELP_COMMANDS}</b></blockquote>
+    <b>ᴍᴏᴅᴜʟᴇ : {len(HELP_COMMANDS)}</b></blockquote>
 <blockquote><b>powered by : @nathanidol</b></blockquote>
 """
 
