@@ -13,7 +13,7 @@ from pyrogram.raw.functions import Ping
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from IdolUbot import *
 
-@PY.UBOT("ping")
+@PY.UBOT("ping|pink")
 @PY.IDOL("cpink|ceponk|sepong")
 @PY.TOP_CMD
 async def _(client, message):

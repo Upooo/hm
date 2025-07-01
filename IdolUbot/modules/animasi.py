@@ -21,13 +21,13 @@ __HELP__ = """
 🦠 <code>{0}piss</code>
 🦠 <code>{0}bundir</code>
 🦠 <code>{0}bot</code>
-🦠 <code>{0}sepongebob</code></blockquote>
+🦠 <code>{0}sepongebob</code>
 🦠 <code>{0}dino</code>
 🦠 <code>{0}hack</code>
 🦠 <code>{0}gabut</code>
 🦠 <code>{0}loveyou</code>
 🦠 <code>{0}bomb</code>
-🦠 <code>{0}charge</code></blockquote>
+🦠 <code>{0}charge</code>
 🦠 <code>{0}fadmin</code>
 🦠 <code>{0}fleave</code>
 🦠 <code>{0}tupload</code>

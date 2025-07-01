@@ -1,5 +1,5 @@
 __MODULE__ = "adzan"
-__HELP__ = f"""
+__HELP__ = """
 <blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴀᴅᴢᴀɴ--</b></blockquote>
 
 <blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ : <code>{0}adzan [nama kota]</code>

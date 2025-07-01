@@ -57,64 +57,6 @@ from pyrogram import filters
 from httpx import AsyncClient, Timeout
 from IdolUbot import *
 
-@PY.IDOL("climit")
-async def _(client, message):
-    ggl = await EMO.GAGAL(client)
-    sks = await EMO.BERHASIL(client)
-    prs = await EMO.PROSES(client)
-    pong = await EMO.PING(client)
-    tion = await EMO.MENTION(client)
-    yubot = await EMO.UBOT(client)
-    await client.unblock_user("SpamBot")
-    bot_info = await client.resolve_peer("SpamBot")
-    msg = await message.reply(f"{prs}processing . . .")
-    response = await client.invoke(
-        StartBot(
-            bot=bot_info,
-            peer=bot_info,
-            random_id=client.rnd_id(),
-            start_param="start",
-        )
-    )
-    await sleep(1)
-    await msg.delete()
-    status = await client.get_messages("SpamBot", response.updates[1].message.id + 1) 
-    if status and hasattr(status, "text"):
-        pjg = len(status.text)
-        print(pjg)
-        if pjg <= 100:
-            if client.me.is_premium:
-                text = f"""
-<blockquote><b>{pong} sᴛᴀᴛᴜs ᴀᴋᴜɴ ᴘʀᴇᴍɪᴜᴍ : ᴛʀᴜᴇ</b>
-<b>{tion} ʟɪᴍɪᴛ ᴄʜᴇᴄᴋ : ᴀᴋᴜɴ ᴀɴᴅᴀ ᴛɪᴅᴀᴋ ᴅɪʙᴀᴛᴀsɪ</b>
-<b>{yubot} ᴜʙᴏᴛ : {bot.me.mention}</b></blockquote>
-"""
-            else:
-                text = f"""
-<blockquote><b>sᴛᴀᴛᴜs ᴀᴋᴜɴ  : ʙᴇʟɪ ᴘʀᴇᴍ ᴅᴜʟᴜ ʏᴀ</b>
-<b>ʟɪᴍɪᴛ ᴄʜᴇᴄᴋ : ᴀᴋᴜɴ ᴀɴᴅᴀ ᴛɪᴅᴀᴋ ᴅɪʙᴀᴛᴀsɪ</b>
-<b>ᴜʙᴏᴛ : {bot.me.mention}</b></blockquote>
- """
-            await client.send_message(message.chat.id, text)
-            return await client.invoke(DeleteHistory(peer=bot_info, max_id=0, revoke=True))
-        else:
-            if client.me.is_premium:
-                text = f"""
-<blockquote><b>{pong} sᴛᴀᴛᴜs ᴀᴋᴜɴ ᴘʀᴇᴍɪᴜᴍ : ᴛʀᴜᴇ</b>
-<b>{tion} ʟɪᴍɪᴛ ᴄʜᴇᴄᴋ : ᴀᴋᴜɴ ᴀɴᴅᴀ ʙᴇʀᴍᴀsᴀʟᴀʜ</b> 
-<b>{yubot} ᴜʙᴏᴛ : {bot.me.mention}</b></blockquote>
-"""
-            else:
-                text = f"""
-<blockquote><b>sᴛᴀᴛᴜs ᴀᴋᴜɴ  : ʙᴇʟɪ ᴘʀᴇᴍ ᴅᴜʟᴜ ʏᴀ</b>
-<b>ʟɪᴍɪᴛ ᴄʜᴇᴄᴋ : ᴀᴋᴜɴ ᴀɴᴅᴀ ʙᴇʀᴍᴀsᴀʟᴀʜ</b>
-<b>ᴜʙᴏᴛ : {bot.me.mention}</b></blockquote>
-"""
-            await client.send_message(message.chat.id, text)
-            return await client.invoke(DeleteHistory(peer=bot_info, max_id=0, revoke=True))
-    else:
-        print("Status tidak valid atau status.text tidak ada")
-
 @PY.IDOL("HALLO")
 async def padaonga(client, message):
     await message.reply(
@@ -140,14 +82,24 @@ async def moiregantenkga(client, message):
 @PY.IDOL("devs")
 async def teson(client, message):
     await message.reply(
-       "<blockquote><b>DEVS GACOL IDAMAN YA NATHAN LAHH!!</blockquote></b>")
+       "<blockquote><b>SI GANTENG GACOL IDAMAN YA NATHAN LAHH!!</blockquote></b>")
 
-@PY.IDOL("idol")
+@PY.IDOL("idolubot")
 async def teson(client, message):
     await message.reply(
-       "IDOL USERBOT MENYALA!!!")
+       "<b>MENYALA IDOL USERBOT!!!</b>")
 
-@PY.IDOL("ubot")
+@PY.IDOL("cek")
+async def teson(client, message):
+    await message.reply(
+       "<b>HADIR TUAN NATHAN!</b>")
+
+@PY.IDOL("nathan")
+async def teson(client, message):
+    await message.reply(
+       "<b>HALOO GANTENGG!!!</b>")
+
+@PY.IDOL("userbot")
 async def teson(client, message):
     await message.reply(
        "<blockquote><b> USERBOT GACOL IDAMAN CUMA @v1idolubot </blockquote></b>")
@@ -155,7 +107,7 @@ async def teson(client, message):
 @PY.IDOL("tes")
 async def teson(client, message):
     await message.reply(
-       "<blockquote><b>always on mas nathann.</blockquote></b>")
+       "<blockquote><b>ALWAYS ON BANG NATHAN!!</blockquote></b>")
                   
 @PY.IDOL("kuda")
 async def _(client, message):

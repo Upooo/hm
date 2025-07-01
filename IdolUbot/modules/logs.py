@@ -143,7 +143,6 @@ async def send_log(client, message, is_dm=False):
 
 <blockquote><b>• ғʀᴏᴍ :</b> {user_name}
 <b>• ᴜsᴇʀ ɪᴅ :</b> {user.id}</blockquote>
-
 <blockquote><b>• ᴍᴇssᴀɢᴇ :</b> {msg_text}
 <b>• ᴛʏᴘᴇ :</b> {msg_type}</blockquote>
 
