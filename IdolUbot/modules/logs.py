@@ -141,29 +141,29 @@ async def send_log(client, message, is_dm=False):
         log_text = f"""
 <blockquote><b><u>📨 ɴᴏᴛɪғɪᴄᴀᴛɪᴏɴ ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛs</u></b></blockquote>
 
-<blockquote><b>• ғʀᴏᴍ :</b> {user_name}</blockquote>
-<blockquote><b>• ᴜsᴇʀ ɪᴅ :</b> {user.id}</blockquote>
+<blockquote><b>• ғʀᴏᴍ :</b> {user_name}
+<b>• ᴜsᴇʀ ɪᴅ :</b> {user.id}</blockquote>
 
-<blockquote><b>• ᴍᴇssᴀɢᴇ :</b>\n{msg_text}</blockquote>
-<blockquote><b>• ᴛʏᴘᴇ :</b> {msg_type}</blockquote>
+<blockquote><b>• ᴍᴇssᴀɢᴇ :</b> {msg_text}
+<b>• ᴛʏᴘᴇ :</b> {msg_type}</blockquote>
 
-<blockquote><b>• ᴅᴀᴛᴇ :</b> <code>{waktu}</code></blockquote>
+<blockquote><b>• ᴅᴀᴛᴇ :</b> {waktu}</blockquote>
 """
         buttons = [[InlineKeyboardButton("📩 ᴏᴘᴇɴ ᴍᴇssᴀɢᴇ", url=f"tg://openmessage?user_id={user.id}&message_id={message.id}")]]
     else:
         log_text = f"""
-📨 ɴᴏᴛɪғɪᴄᴀᴛɪᴏɴ ɢʀᴏᴜᴘ ᴄʜᴀᴛs
+<blockquote><b><u>📨 ɴᴏᴛɪғɪᴄᴀᴛɪᴏɴ ɢʀᴏᴜᴘ ᴄʜᴀᴛs</u></b></blockquote>
 
-<blockquote><b>• ɢʀᴏᴜᴘ :</b>\n {chat_title}</blockquote>
-<blockquote><b>• ɢʀᴏᴜᴘ ɪᴅ :</b> {message.chat.id}</blockquote>
+<blockquote><b>• ɢʀᴏᴜᴘ :</b> {chat_title}
+<b>• ɢʀᴏᴜᴘ ɪᴅ :</b> {message.chat.id}</blockquote>
 
-<blockquote><b>• ғʀᴏᴍ :</b> {user_name}</blockquote>
-<blockquote><b>• ᴜsᴇʀ ɪᴅ :</b> {user.id}</blockquote>
+<blockquote><b>• ғʀᴏᴍ :</b> {user_name}
+<b>• ᴜsᴇʀ ɪᴅ :</b> {user.id}</blockquote>
 
-<blockquote><b>• ᴍᴇssᴀɢᴇ :</b>\n {msg_text}</blockquote>
-<blockquote><b>• ᴛʏᴘᴇ :</b> {msg_type}</blockquote>
+<blockquote><b>• ᴍᴇssᴀɢᴇ :</b>\n {msg_text}
+<b>• ᴛʏᴘᴇ : {msg_type}</b></blockquote>
 
-<blockquote><b>• ᴅᴀᴛᴇ :</b> <code>{waktu}</code></blockquote>
+<blockquote><b>• ᴅᴀᴛᴇ : {waktu}</b></blockquote>
 """
         msg_link = message.link if hasattr(message, "link") else None
         buttons = [[InlineKeyboardButton("📩 ᴏᴘᴇɴ ᴍᴇssᴀɢᴇ", url=msg_link)]] if msg_link else []
