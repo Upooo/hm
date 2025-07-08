@@ -1,5 +1,6 @@
-from IdolUbot.core.database import prefix_collection
+from IdolUbot.core.database import mongodb
 
+prefix_collection = mongodb["prefix"]
 async def get_pref(user_id: int):
     pref = await prefix_collection.find_one({"_id": user_id})
     return pref.get("prefixesi") if pref else "."

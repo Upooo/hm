@@ -1,7 +1,7 @@
 from typing import List, Optional, Union
-from IdolUbot import *
+from IdolUbot.core.database import mongodb
 
-
+vars_collection = mongodb["varsX"]
 # === Fungsi Dasar ===
 async def set_vars(user_id: int, vars_name: str, value: Union[int, str], query: str = "vars") -> None:
     await vars_collection.update_one(

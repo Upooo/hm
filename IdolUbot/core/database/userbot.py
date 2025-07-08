@@ -1,5 +1,6 @@
-from IdolUbot import *
+from IdolUbot.core.database import mongodb
 
+ubot_collection = mongodb["idol"]
 async def add_ubot(user_id: int, api_id: int, api_hash: str, session_string: str):
     return await ubot_collection.update_one(
         {"user_id": user_id},
