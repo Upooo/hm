@@ -13,7 +13,7 @@ def extract_type_and_msg(message):
     return type, msg
 
 
-@PY.NO_CMD_UBOT("FILTER_MSG")
+@PY.NO_CMD_UBOT("FILTER_MSG", ubot)
 async def filter_message(client, message):
     try:
         chat_logs = await get_vars(client.me.id, "ID_LOGS")
