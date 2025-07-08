@@ -3,13 +3,7 @@ from datetime import datetime
 from pytz import timezone
 from pyrogram.types import InlineKeyboardMarkup
 
-from IdolUbot import bot, ubot, MSG, BTN
-from IdolUbot.core.database import (
-    get_expired_date,
-    remove_ubot,
-    remove_all_vars,
-    rem_expired_date,
-)
+from IdolUbot import *
 
 async def expiredUserbots() -> None:
     while True:
