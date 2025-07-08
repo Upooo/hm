@@ -1,5 +1,4 @@
 from IdolUbot import *
-from IdolUbot.core.database import get_vars
 
 
 class EMO:
