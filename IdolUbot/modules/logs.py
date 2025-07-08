@@ -302,7 +302,7 @@ async def logs_toggle(client, message):
 
             except Exception as e:
                 if "USER_RESTRICTED" in str(e):
-                    fallback_id = bot.me.id
+                    fallback_id = client.me.id
                     await set_vars(client.me.id, "LOG_CHANNEL_ID", fallback_id)
                     try:
                         await bot.send_message(
