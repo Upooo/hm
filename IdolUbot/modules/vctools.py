@@ -24,7 +24,9 @@ from pyrogram.types import Message
 from pyrogram.errors import UserBannedInChannel
 # from pytgcalls.exceptions import NotInCallError
 
-from pyrogram.raw.functions.phone import CreateGroupCall, DiscardGroupCall, GetGroupCall
+from pyrogram.raw.functions.phone import CreateGroupCall, DiscardGroupCall, GetGroupCall, EditGroupCallTitle
+from pyrogram.raw.functions.messages import GetFullChat
+from pyrogram.raw.types import InputGroupCall
 from IdolUbot.core.helpers.txt_cmd import *
 from IdolUbot import *
 
@@ -68,12 +70,6 @@ async def startvc_userbot(client, message: Message):
     except Exception as e:
         await msg.edit(f"<blockquote><b>{ggl}ɢᴀɢᴀʟ ᴍᴇᴍᴜʟᴀɪ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ :\n</b></blockquote><blockquote><code>{e}</code></blockquote>")
 
-from pyrogram.raw.functions.phone import EditGroupCallTitle
-
-from pyrogram.raw.functions.phone import GetGroupCall, EditGroupCallTitle
-from pyrogram.raw.types import InputGroupCall
-from pyrogram.errors import ChatAdminRequired
-
 @PY.UBOT("vctitle|judulos")
 @PY.TOP_CMD
 @PY.GROUP
@@ -90,8 +86,10 @@ async def change_vc_title(client, message: Message):
 
     try:
         # Ambil informasi panggilan grup dari chat
+        peer = await client.resolve_peer(message.chat.id)
+
         chat = await client.get_chat(message.chat.id)
-        full_chat = await client.get_full_chat(chat.id)
+        full_chat = await client.invoke(GetFullChat(chat_id=peer.chat_id))
         call = full_chat.full_chat.call
 
         if not call:
@@ -123,20 +121,17 @@ async def stopvc_userbot(client, message: Message):
     msg = await message.reply(f"<blockquote><b>{prs}ᴍᴇɴɢʜᴇɴᴛɪᴋᴀɴ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ...</b></blockquote>")
 
     try:
-        # Ambil informasi voice chat aktif
-        chat = await client.get_chat(message.chat.id)
-        full_chat = await client.get_full_chat(chat.id)
+        peer = await client.resolve_peer(message.chat.id)
+        full_chat = await client.invoke(GetFullChat(chat_id=peer.chat_id))
         call = full_chat.full_chat.call
 
         if not call:
-            return await msg.edit("❌ Tidak ada voice chat aktif untuk dihentikan.")
+            return await msg.edit("❌ Tidak ada voice chat aktif yang dapat dihentikan.")
 
         group_call = InputGroupCall(id=call.id, access_hash=call.access_hash)
-
-        # Hentikan obrolan suara
         await client.invoke(DiscardGroupCall(call=group_call))
-        await msg.edit(f"<blockquote><b>{brhsl} ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ʙᴇʀʜᴀꜱɪʟ ᴅɪʜᴇɴᴛɪᴋᴀɴ.</b></blockquote>")
 
+        await msg.edit(f"<blockquote><b>{brhsl} ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ʙᴇʀʜᴀꜱɪʟ ᴅɪʜᴇɴᴛɪᴋᴀɴ.</b></blockquote>")
     except Exception as e:
         await msg.edit(f"<blockquote><b>{ggl} ɢᴀɢᴀʟ ᴍᴇɴɢʜᴇɴᴛɪᴋᴀɴ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ :</b></blockquote>\n<code>{e}</code>")
 
