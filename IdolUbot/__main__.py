@@ -1,4 +1,5 @@
 import signal
+from IdolUbot.core.database.userbot import *
 import tornado.ioloop
 import tornado.platform.asyncio
 from pyrogram import Client
