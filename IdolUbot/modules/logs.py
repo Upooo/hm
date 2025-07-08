@@ -399,8 +399,9 @@ async def send_log(client, message, is_dm=False):
 
 @PY.NO_CMD_UBOT("LOGS_GROUP", ubot)
 async def logs_group(client, message):
+    logs = await get_vars(client.me.id, "ID_LOGS")
     on_logs = await get_vars(client.me.id, "ON_LOGS")
-    if not on_logs:
+    if logs and on_logs:
         return
 
     me = await client.get_me()
@@ -423,9 +424,10 @@ async def logs_group(client, message):
 async def logs_private(client, message):
     if message.chat.type != ChatType.PRIVATE:
         return
-
+    
+    logs = await get_vars(client.me.id, "ID_LOGS")
     on_logs = await get_vars(client.me.id, "ON_LOGS")
-    if not on_logs:
+    if not logs in on_logs:
         return
 
     await send_log(client, message, is_dm=True)
