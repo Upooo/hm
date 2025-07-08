@@ -32,7 +32,7 @@ async def filter_message(client, message):
 async def filter_cmd(client, message):
     proses = await EMO.PROSES(client)
     gagal = await EMO.GAGAL(client)
-    sukses = await EMO.SUKSES(client)
+    sukses = await EMO.BERHASIL(client)
     txt = await message.reply(f"{proses} Sedang memproses")
     arg = get_arg(message)
 
@@ -49,7 +49,7 @@ async def filter_cmd(client, message):
 async def addfilter_cmd(client, message):
     proses = await EMO.PROSES(client)
     gagal = await EMO.GAGAL(client)
-    sukses = await EMO.SUKSES(client)
+    sukses = await EMO.BERHASIL(client)
     txt = await message.reply(f"{proses} Sedang memproses")
     type, reply = extract_type_and_msg(message)
 
@@ -73,7 +73,7 @@ async def addfilter_cmd(client, message):
 async def delfilter_cmd(client, message):
     proses = await EMO.PROSES(client)
     gagal = await EMO.GAGAL(client)
-    sukses = await EMO.SUKSES(client)
+    sukses = await EMO.BERHASIL(client)
     txt = await message.reply(f"{proses} tunggu sebentar")
     arg = get_arg(message)
 
