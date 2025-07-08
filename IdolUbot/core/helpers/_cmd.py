@@ -13,6 +13,10 @@ async def if_sudo(_, client, message):
     is_self = bool(message.from_user and message.from_user.is_self or getattr(message, "outgoing", False))
     return is_user.id in is_self
 
+async def if_filter(_, client, message):
+    on_off = await get_vars(client.me.id, "FILTER_ON_OFF")
+    return bool(on_off)
+
 class PY:
     @staticmethod
     def ADMIN(func):
@@ -69,14 +73,14 @@ class PY:
                 ),
                 "group": 4,
             },
-            # "FILTER_MSG": {
-                    # "query": filters.create(if_filter) & filters.group & ~filters.me & ~filters.private & ~filters.bot,
-                    # "group": 5,
-                # },
+            "FILTER_MSG": {
+                    "query": filters.create(if_filter) & filters.group & ~filters.me & ~filters.private & ~filters.bot,
+                    "group": 5,
+                },
             # "FILTER_PRIVATE": {
-                    # "query": filters.create(if_private) & filters.private & ~filters.group & ~filters.bot,
-                    # "group": 5,
-                # },
+            #         "query": filters.create(if_private) & filters.private & ~filters.group & ~filters.bot,
+            #         "group": 5,
+            #     },
             # "HANDLE_ANTI_USER": {
                     # "query": filters.create(buat_anti_user) & filters.create(mecha_chat),
                     # "group": 6,
