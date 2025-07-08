@@ -27,11 +27,9 @@ async def filter_message(client, message):
         pass
 
 
-
-
 @PY.UBOT("filter")
 @PY.TOP_CMD
-async def _(client, message):
+async def filter_cmd(client, message):
     proses = await EMO.PROSES(client)
     gagal = await EMO.GAGAL(client)
     sukses = await EMO.SUKSES(client)
@@ -48,7 +46,7 @@ async def _(client, message):
 
 @PY.UBOT("addfilter")
 @PY.TOP_CMD
-async def _(client, message):
+async def addfilter_cmd(client, message):
     proses = await EMO.PROSES(client)
     gagal = await EMO.GAGAL(client)
     sukses = await EMO.SUKSES(client)
@@ -72,7 +70,7 @@ async def _(client, message):
 
 @PY.UBOT("delfilter")
 @PY.TOP_CMD
-async def _(client, message):
+async def delfilter_cmd(client, message):
     proses = await EMO.PROSES(client)
     gagal = await EMO.GAGAL(client)
     sukses = await EMO.SUKSES(client)
@@ -95,7 +93,7 @@ async def _(client, message):
 
 @PY.UBOT("filters")
 @PY.TOP_CMD
-async def _(client, message):
+async def filters_cmd(client, message):
     vars = await all_vars(client.me.id, "FILTERS")
     if vars:
         alasan = await EMO.ALASAN(client)
