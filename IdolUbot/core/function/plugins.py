@@ -5,7 +5,7 @@ from pyrogram import __version__
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 
 from IdolUbot import bot, ubot
-from IdolUbot.config import LOGS_MAKER_UBOT
+from IdolUbot.config import LOGS_MAKER_UBOT, LOGS_ON_UBOT
 from IdolUbot.modules import loadModule
 from IdolUbot.core.helpers import PY
 
