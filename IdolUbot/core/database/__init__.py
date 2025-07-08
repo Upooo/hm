@@ -11,6 +11,12 @@ prefix_collection = mongodb["prefix"]
 ubot_collection = mongodb["idol"]
 vars_collection = mongodb["varsX"]
 
+
+from IdolUbot.core.database.expired import *
+from IdolUbot.core.database.userbot import *
+from IdolUbot.core.database.pref import *
+from IdolUbot.core.database.variabel import *
+
 # Fungsi dari setiap modul (dengan absolute import)
 # from IdolUbot.core.database.expired import (
 #     get_expired_date,
