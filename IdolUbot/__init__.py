@@ -152,6 +152,6 @@ bot = Bot(
 
 ubot = Ubot(name="idolubot")
 
-from IdolUbot.core.database import *
-from IdolUbot.core.function import *
-from IdolUbot.core.helpers import *
+# from IdolUbot.core.database import *
+# from IdolUbot.core.function import *
+# from IdolUbot.core.helpers import *
