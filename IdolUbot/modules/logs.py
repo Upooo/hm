@@ -277,15 +277,13 @@ async def logs_toggle(client, message):
         log_group_id = await get_vars(client.me.id, "LOG_CHANNEL_ID")
         if not log_group_id:
             try:
-                # Coba buat grup log
                 me = await client.get_me()
                 created = await client.create_supergroup(
                     title=f"ʟᴏɢꜱ {bot.me.full_name}",
-                    description="Jangan keluar/hapus grup log ini, Say thanks to @nathanidol\n\nPowered by: @nathanidol"
+                    description="Jangan keluar/hapus grup log ini, Powered by: @nathanidol"
                 )
                 group_id = created.id
 
-                # Tambahkan bot ke grup dan beri hak istimewa
                 await client.add_chat_members(group_id, f"{bot.me.username}")
                 await client.promote_chat_member(
                     chat_id=group_id,
@@ -303,18 +301,18 @@ async def logs_toggle(client, message):
                 await set_vars(client.me.id, "LOG_CHANNEL_ID", group_id)
 
             except Exception as e:
-                # Jika gagal karena restriction, fallback ke PV
-                fallback_id = bot.me.id
-                await set_vars(client.me.id, "LOG_CHANNEL_ID", fallback_id)
-
-                return await message.reply(
-                    f"{ggl} <b>Gagal membuat grup log, mungkin karena akun dibatasi Telegram.</b>\n"
-                    f"<b>🔁 Logs akan dikirim ke chat pribadi bot sebagai gantinya.</b>\n\n"
-                    f"<code>{e}</code>"
-                )
+                if "USER_RESTRICTED" in str(e):
+                    fallback_id = bot.me.id
+                    await set_vars(client.me.id, "LOG_CHANNEL_ID", fallback_id)
+                    await message.reply(
+                        f"{ggl} Akun userbot kamu sedang dibatasi oleh Telegram.\n"
+                        f"📥 Logs akan dikirim ke <b>chat pribadi bot</b> sebagai gantinya."
+                    )
+                else:
+                    return await message.reply(f"{ggl} Gagal membuat grup log:\n<code>{e}</code>")
 
     await set_vars(client.me.id, "ON_LOGS", value)
-    return await message.reply(f"{brhsl} ʟᴏɢꜱ ʙᴇʀʜᴀꜱɪʟ ᴅɪꜱᴇᴛᴛɪɴɢ ᴋᴇ : {value}")
+    return await message.reply(f"{brhsl} Logs berhasil diatur ke: <b>{'Aktif' if value else 'Nonaktif'}</b>")
 
 
 async def send_log(client, message, is_dm=False):
