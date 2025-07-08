@@ -8,8 +8,6 @@ __HELP__ = """
 🦠 ᴋᴇᴛ : ᴀᴋʜɪʀɪ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ ɢʀᴏᴜᴘ.</b></blockquote>
 <blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ : <code>{0}vctitle [judul]</code>
 🦠 ᴋᴇᴛ : ɢᴀɴᴛɪ ᴊᴜᴅᴜʟ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ ʏᴀɴɢ ꜱᴇᴅᴀɴɢ ᴀᴋᴛɪꜰ.</b></blockquote>
-<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ : <code>{0}cekos</code>
-🦠 ᴋᴇᴛ : ᴄᴇᴋ ᴅᴀғᴛᴀʀ ᴘᴇꜱᴇʀᴛᴀ ᴅɪ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ ʙᴇꜱᴇʀᴛᴀ ꜱᴛᴀᴛᴜꜱ ᴍɪᴄ ᴀᴋᴛɪꜰ/ᴍᴀᴛɪ.</b></blockquote>
 <blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ : <code>{0}jvc</code>
 🦠 ᴋᴇᴛ : ʙᴇʀɢᴀʙᴜɴɢ ᴋᴇ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ ɢʀᴏᴜᴘ ᴀᴛᴀᴜ ᴄʜᴀɴɴᴇʟ.</b></blockquote>
 <blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ : <code>{0}lvc</code>
@@ -19,14 +17,13 @@ __HELP__ = """
 ├ ʟɪɴᴋ ɢʀᴏᴜᴘs
 ├ ᴜꜱᴇʀɴᴀᴍᴇ ᴄʜᴀɴɴᴇʟ
 ╰ ɪᴅ ɢʀᴏᴜᴘ ᴏʀ ᴄʜᴀɴɴᴇʟ
-ᴄᴏɴᴛᴏʜ : <code>{0}jvc @username</code></b></blockquote>
+ᴄᴏɴᴛᴏʜ : <code>{0}jvc @xnxxnathan</code></b></blockquote>
 """
-
 from random import randint
 from pyrogram.types import Message
 
 from pyrogram.errors import UserBannedInChannel
-# from pytgcalls.exceptions import NotInCallError
+from pytgcalls.exceptions import NotInCallError
 
 from pyrogram.raw.functions.phone import CreateGroupCall, DiscardGroupCall
 from IdolUbot.core.helpers.txt_cmd import *
@@ -40,15 +37,7 @@ def nat_argsvc(message):
 
 
 active_calls = {}
-active_participants = {}
 
-call_py = PyTgCalls(ubot)
-
-@call_py.on_participants_update()
-async def participants_handler(client, update: Update):
-    active_participants[update.chat_id] = {
-        p.user_id: p for p in update.participants
-    }
 
 @PY.UBOT("startvc|bukaos")
 @PY.TOP_CMD
@@ -117,7 +106,7 @@ async def change_vc_title(client, message: Message):
     prs = await EMO.PROSES(client)
 
     if len(message.command) < 2:
-        return await message.reply("Masukkan judul baru. Contoh: <code>.vctitle Kelas Malam</code>")
+        return await message.reply("<code>Masukkan judul baru. Contoh: .vctitle Kelas Malam</code>")
 
     new_title = " ".join(message.command[1:])
     msg = await message.reply(f"<blockquote><b>{prs}ᴍᴇɴɢɢᴀɴᴛɪ ᴊᴜᴅᴜʟ...</b></blockquote>")
@@ -132,34 +121,6 @@ async def change_vc_title(client, message: Message):
     except Exception as e:
         await msg.edit(f"<blockquote><b>{ggl} ɢᴀɢᴀʟ :</b></blockquote><blockquote><code>{e}</code></blockquote>")
 
-@PY.UBOT("cekos")
-@PY.TOP_CMD
-@PY.GROUP
-async def cek_os(client, message: Message):
-    ggl = await EMO.GAGAL(client)
-
-    chat_id = message.chat.id
-    peserta = active_participants.get(chat_id, {})
-
-    if not peserta:
-        return await message.reply(f"<b>{ggl} Tidak ada peserta VC terdeteksi.</b>")
-
-    teks = "<b>👥 Peserta VC:</b>\n\n"
-    found = False
-
-    for uid, p in peserta.items():
-        try:
-            user = await client.get_users(uid)
-            status = "🔊 Mic Aktif" if not p.muted else "🔇 Mic Mati"
-            teks += f"{status} - <b>{user.first_name}</b>\n"
-            found = True
-        except Exception:
-            continue
-
-    if not found:
-        return await message.reply(f"<b>{ggl} Tidak ada peserta VC terdeteksi.</b>")
-
-    await message.reply(teks)
 
 @PY.UBOT("jvc|naik|jvcs")
 @PY.IDOL("cjvc|cnaik|cjvcs")
@@ -244,5 +205,9 @@ async def leave_vc(client, message: Message):
             f"<blockquote><b>{brhsl} ʙᴇʀʜᴀꜱɪʟ ᴋᴇʟᴜᴀʀ ᴅᴀʀɪ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ.</b></blockquote>"
             f"<blockquote><b>ɴᴀᴍᴀ ɢᴄ : {chat_name}\nɪᴅ ɢᴄ : <code>{chat_id}</code></b></blockquote>"
         )
+
+    except NotInCallError:
+        await mex.edit(f"<blockquote><b>{ggl} ᴋᴀᴍᴜ ʙᴇʟᴜᴍ ɪᴋᴜᴛ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ.</b></blockquote>")
+
     except Exception as e:
         await mex.edit(f"<blockquote><b>{ggl} ɢᴀɢᴀʟ :</b></blockquote>\n<blockquote><code>{e}</code></blockquote>")
