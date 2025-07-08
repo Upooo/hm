@@ -71,6 +71,10 @@ async def cmd_button(client: Client, message: Message):
         result = await client.get_inline_bot_results(
             bot.me.username, f"get_button {id(message)}"
         )
+
+        if not result.results:
+            return await message.reply("❌ Gagal kirim tombol: hasil kosong.")
+
         msg = message.reply_to_message or message
         await client.send_inline_bot_result(
             chat_id=message.chat.id,
@@ -78,6 +82,7 @@ async def cmd_button(client: Client, message: Message):
             result_id=result.results[0].id,
             reply_to_message_id=msg.id
         )
+
     except Exception as e:
         await message.reply(f"❌ Gagal kirim tombol: {e}")
 

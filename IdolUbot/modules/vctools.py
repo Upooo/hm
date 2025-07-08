@@ -24,7 +24,7 @@ from pyrogram.types import Message
 from pyrogram.errors import UserBannedInChannel
 # from pytgcalls.exceptions import NotInCallError
 
-from pyrogram.raw.functions.phone import CreateGroupCall, DiscardGroupCall
+from pyrogram.raw.functions.phone import CreateGroupCall, DiscardGroupCall, GetGroupCall
 from IdolUbot.core.helpers.txt_cmd import *
 from IdolUbot import *
 
@@ -87,7 +87,12 @@ async def change_vc_title(client, message: Message):
     try:
         chat = await client.get_chat(message.chat.id)
         peer = await client.resolve_peer(message.chat.id)
-        await client.invoke(EditGroupCallTitle(title=new_title))
+        group_call = await client.invoke(GetGroupCall(
+            peer=peer,
+            limit=1
+        ))
+        call_asu = group_call.call
+        await client.invoke(EditGroupCallTitle(call=call_asu, title=new_title))
 
         await msg.edit(f"<blockquote><b>{brhsl} ᴊᴜᴅᴜʟ ʙᴀʀᴜ : <code>{new_title}</code></b></blockquote>")
     except Exception as e:
