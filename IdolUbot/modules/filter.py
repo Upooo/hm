@@ -16,7 +16,7 @@ def extract_type_and_msg(message):
 @PY.NO_CMD_UBOT("FILTER_MSG", ubot)
 async def filter_message(client, message):
     try:
-        chat_logs = await get_vars(client.me.id, "ID_LOGS")
+        chat_logs = await get_vars(client.me.id, "ON_LOGS")
         all_filters = await all_vars(client.me.id, "FILTERS") or {}
         
         for key, value in all_filters.items():
@@ -56,7 +56,7 @@ async def addfilter_cmd(client, message):
     if not type and message.reply_to_message:
         return await txt.edit(f"{gagal} harap balas pesan dan kasih nama")
 
-    logs = await get_vars(client.me.id, "ID_LOGS")
+    logs = await get_vars(client.me.id, "ON_LOGS")
     if bool(logs):
         try:
             msg = await reply.copy(int(logs))
@@ -80,7 +80,7 @@ async def delfilter_cmd(client, message):
     if not arg:
         return await txt.edit(f"{gagal} {message.text.split()[0]} nama filter")
 
-    logs = await get_vars(client.me.id, "ID_LOGS")
+    logs = await get_vars(client.me.id, "ON_LOGS")
     all = await all_vars(client.me.id, "FILTERS")
 
     if arg not in all:
