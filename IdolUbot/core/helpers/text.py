@@ -1,6 +1,6 @@
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from IdolUbot import OWNER_ID, bot, ubot, get_expired_date
+from IdolUbot import *
 
 
 class MSG:     
