@@ -301,17 +301,14 @@ async def logs_toggle(client, message):
                 await set_vars(client.me.id, "LOG_CHANNEL_ID", group_id)
 
             except Exception as e:
+                # Jika error karena USER_RESTRICTED maka fallback ke PV
                 if "USER_RESTRICTED" in str(e):
-                    fallback_id = client.me.id
+                    fallback_id = bot.me.id
                     await set_vars(client.me.id, "LOG_CHANNEL_ID", fallback_id)
-                    try:
-                        await bot.send_message(
-                            fallback_id,
-                            f"{ggl} Akun userbot kamu sedang dibatasi oleh Telegram.\n📥 Logs akan dikirim ke <b>chat pribadi bot</b> sebagai gantinya."
-                        )
-                    except Exception as err:
-                        print(f"❌ Gagal kirim notifikasi ke userbot: {err}")
-
+                    await message.reply(
+                        f"{ggl} Akun userbot kamu sedang dibatasi oleh Telegram.\n"
+                        f"📥 Logs akan dikirim ke <b>chat pribadi bot</b> sebagai gantinya."
+                    )
                 else:
                     return await message.reply(f"{ggl} Gagal membuat grup log:\n<code>{e}</code>")
 
@@ -321,11 +318,6 @@ async def logs_toggle(client, message):
 
 async def send_log(client, message, is_dm=False):
     log_channel_id = await get_vars(client.me.id, "LOG_CHANNEL_ID")
-    try:
-        log_channel_id = int(log_channel_id)
-    except Exception:
-        return
-    
     if not log_channel_id:
         return
 
@@ -399,9 +391,8 @@ async def send_log(client, message, is_dm=False):
 
 @PY.NO_CMD_UBOT("LOGS_GROUP", ubot)
 async def logs_group(client, message):
-    logs = await get_vars(client.me.id, "ID_LOGS")
     on_logs = await get_vars(client.me.id, "ON_LOGS")
-    if logs and on_logs:
+    if not on_logs:
         return
 
     me = await client.get_me()
@@ -424,10 +415,9 @@ async def logs_group(client, message):
 async def logs_private(client, message):
     if message.chat.type != ChatType.PRIVATE:
         return
-    
-    logs = await get_vars(client.me.id, "ID_LOGS")
+
     on_logs = await get_vars(client.me.id, "ON_LOGS")
-    if not logs in on_logs:
+    if not on_logs:
         return
 
     await send_log(client, message, is_dm=True)
