@@ -1,4 +1,4 @@
-from IdolUbot.core.database import ubot_collection
+from IdolUbot import *
 
 async def add_ubot(user_id: int, api_id: int, api_hash: str, session_string: str):
     return await ubot_collection.update_one(
