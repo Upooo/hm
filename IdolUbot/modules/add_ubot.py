@@ -322,7 +322,7 @@ async def _(client, callback_query):
         pass
     for chat_id in LOGS_MAKER_UBOT:
         try:
-            return await bot.send_message(
+            await bot.send_message(
                 chat_id,
                 f"""<b>❏ {bot.me.full_name} ᴅɪᴀᴋᴛɪғᴋᴀɴ</b>
 <b>├ ᴀᴋᴜɴ:</b> <a href=tg://user?id={new_client.me.id}>{new_client.me.first_name} {new_client.me.last_name or ''}</a> 
@@ -340,6 +340,7 @@ async def _(client, callback_query):
                 ),
                 disable_web_page_preview=True,
             )
+            
         except Exception as e:
             print(f"GAGAL KIRIM KE {chat_id} : {e}")
 

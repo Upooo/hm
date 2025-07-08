@@ -14,8 +14,8 @@ __HELP__ = """
 🦠 ᴋᴇᴛ : ᴍᴇɴɢᴀᴛᴜʀ ᴋᴏɴꜰɪɢᴜʀᴀꜱɪ ᴘᴍᴘᴇʀᴍɪᴛ. 
 🧩 ᴄᴏɴᴛᴏʜ: <code>{0}setpm limit 5</code></blockquote>
 <blockquote>
-🔗 <b>ᴄᴏɴᴛᴏʜ ᴘᴇɴɢɢᴜɴᴀᴀɴ ʙᴜᴛᴛᴏɴ :</b> <a href='https://t.me/halopyrogram/172'>ᴛᴜᴛᴏʀɪᴀʟ</a>  
-🖼️ <b>ᴄᴏɴᴛᴏʜ ᴘᴇɴɢɢᴜɴᴀᴀɴ ɢᴀᴍʙᴀʀ :</b> <a href='https://t.me/halopyrogram/192'>ᴛᴜᴛᴏʀɪᴀʟ</a>
+🔗 <b>ᴄᴏɴᴛᴏʜ ᴘᴇɴɢɢᴜɴᴀᴀɴ ʙᴜᴛᴛᴏɴ :</b> <a href='https://t.me/'>ᴛᴜᴛᴏʀɪᴀʟ</a>  
+🖼️ <b>ᴄᴏɴᴛᴏʜ ᴘᴇɴɢɢᴜɴᴀᴀɴ ɢᴀᴍʙᴀʀ :</b> <a href='https://t.me/'>ᴛᴜᴛᴏʀɪᴀʟ</a>
 </blockquote>
 """
 

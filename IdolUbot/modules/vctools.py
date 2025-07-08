@@ -85,9 +85,9 @@ async def change_vc_title(client, message: Message):
     msg = await message.reply(f"<blockquote><b>{prs}ᴍᴇɴɢɢᴀɴᴛɪ ᴊᴜᴅᴜʟ...</b></blockquote>")
 
     try:
-        chat_id = message.chat.id
-        call = await client.get_group_call(chat_id)
-        await client.invoke(EditGroupCallTitle(call=call.call, title=new_title))
+        chat = await client.get_chat(message.chat.id)
+        peer = await client.resolve_peer(message.chat.id)
+        await client.invoke(EditGroupCallTitle(peer=peer,random_id=randint(10000, 999999999), title=new_title))
 
         await msg.edit(f"<blockquote><b>{brhsl} ᴊᴜᴅᴜʟ ʙᴀʀᴜ : <code>{new_title}</code></b></blockquote>")
     except Exception as e:
