@@ -22,7 +22,7 @@ async def loadPlugins() -> None:
     print(f"[🤖 {bot.me.full_name} 🤖] [💠 ᴘʟᴜɢɪɴꜱ ʙᴇʀʜᴀꜱɪʟ ᴅɪ ᴍᴜᴀᴛ 💠]")
 
     await bot.send_message(
-        LOGS_MAKER_UBOT,
+        LOGS_ON_UBOT,
         f"""<blockquote><b><u>» {bot.me.mention} sᴛᴀʀᴛᴇᴅ :</u></b>
 
 <b>ɪᴅ :</b> <code>{bot.me.id}</code>
