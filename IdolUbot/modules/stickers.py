@@ -65,39 +65,54 @@ async def _(client, message):
     ggl = await EMO.GAGAL(client)
     info = await message.reply(f"{prs}proceꜱꜱing...", quote=True)
     await client.unblock_user("@QuotLyBot")
-
-    # Ambil warna dari argumen, default ke "black"
-    color = "black"
-    if len(message.command) >= 2:
-        color = message.command[1]
-
-    # Kalau reply ke pesan orang lain
     if message.reply_to_message:
-        if message.reply_to_message.text or message.reply_to_message.caption:
-            try:
-                await message.reply_to_message.forward("@QuotLyBot")
-                await client.send_message("@QuotLyBot", f"/qcolor {color}")
-                await asyncio.sleep(9)
-                await info.delete()
-                async for quotly in client.get_chat_history("@QuotLyBot", limit=1):
-                    if not quotly.sticker:
-                        await message.reply(
-                            f"@QuotLyBot {ggl}tidak dapat merespon permintaan", quote=True
-                        )
-                    else:
-                        sticker = await client.download_media(quotly)
-                        await message.reply_sticker(sticker, quote=True)
-                        os.remove(sticker)
-            except Exception as err:
-                await info.edit(f"{ggl} {err}")
+        if len(message.command) < 2:
+            msg = [message.reply_to_message]
         else:
-            await info.edit(f"{ggl}reply ke pesan teks/media")
+            try:
+                count = int(message.command[1])
+            except Exception as error:
+                await info.edit(error)
+            msg = [
+                i
+                for i in await client.get_messages(
+                    chat_id=message.chat.id,
+                    message_ids=range(
+                        message.reply_to_message.id, message.reply_to_message.id + count
+                    ),
+                    replies=-1,
+                )
+            ]
+        try:
+            for x in msg:
+                await x.forward("@QuotLyBot")
+        except Exception:
+            pass
+        await asyncio.sleep(9)
+        await info.delete()
+        async for quotly in client.get_chat_history("@QuotLyBot", limit=1):
+            if not quotly.sticker:
+                await message.reply(
+                    f"@QuotLyBot {ggl}tidak dapat merespon permintaan", quote=True
+                )
+            else:
+                sticker = await client.download_media(quotly)
+                await message.reply_sticker(sticker, quote=True)
+                os.remove(sticker)
     else:
-        await info.edit(f"{ggl}Reply ke pesan + ketik `.q [warna]`")
-
-    # Hapus history dengan QuotlyBot agar rapi
+        if len(message.command) < 2:
+            return await info.edit(f"{ggl}reply to text/media")
+        else:
+            msg = await client.send_message(
+                "@QuotLyBot", f"/qcolor {message.command[1]}"
+            )
+            await asyncio.sleep(1)
+            get = await client.get_messages("@QuotLyBot", msg.id + 1)
+            await info.edit(
+                f"{brhsl}warna latar belakang kutipan disetel ke: {get.text.split(':')[1]}"
+            )
     user_info = await client.resolve_peer("@QuotLyBot")
-    await client.invoke(DeleteHistory(peer=user_info, max_id=0, revoke=True))
+    return await client.invoke(DeleteHistory(peer=user_info, max_id=0, revoke=True))
 
 @PY.UBOT("tiny")
 @PY.TOP_CMD
