@@ -25,12 +25,12 @@ async def loadPlugins() -> None:
             await bot.send_message(
                 chat_id,
                 f"""<blockquote><b><u>» {bot.me.mention} sᴛᴀʀᴛᴇᴅ :</u></b>
-        <b>ɪᴅ :</b> <code>{bot.me.id}</code>
-        <b>ɴᴀᴍᴇ :</b> <b>{bot.me.full_name}</b>
-        <b>ᴛᴏᴛᴀʟ ᴍᴏᴅᴜʟᴇs :</b> <code>{len(HELP_COMMANDS)}</code>
-        <b>ᴛᴏᴛᴀʟ ᴘᴇɴɢɢᴜɴᴀ :</b> <code>{len(ubot._ubot)}</code>
-        <b>ᴜsᴇʀɴᴀᴍᴇ :</b> @{bot.me.username}
-        </blockquote>""",
+<b>ɪᴅ :</b> <code>{bot.me.id}</code>
+<b>ɴᴀᴍᴇ :</b> <b>{bot.me.full_name}</b>
+<b>ᴛᴏᴛᴀʟ ᴍᴏᴅᴜʟᴇs :</b> <code>{len(HELP_COMMANDS)}</code>
+<b>ᴛᴏᴛᴀʟ ᴘᴇɴɢɢᴜɴᴀ :</b> <code>{len(ubot._ubot)}</code>
+<b>ᴜsᴇʀɴᴀᴍᴇ :</b> @{bot.me.username}
+</blockquote>""",
                 reply_markup=InlineKeyboardMarkup([
                     [
                         
