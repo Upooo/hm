@@ -12,7 +12,7 @@ def extract_type_and_msg(message):
 @PY.NO_CMD_UBOT("FILTER_MSG", ubot)
 async def filter_message(client, message):
     try:
-        chat_logs = await get_vars(client.me.id, "ON_LOGS")
+        chat_logs = await get_vars(client.me.id, "ID_LOGS")
         all_filters = await all_vars(client.me.id, "FILTERS") or {}
 
         for key, value in all_filters.items():
@@ -51,7 +51,7 @@ async def addfilter_cmd(client, message):
     if not type_name or not reply_msg:
         return await txt.edit(f"{gagal} Balas pesan dan beri nama filter!\nContoh: <code>.addfilter salam</code> (dengan reply)")
 
-    logs = await get_vars(client.me.id, "ON_LOGS")
+    logs = await get_vars(client.me.id, "ID_LOGS")
     if not logs:
         return await txt.edit(f"{gagal} Logs belum diaktifkan!")
 
@@ -74,7 +74,7 @@ async def delfilter_cmd(client, message):
     if not arg:
         return await txt.edit(f"{gagal} Gunakan: <code>.delfilter nama_filter</code>")
 
-    logs = await get_vars(client.me.id, "ON_LOGS")
+    logs = await get_vars(client.me.id, "ID_LOGS")
     all = await all_vars(client.me.id, "FILTERS")
 
     if arg not in all:
