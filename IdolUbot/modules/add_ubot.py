@@ -8,7 +8,6 @@ from pyrogram.types import *
 from pyrogram.raw import functions
 
 from IdolUbot import *
-from IdolUbot.core.database import *
 
 
 @PY.BOT("start")

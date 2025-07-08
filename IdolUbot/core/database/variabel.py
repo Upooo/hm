@@ -1,5 +1,5 @@
 from typing import List, Optional, Union
-from IdolUbot.core.database import vars_collection
+from IdolUbot import *
 
 
 # === Fungsi Dasar ===

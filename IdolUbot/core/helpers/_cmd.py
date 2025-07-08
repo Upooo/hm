@@ -6,7 +6,7 @@ from IdolUbot import bot, ubot
 from IdolUbot.config import OWNER_ID, DEVS
 from .emoji import EMO
 
-from IdolUbot.core.database import get_vars, set_vars, get_list_from_vars, add_to_vars
+from IdolUbot import *
 
 async def if_sudo(_, client, message):
     is_user = message.from_user if message.from_user else message.sender_chat
