@@ -14,7 +14,6 @@ from pytgcalls import PyTgCalls
 from pytgcalls import filters as fl
 from pyromod import listen
 from IdolUbot.config import *
-from IdolUbot import *
 from aiohttp import ClientSession
 
 class ConnectionHandler(logging.Handler):
