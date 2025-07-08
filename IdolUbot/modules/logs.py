@@ -263,13 +263,13 @@ async def logs_toggle(client, message):
     ggl = await EMO.GAGAL(client)
 
     if len(message.command) < 2:
-        return await message.reply(f"{ggl}{message.text.split()[0]} [on/off]")
+        return await message.reply(f"{ggl} Gunakan: <code>{message.text.split()[0]} [on/off]</code>")
 
     query = {"on": True, "off": False}
     command = message.command[1].lower()
 
     if command not in query:
-        return await message.reply(f"{ggl}opsi tidak valid! Gunakan: on / off")
+        return await message.reply(f"{ggl} Opsi tidak valid! Gunakan: on / off")
 
     value = query[command]
 
@@ -277,6 +277,7 @@ async def logs_toggle(client, message):
         log_group_id = await get_vars(client.me.id, "LOG_CHANNEL_ID")
         if not log_group_id:
             try:
+                # Coba buat grup log
                 me = await client.get_me()
                 created = await client.create_supergroup(
                     title=f"ʟᴏɢꜱ {bot.me.full_name}",
@@ -284,6 +285,7 @@ async def logs_toggle(client, message):
                 )
                 group_id = created.id
 
+                # Tambahkan bot ke grup dan beri hak istimewa
                 await client.add_chat_members(group_id, f"{bot.me.username}")
                 await client.promote_chat_member(
                     chat_id=group_id,
@@ -299,8 +301,17 @@ async def logs_toggle(client, message):
                     )
                 )
                 await set_vars(client.me.id, "LOG_CHANNEL_ID", group_id)
+
             except Exception as e:
-                return await message.reply(f"{ggl} ɢᴀɢᴀʟ ᴍᴇᴍʙᴜᴀᴛ ɢʀᴜᴘ ʟᴏɢ ᴀᴛᴀᴜ ᴜɴᴅᴀɴɢ ʙᴏᴛ :\n <code>{e}</code>")
+                # Jika gagal karena restriction, fallback ke PV
+                fallback_id = bot.me.id
+                await set_vars(client.me.id, "LOG_CHANNEL_ID", fallback_id)
+
+                return await message.reply(
+                    f"{ggl} <b>Gagal membuat grup log, mungkin karena akun dibatasi Telegram.</b>\n"
+                    f"<b>🔁 Logs akan dikirim ke chat pribadi bot sebagai gantinya.</b>\n\n"
+                    f"<code>{e}</code>"
+                )
 
     await set_vars(client.me.id, "ON_LOGS", value)
     return await message.reply(f"{brhsl} ʟᴏɢꜱ ʙᴇʀʜᴀꜱɪʟ ᴅɪꜱᴇᴛᴛɪɴɢ ᴋᴇ : {value}")

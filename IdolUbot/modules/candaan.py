@@ -35,7 +35,7 @@ __HELP__ = """
 <blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}cekbh</code>
 🦠 ᴋᴇᴛ : ᴜɴᴛᴜᴋ ᴄᴇᴋ ʙʜ ꜱᴇꜱᴇᴏʀᴀɴɢ.</b></blockquote>
 <blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}cekkesadaran</code>
-🦠 ᴋᴇᴛ : ᴜɴᴛᴜᴋ ᴄᴇᴋ ᴋᴇꜱᴀᴅᴀʀᴀɴ ꜱᴇꜱᴇᴏʀᴀɴɢ.</b></blockquote
+🦠 ᴋᴇᴛ : ᴜɴᴛᴜᴋ ᴄᴇᴋ ᴋᴇꜱᴀᴅᴀʀᴀɴ ꜱᴇꜱᴇᴏʀᴀɴɢ.</b></blockquote>
 """
 
 AGAMA_LIST = [
@@ -56,7 +56,7 @@ async def cek_agama(client, message: Message):
     nama = target_user.first_name
 
     # Cek apakah itu owner bot
-    if user_id == DEVS:
+    if user_id in DEVS:
         return await message.reply_text("⛔ <b>ITU OWNER GUA GAUSAH DI CEK CEK KONTOL!</b>")
 
     agama = random.choice(AGAMA_LIST)
@@ -83,7 +83,7 @@ async def cekkhodam(client, message):
         nama = replied_user.first_name
         user_id = replied_user.id
 
-        if user_id == DEVS:
+        if user_id in DEVS:
             return await message.edit(f"""
 <blockquote><b>ʜᴀsɪʟ ᴄᴇᴋ ᴋʜᴏᴅᴀᴍ :</b></blockquote>
 <blockquote><b>
@@ -120,7 +120,7 @@ async def cekgtg(client, message):
         nama = replied_user.first_name
         user_id = replied_user.id
 
-        if user_id == DEVS:
+        if user_id in DEVS:
             return await message.edit("<b>OWNER GUA JELAS GANTENG BANGET LAH ANJING!</b>")
 
         hasil = f"""
@@ -147,7 +147,7 @@ async def cekcantik(client, message):
         nama = replied_user.first_name
         user_id = replied_user.id
 
-        if user_id == DEVS:
+        if user_id in DEVS:
             return await message.edit("<b>⛔ OWNER GUA COWO JING MASA CANTIK!</b>")
         elif user_id == PIRAEPEP:
             return await message.edit("<b>PIRA MAH UDAH FIX CANTIK CUY!</b>")
@@ -168,7 +168,6 @@ async def cekcantik(client, message):
 @PY.TOP_CMD
 async def cekkntl(client, message):
     try:
-        SAIKO_SAHABAT = 6244458400
         if not message.reply_to_message:
             return await message.edit("📌 ʙᴀʟᴀꜱ ᴘᴇꜱᴀɴ ꜱᴇꜱᴇᴏʀᴀɴɢ ᴜɴᴛᴜᴋ ᴄᴇᴋ ᴋᴏɴᴛᴏʟ!")
 
@@ -176,7 +175,7 @@ async def cekkntl(client, message):
         nama = replied_user.first_name
         user_id = replied_user.id
 
-        if user_id == OWNER_ID:
+        if user_id in DEVS:
             return await message.edit(f"""
 <blockquote><b>ʜᴀsɪʟ ᴄᴇᴋ ᴋᴏɴᴛᴏʟ :</b></blockquote>
 <blockquote><b>
@@ -219,7 +218,7 @@ async def cekmmk(client, message):
         nama = replied_user.first_name
         user_id = replied_user.id
 
-        if user_id == OWNER_ID:
+        if user_id in DEVS:
             return await message.edit("<b>OWNER GUA GA PUNYA MEMEK TOLOL! KAN DIA COWO.</b>")
         # elif user_id == SAIKO_SAHABAT:
         #     return await message.edit("Et dah sahabat owner gua itu, jelas ganteng lah tot!")
@@ -315,7 +314,7 @@ async def cekimut(client, message):
         nama = replied_user.first_name
         user_id = replied_user.id
 
-        if user_id == DEVS:
+        if user_id in DEVS:
             return await message.edit(f"""
 <blockquote><b>ʜᴀsɪʟ ᴄᴇᴋ ɪᴍᴜᴛ :</b></blockquote>
 <blockquote><>
@@ -351,7 +350,7 @@ async def cekmmk(client, message):
         nama = replied_user.first_name
         user_id = replied_user.id
 
-        if user_id == DEVS:
+        if user_id in DEVS:
             return await message.edit("<b>⛔ OWNER GUA GA MAKE BH TOLOL! KAN DIA COWO.</b>")
         
         hasil = f"""
@@ -381,10 +380,8 @@ async def ceksmpk(client, message):
         nama = replied_user.first_name
         user_id = replied_user.id
 
-        if user_id == DEVS:
+        if user_id in DEVS:
             return await message.edit("GAUSAH CEK CEK OWNER GUA MEMEK!")
-        # elif user_id == SAIKO_SAHABAT:
-        #     return await message.edit("Et dah sahabat owner gua itu, jelas ganteng lah tot!")
         
         hasil = f"""
 <blockquote><b>ʜᴀsɪʟ ᴄᴇᴋ ꜱᴇᴍᴘᴀᴋ :</b></blockquote>
@@ -412,7 +409,7 @@ async def cekksdran(client, message):
         nama = replied_user.first_name
         user_id = replied_user.id
 
-        if user_id == DEVS:
+        if user_id in DEVS:
             return await message.edit("⛔ ITU OWNER GUA YA JELAS SADAR LAH, KALO GA MAH GUA GABAKAL JADI!")
 
         hasil = f"""
@@ -438,7 +435,7 @@ async def cekksnge(client, message):
         nama = replied_user.first_name
         user_id = replied_user.id
 
-        if user_id == DEVS:
+        if user_id in DEVS:
             return await message.edit("⛔ DIA SIBUK NGODING, GA ADA WAKTU BUAT SANGE.")
 
         hasil = f"""
