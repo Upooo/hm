@@ -19,14 +19,22 @@ __HELP__ = """
 """
 
 from random import randint
+from asyncio import sleep
+from typing import Optional
+from contextlib import suppress
 from pyrogram.types import Message
 
 from pyrogram.errors import UserBannedInChannel
 # from pytgcalls.exceptions import NotInCallError
 
-from pyrogram.raw.functions.phone import CreateGroupCall, DiscardGroupCall, GetGroupCall, EditGroupCallTitle
+from pyrogram import Client, enums
+from pyrogram.raw.functions.channels import GetFullChannel
 from pyrogram.raw.functions.messages import GetFullChat
-from pyrogram.raw.types import InputGroupCall
+from pyrogram.raw.functions.phone import CreateGroupCall, DiscardGroupCall, EditGroupCallTitle
+from pyrogram.raw.types import InputGroupCall, InputPeerChannel, InputPeerChat
+from pyrogram.types import Message
+from pytgcalls.exceptions import AlreadyJoinedError
+from pytgcalls.types.input_stream import InputAudioStream, InputStream
 from IdolUbot.core.helpers.txt_cmd import *
 from IdolUbot import *
 
@@ -36,104 +44,160 @@ def nat_argsvc(message):
         return " ".join(message.command[1:])
     return None
 
+async def get_group_call(
 
-@PY.UBOT("startvc|mulaios")
-@PY.TOP_CMD
-@PY.GROUP
-async def startvc_userbot(client, message: Message):
-    brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
-    prs = await EMO.PROSES(client)
+    client: Client, message: Message, err_msg: str = ""
 
-    vctitle = nat_argsvc(message)
-    msg = await message.reply(f"<blockquote><b>{prs}ᴍᴇᴍᴜʟᴀɪ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ...</b></blockquote>")
+) -> Optional[InputGroupCall]:
+    chat_peer = await client.resolve_peer(message.chat.id)
+    if isinstance(chat_peer, (InputPeerChannel, InputPeerChat)):
+        if isinstance(chat_peer, InputPeerChannel):
+            full_chat = (
+                await client.invoke(GetFullChannel(channel=chat_peer))
+            ).full_chat
+        elif isinstance(chat_peer, InputPeerChat):
+            full_chat = (
+                await client.invoke(GetFullChat(chat_id=chat_peer.chat_id))
+            ).full_chat
+        if full_chat is not None:
+            return full_chat.call
+    await eor(message, f"**No group call Found** {err_msg}")
+    return False
 
+@PY.UBOT("startvc")
+async def start_vctools(client, message):
+    flags = " ".join(message.command[1:])
+    ky = await message.reply("<code>Processing....</code>")
+    vctitle = get_arg(message)
+    if flags == enums.ChatType.CHANNEL:
+        chat_id = message.chat.title
+    else:
+        chat_id = message.chat.id
+    args = (
+        f"<b>• Obrolan Suara Aktif</b>\n<b>• Chat : </b><code>{message.chat.title}</code>"
+    )
     try:
-        chat = await client.get_chat(message.chat.id)
-        peer = await client.resolve_peer(message.chat.id)
-
-        await client.invoke(
-            CreateGroupCall(
-                peer=peer,
-                random_id=randint(10000, 999999999),
-                title=vctitle if vctitle else None
+        if not vctitle:
+            await client.invoke(
+                CreateGroupCall(
+                    peer=(await client.resolve_peer(chat_id)),
+                    random_id=randint(10000, 999999999),
+                )
             )
-        )
-
-        teks = f"<blockquote><b>{brhsl}ʙᴇʀʜᴀꜱɪʟ ᴍᴇᴍᴜʟᴀɪ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ</b></blockquote>"
-        if vctitle:
-            teks += f"<blockquote><b>ᴅᴇɴɢᴀɴ ᴊᴜᴅᴜʟ : <code>{vctitle}</code></b></blockquote>"
-        await msg.edit(teks)
-
-    except PeerIdInvalid:
-        await msg.edit(f"<blockquote><b>{ggl}ɢᴀɢᴀʟ ᴍᴇɴᴅᴀᴘᴀᴛᴋᴀɴ ᴘᴇᴇʀ.</b></blockquote>")
+        else:
+            args += f"\n • <b>Title : </b> <code>{vctitle}</code>"
+            await client.invoke(
+                CreateGroupCall(
+                    peer=(await client.resolve_peer(chat_id)),
+                    random_id=randint(10000, 999999999),
+                    title=vctitle,
+                )
+            )
+        await ky.edit(args)
     except Exception as e:
-        await msg.edit(f"<blockquote><b>{ggl}ɢᴀɢᴀʟ ᴍᴇᴍᴜʟᴀɪ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ :\n</b></blockquote><blockquote><code>{e}</code></blockquote>")
+        await ky.edit(f"<b>INFO:</b> `{e}`")
 
-@PY.UBOT("vctitle|judulos")
-@PY.TOP_CMD
-@PY.GROUP
-async def change_vc_title(client, message: Message):
-    brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
-    prs = await EMO.PROSES(client)
+
+@PY.UBOT("stopvc")
+async def stop_vctools(client, message):
+    hi = await message.reply("<code>Processing....</code>")
+    message.chat.id
+    if not (
+        group_call := (await get_group_call(client, message, err_msg=", Kesalahan..."))
+    ):
+        return
+    await client.invoke(DiscardGroupCall(call=group_call))
+    await hi.edit(
+        f"<b>• Obrolan Suara Diakhiri</b>\n<b>• Chat : </b><code>{message.chat.title}</code>")
+    
+@PY.UBOT("vctitle")
+async def set_vctitle(client, message):
+    proses = await message.reply("<code>Processing....</code>")
 
     if len(message.command) < 2:
-        return await message.reply("❌ masukan judul baru.\nContoh: <code>.vctitle Nongkrong</code>")
+        return await proses.edit("❌ Masukkan judul baru.\nContoh: <code>.vctitle Nongkrong Malam</code>")
 
     new_title = " ".join(message.command[1:])
-    msg = await message.reply(f"<blockquote><b>{prs}ᴍᴇɴɢɢᴀɴᴛɪ ᴊᴜᴅᴜʟ...</b></blockquote>")
+
+    group_call = await get_group_call(client, message, err_msg=", gagal mendapatkan obrolan suara.")
+    if not group_call:
+        return
 
     try:
-        # Ambil informasi panggilan grup dari chat
-        peer = await client.resolve_peer(message.chat.id)
-
-        chat = await client.get_chat(message.chat.id)
-        full_chat = await client.invoke(GetFullChat(chat_id=peer.chat_id))
-        call = full_chat.full_chat.call
-
-        if not call:
-            return await msg.edit("❌ Tidak ada voice chat aktif di grup ini.")
-
-        group_call = InputGroupCall(id=call.id, access_hash=call.access_hash)
-
-        # Ubah judul voice chat
-        await client.invoke(EditGroupCallTitle(
-            call=group_call,
-            title=new_title
-        ))
-
-        await msg.edit(f"<blockquote><b>{brhsl} ᴊᴜᴅᴜʟ ʙᴀʀᴜ : <code>{new_title}</code></b></blockquote>")
-
-    except ChatAdminRequired:
-        await msg.edit(f"❌ Bot/userbot perlu hak admin untuk mengubah judul voice chat.")
+        await client.invoke(EditGroupCallTitle(call=group_call, title=new_title))
+        await proses.edit(
+            f"<b>• Judul Obrolan Suara Diperbarui</b>\n"
+            f"<b>• Chat :</b> <code>{message.chat.title}</code>\n"
+            f"<b>• Judul Baru :</b> <code>{new_title}</code>"
+        )
+    except Forbidden:
+        await proses.edit("❌ Gagal mengubah judul: kamu tidak memiliki izin.")
     except Exception as e:
-        await msg.edit(f"<blockquote><b>{ggl}ɢᴀɢᴀʟ ᴍᴇɴɢɢᴀɴᴛɪ ᴊᴜᴅᴜʟ :</b></blockquote>\n<code>{e}</code>")
+        await proses.edit(f"❌ Gagal mengubah judul:\n<code>{e}</code>")
 
-@PY.UBOT("stopvc|stopos")
-@PY.TOP_CMD
-@PY.GROUP
-async def stopvc_userbot(client, message: Message):
-    brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
-    prs = await EMO.PROSES(client)
+    
+@PY.UBOT("cekos")
+async def cekos_vc(client, message):
+    
+    x = await message.reply("<code>Processing....</code>")
 
-    msg = await message.reply(f"<blockquote><b>{prs}ᴍᴇɴɢʜᴇɴᴛɪᴋᴀɴ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ...</b></blockquote>")
-
+    chat = message.command[1] if len(message.command) > 1 else message.chat.id
     try:
-        peer = await client.resolve_peer(message.chat.id)
-        full_chat = await client.invoke(GetFullChat(chat_id=peer.chat_id))
-        call = full_chat.full_chat.call
+        if isinstance(chat, int):
+            chat_id = chat
+        else:
+            chat_info = await client.get_chat(chat)
+            chat_id = chat_info.id
 
-        if not call:
-            return await msg.edit("❌ Tidak ada voice chat aktif yang dapat dihentikan.")
+        try:
+            info = await client.get_chat(chat_id)
+            title = info.title if info.title else f"{chat_id}"
+        except Exception:
+            title = f"{chat_id}"
+        group_call = await get_group_call(client, message, err_msg=", Error...")
+        if not group_call:
+            return await x.edit(
+                f"<b>Voice chat group not found in {title}</b>"
+            )
+        try:
+            participants = await client.call_py.get_participants(chat_id)
+            mentions = []
+            for participant in participants:
+                user_id = participant.user_id
+                try:
+                    user = await client.get_users(user_id)
+                    mention = user.mention
+                    status = "Unmuted" if participant.muted else "Muted"
+                    volume = participant.volume
+                    mentions.append(f"{mention}|Mic: {status}|Vol: {volume}%")
+                except Exception as e:
+                    logger.error(f"{e}")
+                    mentions.append(f"{user_id} Status Unknown")
 
-        group_call = InputGroupCall(id=call.id, access_hash=call.access_hash)
-        await client.invoke(DiscardGroupCall(call=group_call))
+            total_participants = len(participants)
+            if total_participants == 0:
+                return await x.edit(
+                    f"<b>No someone in voice chat group!!</b>"
+                )
+            mentions_text = "\n".join(
+                [
+                    (f"• {mention}" if i < total_participants - 1 else f"• {mention}")
+                    for i, mention in enumerate(mentions)
+                ]
+            )
+            text = f"""
+<b>Voice Chat Listener:</b>
+Chat: <code>{title}</code>.
+Total: <code>{total_participants}</code> Listener.
 
-        await msg.edit(f"<blockquote><b>{brhsl} ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ʙᴇʀʜᴀꜱɪʟ ᴅɪʜᴇɴᴛɪᴋᴀɴ.</b></blockquote>")
+<b>People:</b>
+{mentions_text}
+"""
+            return await x.edit(f"<blockquote><b>{text}</b></blockquote>")
+        except Exception as e:
+            return await x.edit(f"EROR : {e}")
     except Exception as e:
-        await msg.edit(f"<blockquote><b>{ggl} ɢᴀɢᴀʟ ᴍᴇɴɢʜᴇɴᴛɪᴋᴀɴ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ :</b></blockquote>\n<code>{e}</code>")
+        return await x.edit(f"EROR : {e}")
 
 @PY.UBOT("jvc|naik|jvcs")
 @PY.IDOL("cjvc|cnaik|cjvcs")
