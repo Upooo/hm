@@ -4,24 +4,20 @@ from IdolUbot import *
 
 __MODULE__ = "salam"
 __HELP__ = """
- <blockquote><b>Bantuan Untuk salam</b>
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ sᴀʟᴀᴍ--</b></blockquote>
 
-• <b>Perintah</b> : <code>{0}p</code>
-• <b>Penjelasan : assalamu'alaikum.</b>
-
-• <b>Perintah</b> : <code>{0}pe</code>
-• <b>Penjelasan : Assalamualaikum Warahmatullahi Wabarakatuh.</b>
-
-• <b>Perintah</b> : <code>{0}l</code>
-• <b>Penjelasan : Wa'alaikumsalam.</b>
-
-• <b>Perintah</b> : <code>{0}wl</code>
-• <b>Penjelasan : Wa'alaikumsalam Warahmatullahi Wabarakatuh.</b>
-
-• <b>Perintah</b> : <code>{0}as</code>
-• <b>Penjelasan : coba aja.</b></blockquote>
-
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}p</code>
+🦠 ᴋᴇᴛ : ᴍᴇɴɢɪʀɪᴍ ᴀssᴀʟᴀᴍᴜ'ᴀʟᴀɪᴋᴜᴍ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}pe</code>
+🦠 ᴋᴇᴛ : ᴍᴇɴɢɪʀɪᴍ ᴀssᴀʟᴀᴍᴜ'ᴀʟᴀɪᴋᴜᴍ ᴡᴀʀᴀʜᴍᴀᴛᴜʟʟᴀʜɪ ᴡᴀʙᴀʀᴀᴋᴀᴛᴜʜ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}l</code>
+🦠 ᴋᴇᴛ : ᴍᴇɴɢɪʀɪᴍ ᴡᴀ'ᴀʟᴀɪᴋᴜᴍsᴀʟᴀᴍ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}wl</code>
+🦠 ᴋᴇᴛ : ᴍᴇɴɢɪʀɪᴍ ᴡᴀ'ᴀʟᴀɪᴋᴜᴍsᴀʟᴀᴍ ᴡᴀʀᴀʜᴍᴀᴛᴜʟʟᴀʜɪ ᴡᴀʙᴀʀᴀᴋᴀᴛᴜʜ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}as</code>
+🦠 ᴋᴇᴛ : ᴍᴇɴɢɪʀɪᴍ ᴛᴇᴋs ᴘᴇɴᴄᴏʙᴀᴀɴ.</blockquote>
 """
+
 
 
 @PY.UBOT("p")

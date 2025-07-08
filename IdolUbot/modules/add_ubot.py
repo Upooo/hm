@@ -8,6 +8,7 @@ from pyrogram.types import *
 from pyrogram.raw import functions
 
 from IdolUbot import *
+from IdolUbot.core.database import *
 
 
 @PY.BOT("start")
@@ -16,7 +17,6 @@ from IdolUbot import *
 async def _(client, message): 
     buttons = BTN.START(message)
     msg = MSG.START(message)
-    
     return await message.reply(msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 @PY.CALLBACK("bahan")
@@ -24,7 +24,7 @@ async def _(client, callback_query):
     user_id = callback_query.from_user.id
     if user_id in ubot._get_my_id:
         buttons = [
-            [InlineKeyboardButton("🔃 ʀᴇꜱᴛᴀʀᴛ", callback_data=f"ress_ubot")],
+            [InlineKeyboardButton("ʀᴇꜱᴛᴀʀᴛ", callback_data=f"ress_ubot")],
             [InlineKeyboardButton("ᴋᴇᴍʙᴀʟɪ", callback_data=f"home {user_id}")],
         ]
         return await callback_query.edit_message_text(
@@ -83,7 +83,7 @@ async def _(client, callback_query):
         waktu = exp.strftime("%d-%m-%Y") if exp else "None"
         return await callback_query.edit_message_text(
             f"""
-<blockquote>ᴛʜʀᴇᴇʙᴏᴛ ᴘʀᴇᴍɪᴜᴍ
+<blockquote>ᴋᴇᴛᴇʀᴀɴɢᴀɴ ᴘʀᴇᴍɪᴜᴍ
   ꜱᴛᴀᴛᴜꜱ : ᴘʀᴇᴍɪᴜᴍ
   ᴘʀᴇꜰɪxᴇꜱ : {prefix[0]}
   ᴇxᴘɪʀᴇᴅ_ᴏɴ : {waktu}</b></blockquote>
@@ -93,7 +93,7 @@ async def _(client, callback_query):
         )
     else:
         buttons = [
-            [InlineKeyboardButton("💵 ʙᴇʟɪ ᴜꜱᴇʀʙᴏᴛ", callback_data=f"bahan")],
+            [InlineKeyboardButton("ʙᴇʟɪ ᴜꜱᴇʀʙᴏᴛ", callback_data=f"bahan")],
             [InlineKeyboardButton("ᴋᴇᴍʙᴀʟɪ", callback_data=f"home {user_id}")],
         ]
         return await callback_query.edit_message_text(
@@ -110,7 +110,7 @@ async def _(client, callback_query):
     user_id = callback_query.from_user.id
     if user_id in ubot._get_my_id:
         buttons = [
-            [InlineKeyboardButton("✅ ʀᴇꜱᴛᴀʀᴛ", callback_data=f"ress_ubot")],
+            [InlineKeyboardButton("ʀᴇꜱᴛᴀʀᴛ", callback_data=f"ress_ubot")],
             [InlineKeyboardButton("ᴋᴇᴍʙᴀʟɪ", callback_data=f"home {user_id}")],
         ]
         return await callback_query.edit_message_text(
@@ -305,7 +305,7 @@ async def _(client, callback_query):
 ɴᴀᴍᴇ : <a href=tg://user?id={new_client.me.id}>{new_client.me.first_name} {new_client.me.last_name or ''}</a>
 ɪᴅ : {new_client.me.id}
 ᴘʀᴇꜰɪxᴇꜱ : {' '.join(SH)} 
-ʜᴀʀᴀᴘ ᴊᴏɪɴ : @xnxxnathan ʜᴀʀᴀᴘ ᴊᴏɪɴ ʀᴏᴏᴍ ᴅɪᴀᴛᴀs ᴅᴀɴ ᴊᴀɴɢᴀɴ ᴏᴜᴛ ᴀɢᴀʀ sᴀғᴇᴛʏ
+ʜᴀʀᴀᴘ ᴊᴏɪɴ : @nathsupport ᴅᴀɴ ᴊᴀɴɢᴀɴ ᴏᴜᴛ ᴀɢᴀʀ sᴀғᴇᴛʏ
 ᴊɪᴋᴀ ʙᴏᴛ ᴛɪᴅᴀᴋ ʀᴇꜱᴘᴏɴ, ᴋᴇᴛɪᴋ /restart</b></blockquote>
         """
     await bot_msg.edit(text_done, disable_web_page_preview=True,
@@ -313,34 +313,37 @@ async def _(client, callback_query):
     await bash("rm -rf *session*")
     await install_my_peer(new_client)
     try:
-        await new_client.join_chat("xnxxnathan") 
-        await new_client.join_chat("storagenathan")
-        await new_client.join_chat("nathsupport")
-        await new_client.join_chat("x444saiko")
-        await new_client.join_chat("logsidol")
-        await new_client.join_chat("storexnxx")
+        await new_client.join_chat("https://t.me/+6ua1VQ4CHiowYjU1") 
+        await new_client.join_chat("https://t.me/+JBP2m-xblhA3ODJl")
+        await new_client.join_chat("https://t.me/+inNH8XtzTfA4NmY1")
+        await new_client.join_chat("https://t.me/+4UJsf5AVi1A0NjJl")
+        await new_client.join_chat("https://t.me/+op4OV4pI2Kk4ZGU1")
+        await new_client.join_chat("https://t.me/+1q_qfRcYTYIzMzFl")
     except UserAlreadyParticipant:
         pass
-
-    return await bot.send_message(
-        LOGS_MAKER_UBOT,
-        f"""
-<b>❏ ᴜsᴇʀʙᴏᴛ ᴅɪᴀᴋᴛɪғᴋᴀɴ</b>
-<b> ├ ᴀᴋᴜɴ:</b> <a href=tg://user?id={new_client.me.id}>{new_client.me.first_name} {new_client.me.last_name or ''}</a> 
-<b> ╰ ɪᴅ:</b> <code>{new_client.me.id}</code>
-""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "ᴄᴇᴋ ᴍᴀsᴀ ᴀᴋᴛɪғ",
-                        callback_data=f"cek_masa_aktif {new_client.me.id}",
-                    )
-                ],
-            ]
-        ),
-        disable_web_page_preview=True,
-)
+    for chat_id in LOGS_MAKER_UBOT:
+        try:
+            return await bot.send_message(
+                chat_id,
+                f"""
+        <b>❏ {bot.me.full_name} ᴅɪᴀᴋᴛɪғᴋᴀɴ</b>
+        <b> ├ ᴀᴋᴜɴ:</b> <a href=tg://user?id={new_client.me.id}>{new_client.me.first_name} {new_client.me.last_name or ''}</a> 
+        <b> ╰ ɪᴅ:</b> <code>{new_client.me.id}</code>
+        """,
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton(
+                                "ᴄᴇᴋ ᴍᴀsᴀ ᴀᴋᴛɪғ",
+                                callback_data=f"cek_masa_aktif {new_client.me.id}",
+                            )
+                        ],
+                    ]
+                ),
+                disable_web_page_preview=True,
+            )
+        except Exception as e:
+            print(f"GAGAL KIRIM KE {chat_id} : {e}")
 
 async def is_cancel(callback_query, text):
     if text.startswith("/cancel"):
@@ -358,7 +361,7 @@ async def _(client, message):
         ]
     await message.reply(
             f"""
-<blockquote><b>ᴀɴᴅᴀ ᴀᴋᴀɴ ᴍᴇʟᴀᴋᴜᴋᴀɴ ʀᴇꜱᴛᴀʀᴛ?!\n ᴊɪᴋᴀ ɪʏᴀ ᴘᴇɴᴄᴇᴛ ᴛᴏᴍʙᴏʟ ᴅɪ ʙᴀᴡᴀʜ ɪɴɪ</b></blockquote>
+<blockquote><b>ᴀɴᴅᴀ ᴀᴋᴀɴ ᴍᴇʟᴀᴋᴜᴋᴀɴ ʀᴇꜱᴛᴀʀᴛ?!\n\nᴊɪᴋᴀ ɪʏᴀ ᴘᴇɴᴄᴇᴛ ᴛᴏᴍʙᴏʟ ᴅɪ ʙᴀᴡᴀʜ ɪɴɪ</b></blockquote>
 """,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(buttons),

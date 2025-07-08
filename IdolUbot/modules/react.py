@@ -1,13 +1,13 @@
-__MODULE__ = "ʀᴇᴀᴄᴛɪᴏɴ"
+__MODULE__ = "reaction"
 __HELP__ = """
-<blockquote>Bantuan Untuk Reaction
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ʀᴇᴀᴄᴛɪᴏɴ--</b></blockquote>
 
-perintah : <code>{0}react</code> [username]
-    memberikan reaction emoji
-   
-perintah : <code>{0}stopreact</code>
-    membatalkan proses reaction</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}react</code> [username]
+🦠 ᴋᴇᴛ : ᴍᴇᴍʙᴇʀɪᴋᴀɴ ʀᴇᴀᴋsɪ ᴇᴍᴏᴊɪ ᴋᴇ ᴜsᴇʀ ʏᴀɴɢ ᴅɪᴛᴇɴᴛᴜᴋᴀɴ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}stopreact</code>
+🦠 ᴋᴇᴛ : ᴍᴇᴍʙᴀᴛᴀʟᴋᴀɴ ᴘʀᴏsᴇs ʀᴇᴀᴋsɪ ʏᴀɴɢ sᴇᴅᴀɴɢ ʙᴇʀᴊᴀʟᴀɴ.</blockquote>
 """
+
 
 from IdolUbot import *
 from pyrogram import Client, idle, filters

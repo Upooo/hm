@@ -9,14 +9,14 @@ from IdolUbot import *
 
 __MODULE__ = "tagall"
 __HELP__ = """
-<blockquote>Bantuan Untuk Tagall
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴛᴀɢᴀʟʟ--</b></blockquote>
 
-perintah : <code>{0}tagall</code>
-    melakukan tag ke seluruh anggota group
-
-perintah : <code>{0}batal</code>
-    membatalkan perintah tagall</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}tagall</code>
+🦠 ᴋᴇᴛ : ᴍᴇʟᴀᴋᴜᴋᴀɴ ᴛᴀɢ ᴋᴇ ꜱᴇʟᴜʀᴜʜ ᴀɴɢɢᴏᴛᴀ ɢʀᴏᴜᴘ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}batal</code>
+🦠 ᴋᴇᴛ : ᴍᴇᴍʙᴀᴛᴀʟᴋᴀɴ ᴘʀᴏꜱᴇꜱ ᴛᴀɢ ʏᴀɴɢ ꜱᴇᴅᴀɴɢ ʙᴇʀᴊᴀʟᴀɴ.</blockquote>
 """
+
 
 
 

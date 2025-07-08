@@ -87,7 +87,7 @@ async def _(client, message):
     blacklist = await get_list_from_vars(client.me.id, "BL_ID")
     total_blacklist = len(blacklist)
 
-    list = f"{brhsl} daftar blackliꜱt\n"
+    list = f"{brhsl} ᴅᴀꜰᴛᴀʀ ʙʟᴀᴄᴋʟɪꜱᴛ\n"
 
     for chat_id in blacklist:
         try:
@@ -96,7 +96,7 @@ async def _(client, message):
         except:
             list += f" ├ {chat_id}\n"
 
-    list += f"{ktrng} ⌭ total blackliꜱt {total_blacklist}"
+    list += f"{ktrng} ᴛᴏᴛᴀʟ ʙʟᴀᴄᴋʟɪꜱᴛ : {total_blacklist}"
     return await mzg.edit(list)
 
 
@@ -106,15 +106,15 @@ async def _(client, message):
     prs = await EMO.PROSES(client)
     ggl = await EMO.GAGAL(client)
     brhsl = await EMO.BERHASIL(client)
-    _msg = f"{prs}proceꜱꜱing..."
+    _msg = f"{prs} ᴘʀᴏᴄᴇꜱꜱɪɴɢ..."
 
     msg = await message.reply(_msg)
     blacklists = await get_list_from_vars(client.me.id, "BL_ID")
 
     if not blacklists:
-        return await msg.edit(f"{ggl}blackliꜱt broadcaꜱt anda koꜱong")
+        return await msg.edit(f"{ggl} ʙʟᴀᴄᴋʟɪꜱᴛ ʙʀᴏᴀᴅᴄᴀꜱᴛ ᴀɴᴅᴀ ᴋᴏꜱᴏɴɢ.")
 
     for chat_id in blacklists:
         await remove_from_vars(client.me.id, "BL_ID", chat_id)
 
-    await msg.edit(f"{brhsl}ꜱemua blackliꜱt broadcaꜱt berhaꜱil di hapuꜱ")
+    await msg.edit(f"{brhsl} ꜱᴇᴍᴜᴀ ʙʟᴀᴄᴋʟɪꜱᴛ ʙʀᴏᴀᴅᴄᴀꜱᴛ ʙᴇʀʜᴀꜱɪʟ ᴅɪ ʜᴀᴘᴜꜱ.")

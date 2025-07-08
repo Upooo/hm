@@ -3,11 +3,12 @@ from IdolUbot import *
 
 __MODULE__ = "gmaps"
 __HELP__ = """
-<b>✮Folder Untuk Maps✮</b>
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ɢᴍᴀᴘꜱ--</b></blockquote>
 
-<blockquote><b>♛Perintah : <code>{0}gps</code>
-Penjelasan : Buat Mencari Lokasi Menggunakan Maps/Gps</b></blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}gps</code> [lokasi]
+🦠 ᴋᴇᴛ : ᴍᴇɴᴄᴀʀɪ ᴛᴇᴍᴘᴀᴛ ᴍᴇʟᴀʟᴜɪ ɢᴏᴏɢʟᴇ ᴍᴀᴘꜱ / ɢᴘꜱ.</b></blockquote>
 """
+
 
 @PY.UBOT("gps|maps")
 async def gps(client, message):

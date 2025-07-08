@@ -9,19 +9,16 @@ from IdolUbot import *
 
 __MODULE__ = "fun"
 __HELP__ = """
-<blockquote>• Bantuan Untuk Fun •
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ꜰᴜɴ--</b></blockquote>
 
-✓ Perintah: <code>{0}giben</code>
-◉ Penjelasan: Fake global ban.
-
-✓ Perintah: <code>{0}gimut</code>
-◉ Penjelasan: Fake global mute.
-
-✓ Perintah: <code>{0}gikik</code>
-◉ Penjelasan: Fake global kick.
-
-✓ Perintah: <code>{0}gikes</code>
-◉ Penjelasan: Fake global broadcast.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}giben</code>
+🦠 ᴋᴇᴛ : ꜰᴀᴋᴇ ɢʟᴏʙᴀʟ ʙᴀɴ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}gimut</code>
+🦠 ᴋᴇᴛ : ꜰᴀᴋᴇ ɢʟᴏʙᴀʟ ᴍᴜᴛᴇ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}gikik</code>
+🦠 ᴋᴇᴛ : ꜰᴀᴋᴇ ɢʟᴏʙᴀʟ ᴋɪᴄᴋ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}gikes</code>
+🦠 ᴋᴇᴛ : ꜰᴀᴋᴇ ɢʟᴏʙᴀʟ ʙʀᴏᴀᴅᴄᴀꜱᴛ.</blockquote>
 """
 
 

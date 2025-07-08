@@ -1,6 +1,5 @@
 from pykeyboard import InlineKeyboard
 from pyrogram.types import InlineKeyboardButton
-from pyrogram.errors import MessageNotModified
 from pyrogram.types import *
 from pyromod.helpers import ikb
 from IdolUbot import *
@@ -138,14 +137,14 @@ class BTN:
                     InlineKeyboardButton("ʙᴜʏ ᴜʙᴏᴛ", callback_data="bahan"),
                 ], 
                 [
-                    InlineKeyboardButton("ᴄʀᴇᴀᴛᴇ", callback_data="buat_ubot"),
+                    InlineKeyboardButton("ᴛʀɪᴀʟ", callback_data="trial_ubot"),
                     InlineKeyboardButton("ғɪᴛᴜʀ", callback_data="help_back")
                 ],
                 [
                     InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data="informasi_ubot"),
                 ],
                 [   
-                    InlineKeyboardButton("ᴛʀɪᴀʟ ᴜʙᴏᴛ", callback_data="trial_ubot")
+                    InlineKeyboardButton("ᴄʀᴇᴀᴛᴇ ᴜʙᴏᴛ", callback_data="buat_ubot"),
                 ]
             ]
         else:

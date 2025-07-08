@@ -1,5 +1,5 @@
 __MODULE__ = "alquran"
-__HELP__ = f"""
+__HELP__ = """
 <blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴀʟ ǫᴜʀ'ᴀɴ--</b></blockquote>
 
 <blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ : <code>{0}alquran [ꜱᴜʀᴀʜ] [ᴀʏᴀᴛ]</code>

@@ -2,19 +2,18 @@ import asyncio
 
 from IdolUbot import *
 
-__MODULE__ = "ᴘᴜʀɢᴇ"
+__MODULE__ = "purge"
 __HELP__ = """
-<blockquote>Bantuan Untuk Purge
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴘᴜʀɢᴇ--</b></blockquote>
 
-perintah : <code>{0}purge</code>
-    bersihkan (hapus semua pesan) dari pesan yang di bales
-
-perintah : <code>{0}del</code>
-    menghapus pesan yang di balas
-
-perintah : <code>{0}purgeme</code>
-    menghapus pesan anda sediri</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}purge</code>
+🦠 ᴋᴇᴛ : ᴍᴇɴɢʜᴀᴘᴜs sᴇᴍᴜᴀ ᴘᴇsᴀɴ ᴅᴀʀɪ ᴘᴇsᴀɴ ʏᴀɴɢ ᴅɪʙᴀʟᴀs sᴀᴍᴘᴀɪ sᴇᴋᴀʀᴀɴɢ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}del</code>
+🦠 ᴋᴇᴛ : ᴍᴇɴɢʜᴀᴘᴜs ᴘᴇsᴀɴ ʏᴀɴɢ ᴅɪʙᴀʟᴀs.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}purgeme</code>
+🦠 ᴋᴇᴛ : ᴍᴇɴɢʜᴀᴘᴜs ᴘᴇsᴀɴ ᴀɴᴅᴀ sᴇɴᴅɪʀɪ.</blockquote>
 """
+
 
 
 @PY.UBOT("del")

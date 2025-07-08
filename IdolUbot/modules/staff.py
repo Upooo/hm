@@ -1,12 +1,11 @@
-from IdolUbot import *
-
-__MODULE__ = "ꜱᴛᴀꜰꜰ"
+__MODULE__ = "staff"
 __HELP__ = """
-<blockquote>Bantuan Untuk Staff
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ꜱᴛᴀꜰꜰ--</b></blockquote>
 
-perintah : <code>{0}staff</code>
-    untuk mendapatkan informaꜱi ꜱeluruh ꜱtaff grup</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}staff</code>
+🦠 ᴋᴇᴛ : ᴍᴇɴɢᴀᴍʙɪʟ ᴅᴀғᴛᴀʀ sᴇʟᴜʀᴜʜ sᴛᴀғғ/ᴀᴅᴍɪɴ ʏᴀɴɢ ᴀᴅᴀ ᴅɪ ɢʀᴏᴜᴘ.</blockquote>
 """
+
 import os
 from IdolUbot import *
 

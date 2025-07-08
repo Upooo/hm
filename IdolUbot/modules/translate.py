@@ -8,19 +8,20 @@ from pykeyboard import InlineKeyboard
 from IdolUbot import *
 
 
-__MODULE__ = "ᴛʀᴀɴꜱʟᴀᴛᴇ"
+__MODULE__ = "translate"
 __HELP__ = """
-<blockquote>Bantuan Untuk Translate
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴛʀᴀɴꜱʟᴀᴛᴇ--</b></blockquote>
 
-perintah : <code>{0}tr</code>
-    menerjemahkan pesan/text
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}tr</code>
+🦠 ᴋᴇᴛ : ᴍᴇɴᴇʀᴊᴇᴍᴀʜᴋᴀɴ ᴘᴇꜱᴀɴ/ᴛᴇxᴛ ᴋᴇ ʙᴀʜᴀꜱᴀ ʏᴀɴɢ ᴅɪᴀᴛᴜʀ.</blockquote>
 
-perintah : <code>{0}tts</code>
-     merubah text menjadi pesan suara sesui bahasa
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}tts</code>
+🦠 ᴋᴇᴛ : ᴍᴇɴɢᴜʙᴀʜ ᴛᴇxᴛ ᴍᴇɴᴊᴀᴅɪ ꜱᴜᴀʀᴀ ꜱᴇꜱᴜᴀɪ ʙᴀʜᴀꜱᴀ ʏᴀɴɢ ᴅɪɢᴜɴᴀᴋᴀɴ.</blockquote>
 
-perintah : <code>{0}setlang</code>
-    merubah bahasa translate</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}setlang</code>
+🦠 ᴋᴇᴛ : ᴍᴇɴɢᴀᴛᴜʀ ʙᴀʜᴀꜱᴀ ʏᴀɴɢ ᴅɪɢᴜɴᴀᴋᴀɴ ᴜɴᴛᴜᴋ ᴛʀᴀɴꜱʟᴀᴛᴇ/ᴛᴛꜱ.</blockquote>
 """
+
 
 
 @PY.UBOT("tts")

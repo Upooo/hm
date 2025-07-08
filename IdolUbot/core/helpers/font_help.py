@@ -1,7 +1,5 @@
 from math import ceil
-
 from pyrogram.types import InlineKeyboardButton
-
 
 class Fonts:
     def typewriter(text):

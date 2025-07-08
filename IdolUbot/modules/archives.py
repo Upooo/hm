@@ -17,7 +17,7 @@ async def archive_user(client, message):
     brhsl = await EMO.BERHASIL(client)
     ggl = await EMO.GAGAL(client)
     if len(message.command) <2:
-        return await message.reply(f"<blockquote><b>{ggl} ᴍᴏʜᴏɴ ɢᴜɴᴀᴋᴀɴ ᴀʀᴄʜ ᴀʟʟ, ᴜꜱᴇʀꜱ, ɢʀᴏᴜᴘ</b></blockquote>")
+        return await message.reply(f"<blockquote><b>{ggl} ᴍᴏʜᴏɴ ɢᴜɴᴀᴋᴀɴ <code>arch [all, pc, gc]</code></b></blockquote>")
     anjai = await message.reply(f"<blockquote><b>{prs} ᴘʀᴏᴄᴄᴇꜱɪɴɢ...</b></blockquote>")
     anjir = message.command[1]
     xx = await get_data_id(client, anjir)

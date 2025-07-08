@@ -4,30 +4,24 @@ from IdolUbot import *
 
 __MODULE__ = "toxic"
 __HELP__ = """
- <blockquote><b>Bantuan Untuk toxic</b>
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴛᴏxɪᴄ--</b></blockquote>
 
-• <b>Perintah</b> : <code>{0}jamet</code>
-• <b>Penjelasan : gatau gabut doang.</b>
-
-• <b>Perintah</b> : <code>{0}vir</code>
-• <b>Penjelasan : gatau gabut doang.</b>
-
-• <b>Perintah</b> : <code>{0}ppx</code>
-• <b>Penjelasan : gatau gabut doang.</b>
-
-• <b>Perintah</b> : <code>{0}kiss</code>
-• <b>Penjelasan : gatau gabut doang.</b>
-
-• <b>Perintah</b> : <code>{0}pc</code>
-• <b>Penjelasan : gatau gabut doang.</b>
-
-• <b>Perintah</b> : <code>{0}hah</code>
-• <b>Penjelasan : gatau gabut doang.</b>
-
-• <b>Perintah</b> : <code>{0}gembel</code>
-• <b>Penjelasan : gatau gabut doang.</b></blockquote>
-
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}jamet</code>
+🦠 ᴋᴇᴛ : ɢᴀᴛᴀᴜ ɢᴀʙᴜᴛ ᴅᴏᴀɴɢ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}vir</code>
+🦠 ᴋᴇᴛ : ɢᴀᴛᴀᴜ ɢᴀʙᴜᴛ ᴅᴏᴀɴɢ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}ppx</code>
+🦠 ᴋᴇᴛ : ɢᴀᴛᴀᴜ ɢᴀʙᴜᴛ ᴅᴏᴀɴɢ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}kiss</code>
+🦠 ᴋᴇᴛ : ɢᴀᴛᴀᴜ ɢᴀʙᴜᴛ ᴅᴏᴀɴɢ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}pc</code>
+🦠 ᴋᴇᴛ : ɢᴀᴛᴀᴜ ɢᴀʙᴜᴛ ᴅᴏᴀɴɢ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}hah</code>
+🦠 ᴋᴇᴛ : ɢᴀᴛᴀᴜ ɢᴀʙᴜᴛ ᴅᴏᴀɴɢ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}gembel</code>
+🦠 ᴋᴇᴛ : ɢᴀᴛᴀᴜ ɢᴀʙᴜᴛ ᴅᴏᴀɴɢ.</blockquote>
 """
+
 
 @PY.UBOT("jamet")
 async def bulan(client, message):

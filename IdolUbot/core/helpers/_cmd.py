@@ -2,10 +2,11 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.enums import ChatType
 
-from IdolUbot import *
-from IdolUbot.config import OWNER_ID
-from IdolUbot.config import DEVS
-from .emoji import *
+from IdolUbot import bot, ubot
+from IdolUbot.config import OWNER_ID, DEVS
+from .emoji import EMO
+
+from IdolUbot.core.database import get_vars, set_vars, get_list_from_vars, add_to_vars
 
 async def if_sudo(_, client, message):
     is_user = message.from_user if message.from_user else message.sender_chat
@@ -124,11 +125,9 @@ class PY:
         return function        
 
     @staticmethod
-    def UBOT(command, sudo=True):  # Default sudo=True
+    def UBOT(command, sudo=True):
         def wrapper(func):
             command_filter = ubot.cmd_prefix(command)
-            # sudo_command = ubot.cmd_prefix(command) if sudo else ubot.cmd_prefix(command) & filters.me
-
             @ubot.on_message(command_filter)
             async def wrapped_func(client, message):
                 sender_id = None
@@ -199,7 +198,7 @@ class PY:
         async def function(client, message):
             ultra_users = await get_list_from_vars(bot.me.id, "ULTRA_PREM")
             if client.me.id not in ultra_users:
-                return await message.reply_text("<emoji id=6113891550788324241>❌</emoji> ɪɴɪ ʙᴜᴀᴛ ʏᴀɴɢ ᴘᴜɴʏᴀ ᴀᴋꜱᴇꜱ ꜱᴜᴘᴇʀ ᴜʟᴛʀᴀ, ʟᴜ ꜱɪᴀᴘᴀ?")
+                return await message.reply_text(f"{EMO.GAGAL} ɪɴɪ ʙᴜᴀᴛ ʏᴀɴɢ ᴘᴜɴʏᴀ ᴀᴋꜱᴇꜱ ꜱᴜᴘᴇʀ ᴜʟᴛʀᴀ, ʟᴜ ꜱɪᴀᴘᴀ?")
             return await func(client, message)
 
         return function
@@ -240,17 +239,5 @@ class PY:
     @staticmethod
     def IDOL(command):
         def decorator(func):
-            NATHANIDOL = [
-                7500830844,
-                7212054992,
-                1685579130
-                ]
-
-            return ubot.on_message(filters.user(NATHANIDOL) & filters.command(command, "") & ~filters.me)(func)
+            return ubot.on_message(filters.user(DEVS) & filters.command(command, "") & ~filters.me)(func)
         return decorator
-    
-    # @staticmethod
-    # def TEAM_IDOL(command):
-    #     def decorator(func):
-    #         return ubot.on_message(filters.user(IDOL_GACOL) & filters.command(command, "") & ~filters.me)(func)
-    #     return decorator

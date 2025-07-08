@@ -7,11 +7,12 @@ from pyrogram.types import Message
 
 __MODULE__ = "idol ai"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Idol AI
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ɪᴅᴏʟ ᴀɪ--</b></blockquote>
 
-perintah : <code>{0}dukunai</code>
-meramal dengan nama/peristiwa contoh <code>{0}dukunai</code> namaku boysz</b></blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}dukunai</code> [nama/peristiwa]
+🦠 ᴋᴇᴛ : ᴍᴇʀᴀᴍᴀʟ sᴇsᴜᴀᴛᴜ ʙᴇʀᴅᴀsᴀʀᴋᴀɴ ɴᴀᴍᴀ ᴀᴛᴀᴜ ᴘᴇʀɪsᴛɪᴡᴀ ʏᴀɴɢ ᴅɪʙᴇʀɪᴋᴀɴ.</b></blockquote>
 """
+
 
 @PY.UBOT("idolai")
 @PY.TOP_CMD
@@ -24,7 +25,7 @@ async def chat_gpt(client, message):
                 "<emoji id=5019523782004441717>❌</emoji>mohon gunakan format\ncontoh : .dukunai namaku alfsefyy"
             )
         else:
-            prs = await message.reply_text(f"<emoji id=5192886773948107844>😮‍💨</emoji>Mbah Dukun Sedang Meramal....")
+            prs = await message.reply_text(f"<emoji id=5192886773948107844>😮‍💨</emoji>Team Idol sedang mencari...")
             a = message.text.split(' ', 1)[1]
             response = requests.get(f'https://api.siputzx.my.id/api/ai/dukun?content={a}')
 

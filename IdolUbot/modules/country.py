@@ -3,10 +3,10 @@ import requests
 
 __MODULE__ = "country"
 __HELP__ = """
-<blockquote><b>『 ʙᴀɴᴛᴜᴀɴ ᴄᴏᴜɴᴛʀʏ ɪɴꜰᴏ 』</b>
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴏᴜɴᴛʀʏ ɪɴꜰᴏ--</b></blockquote>
 
-  <b>• ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{0}country</code> [ɴᴀᴍᴀ ɴᴇɢᴀʀᴀ]
-  <b>• ᴘᴇɴᴊᴇʟᴀsᴀɴ:</b> ᴜɴᴛᴜᴋ ᴍᴇɴᴀᴍᴘɪʟᴋᴀɴ ɪɴꜰᴏʀᴍᴀꜱɪ ᴛᴇɴᴛᴀɴɢ ꜱᴇꜱᴜᴀᴛᴜ ɴᴇɢᴀʀᴀ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}country [nama negara]</code>
+🦠 ᴋᴇᴛ : ᴜɴᴛᴜᴋ ᴍᴇɴᴀᴍᴘɪʟᴋᴀɴ ɪɴꜰᴏʀᴍᴀꜱɪ ᴛᴇɴᴛᴀɴɢ ꜱᴇꜱᴜᴀᴛᴜ ɴᴇɢᴀʀᴀ.</b></blockquote>
 """
 
 API_URL = "https://api.siputzx.my.id/api/tools/countryInfo"

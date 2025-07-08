@@ -30,7 +30,7 @@ async def free_trial_callback(client, callback_query):
 ├ sᴜᴘᴘᴏʀᴛ : @nathsupport
 ├ ᴜsᴇʀʙᴏᴛ : @idolubot
 ├ ᴜsᴇʀʙᴏᴛ : @v1idolubot
-╰ ᴜsᴇʀʙᴏᴛ : @v2idolubot</b></blockquote>
+╰ ᴍᴜꜱɪᴄ ʙᴏᴛ : @reexmusic_bot</b></blockquote>
 """,
   )
   

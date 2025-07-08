@@ -15,28 +15,22 @@ from IdolUbot import *
 
 __MODULE__ = "ᴘʀᴏꜰɪʟᴇꜱ"
 __HELP__ = """
-<blockquote>Bantuan Untuk Profiles
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴘʀᴏꜰɪʟᴇꜱ--</b></blockquote>
 
-  <b>• ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{0}sg</code> [ᴜsᴇʀ_ɪᴅ/ʀᴇᴘʟʏ ᴜsᴇʀ]
-  <b>• ᴘᴇɴᴊᴇʟᴀsᴀɴ:</b> ᴜɴᴛᴜᴋ ᴍᴇᴍᴇʀɪᴋsᴀ ʜɪsᴛᴏʀɪ ɴᴀᴍᴀ/ᴜsᴇʀɴᴀᴍᴇ
-
-perintah : <code>{0}setbio</code>
-    mengubah bio pada akun anda
-
-perintah : <code>{0}setname</code>
-    mengubah nama pada akun anda:
-
-perintah : <code>{0}block</code>
-    memblokir pengguna
-
-perintah : <code>{0}unblock</code>
-    membuka pemblokiran pada pengguna
-
-perintah : <code>{0}info</code>
-    melihat informasi data akun telegram
-
-perintah : <code>{0}cinfo</code>
-    melihat informasi data group/channel telegram</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}sg</code> [ᴜsᴇʀ_ɪᴅ/ʀᴇᴘʟʏ ᴜsᴇʀ]
+🦠 ᴋᴇᴛ : ᴍᴇᴍᴇʀɪᴋsᴀ ʜɪsᴛᴏʀɪ ᴜsᴇʀɴᴀᴍᴇ/ɴᴀᴍᴀ ᴘᴇɴɢɢᴜɴᴀ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}setbio</code>
+🦠 ᴋᴇᴛ : ᴍᴇɴɢᴜʙᴀʜ ʙɪᴏ ᴀᴋᴜɴ ᴀɴᴅᴀ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}setname</code>
+🦠 ᴋᴇᴛ : ᴍᴇɴɢᴜʙᴀʜ ɴᴀᴍᴀ ᴀᴋᴜɴ ᴀɴᴅᴀ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}block</code>
+🦠 ᴋᴇᴛ : ᴍᴇᴍʙʟᴏᴋɪʀ sᴇsᴇᴏʀᴀɴɢ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}unblock</code>
+🦠 ᴋᴇᴛ : ᴍᴇᴍʙᴜᴋᴀ ʙʟᴏᴋɪʀᴀɴ ᴘᴀᴅᴀ sᴇsᴇᴏʀᴀɴɢ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}info</code>
+🦠 ᴋᴇᴛ : ᴍᴇʟɪʜᴀᴛ ɪɴꜰᴏʀᴍᴀsɪ ᴘʀᴏꜰɪʟ ᴀᴋᴜɴ ᴀɴᴅᴀ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}cinfo</code>
+🦠 ᴋᴇᴛ : ᴍᴇʟɪʜᴀᴛ ɪɴꜰᴏʀᴍᴀsɪ ɢʀᴏᴜᴘ/ᴄʜᴀɴɴᴇʟ.</blockquote>
 """
 
 

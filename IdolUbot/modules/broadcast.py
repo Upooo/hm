@@ -8,16 +8,17 @@ from pyrogram.errors.exceptions import *
 from pyrogram.errors.exceptions.not_acceptable_406 import ChannelPrivate
 
 from IdolUbot import *
+from .limit import limit_cmd
 
 __MODULE__ = "bc"
 __HELP__ = """
 <blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ʙʀᴏᴀᴅᴄᴀsᴛ--</b></blockquote>
 
-<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}bc [all, users, group]</code>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}bc [all, pc, gc]</code>
 🦠 ᴋᴇᴛ : ᴀʟʟ ᴜɴᴛᴜᴋ ꜱᴇᴍᴜᴀ , ᴜꜱᴇʀꜱ ᴜɴᴛᴜᴋ ᴜꜱᴇʀ, ɢʀᴏᴜᴘ ᴜɴᴛᴜᴋ ɢʀᴏᴜᴘ.</b></blockquote>
 <blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}stopg</code>
 🦠 ᴋᴇᴛ : ᴜɴᴛᴜᴋ ᴍᴇɴɢʜᴇɴᴛɪᴋᴀɴ ᴘʀᴏꜱᴇꜱ ʙʀᴏᴀᴅᴄᴀꜱᴛ ʏᴀɴɢ ꜱᴇᴅᴀɴɢ ʙᴇʀʟᴀɴɢꜱᴜɴɢ.</b></blockquote>
-<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}cfd</code>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}cfd [all, pc, gc]</code>
 🦠 ᴋᴇᴛ : ᴍᴇɴɢɪʀɪᴍ ᴘᴇꜱᴀɴ ꜱɪᴀʀᴀɴ ꜱᴇᴄᴀʀᴀ ꜰᴏʀᴡᴀʀᴅ.</b></blockquote>
 <blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}send</code>
 🦠 ᴋᴇᴛ : ᴍᴇɴɢɪʀɪᴍ ᴘᴇꜱᴀɴ ᴋᴇ ᴜꜱᴇʀ/ɢʀᴏᴜᴘ/ᴄʜᴀɴɴᴇʟ.</b></blockquote>
@@ -46,7 +47,7 @@ async def gcast_handler(client, message):
     gcs = await message.reply(_msg)    
     command, text = extract_type_and_msg(message)
 
-    if command not in ["group", "users", "all"] or not text:
+    if command not in ["gc", "pc", "all"] or not text:
         gcast_progress.remove(client.me.id)
         return await gcs.edit(f"<blockquote><code>{message.text.split()[0]}</code> <b>[ᴛʏᴘᴇ] [ᴛᴇxᴛ/ʀᴇᴘʟʏ]</b> {ggl}</blockquote>")
     chats = await get_data_id(client, command)
@@ -56,7 +57,7 @@ async def gcast_handler(client, message):
     failed = 0
     for chat_id in chats:
         if client.me.id not in gcast_progress:
-            await gcs.edit(f"<blockquote><b>⌭ ᴘʀᴏsᴇs ɢᴄᴀsᴛ ʙᴇʀʜᴀsɪʟ ᴅɪ ʙᴀᴛᴀʟᴋᴀɴ !</b> {sks}</blockquote>")
+            await gcs.edit(f"<blockquote><b>ᴘʀᴏsᴇs ɢᴄᴀsᴛ ʙᴇʀʜᴀsɪʟ ᴅɪ ʙᴀᴛᴀʟᴋᴀɴ !</b> {sks}</blockquote>")
             return
         if chat_id in blacklist or chat_id in BLACKLIST_CHAT:
             continue
@@ -116,7 +117,7 @@ async def _(client, message):
 
     command, text = extract_type_and_msg(message)
     
-    if command not in ["group", "users", "all"] or not text:
+    if command not in ["gc", "pc", "all"] or not text:
         return await gcs.edit(f"{ggl}{message.text.split()[0]} type [reply]")
 
     if not message.reply_to_message:
@@ -160,11 +161,11 @@ async def _(client, message):
 @PY.BOT("broadcast|bacot|bcast|bc|cfd")
 @PY.ADMIN
 async def _(client, message):
-    msg = await message.reply("<blockquote><b>⌭ okee proses...</blockquote></b>\n\n<blockquote><b>⌭ mohon bersabar untuk menunggu proses broadcast sampai selesai</blockquote></b>", quote=True)
+    msg = await message.reply("<blockquote><b>okee proses...</blockquote></b>\n\n<blockquote><b>mohon bersabar untuk menunggu proses broadcast sampai selesai</blockquote></b>", quote=True)
 
     send = get_message(message)
     if not send:
-        return await msg.edit("⌭ mohon balaꜱ atau ketik ꜱeꜱuatu...")
+        return await msg.edit("ᴍᴏʜᴏɴ ʙᴀʟᴀꜱ ᴀᴛᴀᴜ ᴋᴇᴛɪᴋ ꜱᴇꜱᴜᴀᴛᴜ...")
         
     susers = await get_list_from_vars(client.me.id, "SAVED_USERS")
     done = 0

@@ -164,8 +164,8 @@ async def get_data_id(client, query):
     chat_types = {
         "global": [ChatType.CHANNEL, ChatType.GROUP, ChatType.SUPERGROUP],
         "all": [ChatType.GROUP, ChatType.SUPERGROUP, ChatType.PRIVATE],
-        "group": [ChatType.GROUP, ChatType.SUPERGROUP],
-        "users": [ChatType.PRIVATE],
+        "gc": [ChatType.GROUP, ChatType.SUPERGROUP],
+        "pc": [ChatType.PRIVATE],
     }
     dialogs = []
     try:

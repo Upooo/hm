@@ -4,11 +4,12 @@ from pyrogram.types import InputMediaPhoto
 
 __MODULE__ = "cari gif"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk GifSearch
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ɢɪꜰꜱᴇᴀʀᴄʜ--</b></blockquote>
 
-Perintah : <code>{0}gif</code> [ǫᴜᴇʀʏ]
-  Untuk Mencari gift/animation Random Dari Google</b></blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}gif</code> [ǫᴜᴇʀʏ]
+🦠 ᴋᴇᴛ : ᴍᴇɴᴄᴀʀɪ ɢɪꜰ / ᴀɴɪᴍᴀꜱɪ ʀᴀɴᴅᴏᴍ ᴅᴀʀɪ ɢᴏᴏɢʟᴇ.</b></blockquote>
 """
+
 
 @PY.UBOT("gif")
 async def gif_cmd(client, message):

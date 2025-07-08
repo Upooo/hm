@@ -2,34 +2,30 @@ from IdolUbot import *
 
 __MODULE__ = "control"
 __HELP__ = """
-<blockquote>Bantuan Untuk Control
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴄᴏɴᴛʀᴏʟ--</b></blockquote>
 
-perintah : <code>{0}prefix</code>
-   untuk merubah prefix/handler perintah
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}create & {0}createbot</code>
+🦠 ᴋᴇᴛ : ᴜɴᴛᴜᴋ ᴍᴇᴍʙᴜᴀᴛ ɢʀᴏᴜᴘ, ᴄʜᴀɴɴᴇʟ, ᴀᴛᴀᴜ ʙᴏᴛ ᴘᴀᴅᴀ ᴛᴇʟᴇɢʀᴀᴍ.</b></blockquote>
 
-perintah : <code>{0}create & {0}createbot</code>
-   untuk membuat group atau channel atau bot
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}emoji</code>
+🦠 ᴋᴇᴛ : ᴍᴇɴɢᴀᴛᴜʀ ᴇᴍᴏᴊɪ ᴜꜱᴇʀʙᴏᴛ.</b></blockquote>
 
-perintah : <code>{0}emoji</code> query emojiprem
-   untuk merubah emoji pada tampilan tertentu
-
-query:
-    ><code>{0}pong</code>
-    ><code>{0}owner</code>
-    ><code>{0}ubot</code>
-    ><code>{0}gcast</code>
-    ><code>{0}sukses</code>
-    ><code>{0}gagal</code>
-    ><code>{0}proses</code>
-    ><code>{0}group</code>
-    ><code>{0}catatan</code>
-    ><code>{0}afk</code>
-    ><code>{0}waktu</code>
-    ><code>{0}alasan</code></blockquote>
+❏ ǫᴜᴇʀʏ:
+├ <code>{0}emoji pong</code>
+├ <code>{0}emoji owner</code>
+├ <code>{0}emoji ubot</code>
+├ <code>{0}emoji gcast</code>
+├ <code>{0}emoji sukses</code>
+├ <code>{0}emoji gagal</code>
+├ <code>{0}emoji proses</code>
+├ <code>{0}emoji group</code>
+├ <code>{0}emoji catatan</code>
+├ <code>{0}emoji waktu</code>
+╰ <code>{0}emoji alasan</code></blockquote>
 """
 
 
-@PY.UBOT("creat")
+@PY.UBOT("create")
 @PY.TOP_CMD
 async def _(client, message):
     if len(message.command) < 3:
@@ -68,7 +64,7 @@ async def _(client, message):
     else:
         ub_prefix = []
         for prefix in message.command[1:]:
-            if prefix.lower() == "threnone":
+            if prefix.lower() == "none":
                 ub_prefix.append("")
             else:
                 ub_prefix.append(prefix)

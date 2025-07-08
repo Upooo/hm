@@ -10,20 +10,18 @@ from IdolUbot import *
 
 __MODULE__ = "global"
 __HELP__ = """
-<blockquote>Bantuan Untuk Global
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ɢʟᴏʙᴀʟ--</b></blockquote>
 
-perintah : <code>{0}gban</code>
-    banned user dari semua group chat 
-
-perintah : <code>{0}ungban</code>
-    unbanned user dari semua group chat
-
-perintah : <code>{0}gmute</code>
-    untuk mengemute user dari semua gc yg kmu admin 
-
-perintah : <code>{0}ungmute</code>
-    untuk meng ungmute user dari semua gc yg kmu admin</blockquote> 
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}gban</code>
+🦠 ᴋᴇᴛ : ᴍᴇʟᴀᴋᴜᴋᴀɴ ʙᴀɴ ᴘᴀᴅᴀ sᴇsᴇᴏʀᴀɴɢ ᴅɪ sᴇᴍᴜᴀ ɢʀᴏᴜᴘ ᴄʜᴀᴛ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}ungban</code>
+🦠 ᴋᴇᴛ : ᴍᴇɴɢʜᴀᴘᴜs ɢʟᴏʙᴀʟ ʙᴀɴ ᴅᴀʀɪ sᴇsᴇᴏʀᴀɴɢ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}gmute</code>
+🦠 ᴋᴇᴛ : ᴍᴇɴɢᴇᴍᴜᴛᴇ sᴇsᴇᴏʀᴀɴɢ ᴅɪ sᴇᴍᴜᴀ ɢᴄ ᴅɪ ᴍᴀɴᴀ ᴋᴀᴍᴜ ᴀᴅᴍɪɴ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}ungmute</code>
+🦠 ᴋᴇᴛ : ᴍᴇɴɢʜᴀᴘᴜs ɢʟᴏʙᴀʟ ᴍᴜᴛᴇ ᴅᴀʀɪ sᴇsᴇᴏʀᴀɴɢ.</blockquote>
 """
+
 
       
 

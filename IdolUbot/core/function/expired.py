@@ -1,19 +1,24 @@
 import asyncio
 from datetime import datetime
-
-from pyrogram.types import InlineKeyboardMarkup
 from pytz import timezone
+from pyrogram.types import InlineKeyboardMarkup
 
-from IdolUbot import *
+from IdolUbot import bot, ubot, MSG, BTN
+from IdolUbot.core.database import (
+    get_expired_date,
+    remove_ubot,
+    remove_all_vars,
+    rem_expired_date,
+)
 
-
-async def expiredUserbots():
+async def expiredUserbots() -> None:
     while True:
         for X in ubot._ubot:
             try:
-                time = datetime.now(timezone("Asia/Jakarta")).strftime("%d-%m-%Y")
-                exp = (await get_expired_date(X.me.id)).strftime("%d-%m-%Y")
-                if time == exp:
+                today = datetime.now(timezone("Asia/Jakarta")).strftime("%d-%m-%Y")
+                expired = (await get_expired_date(X.me.id)).strftime("%d-%m-%Y")
+
+                if today == expired:
                     await X.unblock_user(bot.me.username)
                     await remove_ubot(X.me.id)
                     await remove_all_vars(X.me.id)
@@ -21,11 +26,12 @@ async def expiredUserbots():
                     ubot._get_my_id.remove(X.me.id)
                     ubot._ubot.remove(X)
                     await X.log_out()
+
                     await bot.send_message(
                         X.me.id,
                         MSG.EXP_MSG_UBOT(X),
                         reply_markup=InlineKeyboardMarkup(BTN.EXP_UBOT()),
                     )
-            except Exception as e:
+            except Exception:
                 print(f"[INFO] - {X.me.id} - EXPIRED END")
         await asyncio.sleep(60)

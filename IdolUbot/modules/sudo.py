@@ -1,16 +1,15 @@
 __MODULE__ = "sudo"
 __HELP__ = """
-<b>📖 FOLDER MODULE SUDO
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ꜱᴜᴅᴏ--</b></blockquote>
 
-<blockquote>📚 perintah: {0}addsudo [@username/user_id/balas]
-📝 penjelasan: untuk menambahkan pengguna sudo</blockquote>
-
-<blockquote>📚perintah: {0}delsudo [@username/user_id/balas]
-📝 penjelasan: untuk menghapus pengguna sudo</blockquote></b>
-
-<blockquote>📚perintah: {0}sudolist
-📝 penjelasan: untuk melihat daftar list pengguna sudo</blockquote></b>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}addsudo</code> [@username/user_id/reply]
+🦠 ᴋᴇᴛ : ᴍᴇɴᴀᴍʙᴀʜ ᴘᴇɴɢɢᴜɴᴀ ᴋᴇ ᴅᴀʟᴀᴍ sᴜᴅᴏ ʟɪsᴛ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}delsudo</code> [@username/user_id/reply]
+🦠 ᴋᴇᴛ : ᴍᴇɴɢʜᴀᴘᴜs ᴘᴇɴɢɢᴜɴᴀ ᴅᴀʀɪ sᴜᴅᴏ ʟɪsᴛ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}sudolist</code>
+🦠 ᴋᴇᴛ : ᴍᴇʟɪʜᴀᴛ ᴅᴀғᴛᴀʀ sᴜᴅᴏ ʏᴀɴɢ ᴀᴋᴛɪꜰ.</blockquote>
 """
+
 
 
 import asyncio

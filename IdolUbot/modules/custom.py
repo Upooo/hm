@@ -3,21 +3,21 @@ from IdolUbot import *
 from pyrogram.enums import ParseMode
 __MODULE__ = "custom"
 __HELP__ = """
-<blockquote>Bantuan Untuk Custom
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴄᴜꜱᴛᴏᴍ--</b></blockquote>
 
-perintah : <code>{0}lihatemoji</code>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}lihatemoji</code>
+🦠 ᴋᴇᴛ : ᴍᴇɴᴀᴍᴘɪʟᴋᴀɴ ᴇᴍᴏᴊɪ ʏᴀɴɢ ᴅɪɢᴜɴᴀᴋᴀɴ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}text</code>
+🦠 ᴋᴇᴛ : ᴍᴇʀᴜʙᴀʜ ᴛᴇxᴛ ᴘᴀᴅᴀ ᴛᴀᴍᴘɪʟᴀɴ ᴛᴇʀᴛᴇɴᴛᴜ.</blockquote>
 
-perintah : <code>{0}text</code>
-   untuk merubah text pada tampilan tertentu
-
-query:
-  <code>{0}pong<code> | default : ± pong
-  <code>{0}owner<code> | default : ± owner
-  <code>{0}ubot<code> | default : ± ubot
-
-contoh :
-     <code>{0}</code>text pong none | untuk menyeting ke default</blockquote>
+<blockquote><b>📦 ᴏᴘꜱɪ ǫᴜᴇʀʏ :</b>
+<code>{0}pong</code> | default : ± pong  
+<code>{0}owner</code> | default : ± owner  
+<code>{0}ubot</code> | default : ± ubot</blockquote>
+<blockquote><b>📌 ᴄᴏɴᴛᴏʜ :</b>
+<code>{0}text pong none</code> → ᴍᴇɴʏᴇᴛɪɴɢ ᴘᴏɴɢ ᴋᴇ ᴅᴇꜰᴀᴜʟᴛ</blockquote>
 """
+
 def extract_emojis_from_entities(message):
     emojis = []
     for entity in message.entities:

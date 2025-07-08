@@ -7,11 +7,12 @@ from IdolUbot import *
 
 __MODULE__ = "hero ml"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ʜᴇʀᴏ ᴍʟ ⦫</b>
-<blockquote><b>⎆ Perintah :
-ᚗ <code>{0}heroml</code> namahero
-⊶ Mengambil informasi Hero Mobile Legend.</b></blockquote>
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ʜᴇʀᴏ ᴍʟ--</b></blockquote>
+
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}heroml</code> [nama_hero]
+🦠 ᴋᴇᴛ : ᴍᴇɴᴀᴍᴘɪʟᴋᴀɴ ɪɴꜰᴏʀᴍᴀꜱɪ ᴛᴇɴᴛᴀɴɢ ʜᴇʀᴏ ᴅɪ ᴍᴏʙɪʟᴇ ʟᴇɢᴇɴᴅ.</b></blockquote>
 """
+
 
 def get_hero_info(hero_name):
     formatted_name = hero_name.replace(" ", "_")

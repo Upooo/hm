@@ -7,15 +7,14 @@ from IdolUbot import *
 
 __MODULE__ = "kontak"
 __HELP__ = """
-<blockquote>◖ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ꜱᴀᴠᴇ ᴋᴏɴᴛᴀᴋ ◗</blockquote>
-<blockquote>
-  ❑ ᴄᴍᴅ: <code>{0}savekon</code> [ʀᴇᴘʟʏ ᴛᴏ ᴜsᴇʀ - ɪᴅ/ᴜsᴇʀɴᴀᴍᴇ ] [ɴᴀᴍᴀ ᴋᴏɴᴛᴀᴋ]
-  <code>ᴜɴᴛᴜᴋ ᴍᴇɴʏɪᴍᴘᴀɴ ᴋᴏɴᴛᴀᴋ ᴅɪ ᴛᴇʟᴇɢʀᴀᴍ</code>
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ sᴀᴠᴇ ᴋᴏɴᴛᴀᴋ--</b></blockquote>
 
-  ❑ ᴄᴍᴅ: <code>{0}delkon</code> [ʀᴇᴘʟʏ ᴛᴏ ᴜsᴇʀ - ɪᴅ/ᴜsᴇʀɴᴀᴍᴇ]
-  <code>ᴜɴᴛᴜᴋ ᴍᴇɴɢʜᴀᴘᴜꜱ ᴋᴏɴᴛᴀᴋ ʏᴀɴɢ ᴅɪꜱɪᴍᴘᴀɴ ᴅɪ ᴛᴇʟᴇɢʀᴀᴍ</code>
-</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}savekon</code> [ʀᴇᴘʟʏ ᴛᴏ ᴜsᴇʀ / ɪᴅ / ᴜsᴇʀɴᴀᴍᴇ] [ɴᴀᴍᴀ ᴋᴏɴᴛᴀᴋ]
+🦠 ᴋᴇᴛ : ᴍᴇɴʏɪᴍᴘᴀɴ ᴋᴏɴᴛᴀᴋ ᴜsᴇʀ ᴅɪ ᴀᴋᴜɴ ᴛᴇʟᴇɢʀᴀᴍ ᴀɴᴅᴀ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}delkon</code> [ʀᴇᴘʟʏ ᴛᴏ ᴜsᴇʀ / ɪᴅ / ᴜsᴇʀɴᴀᴍᴇ]
+🦠 ᴋᴇᴛ : ᴍᴇɴɢʜᴀᴘᴜꜱ ᴋᴏɴᴛᴀᴋ ᴅᴀʀɪ ᴀᴋᴜɴ ᴛᴇʟᴇɢʀᴀᴍ ᴀɴᴅᴀ.</blockquote>
 """
+
 
 @PY.UBOT("savekon")
 @PY.TOP_CMD

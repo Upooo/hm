@@ -9,22 +9,18 @@ from IdolUbot import *
 
 __MODULE__ = "convert"
 __HELP__ = """
-<blockquote>Bantuan Untuk Convert
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴄᴏɴᴠᴇʀᴛ--</b></blockquote>
 
-perintah : <code>{0}toanime</code>
-    untuk merubah photo/sticker/gif menjadi gambar anime
-  
-perintah : <code>{0}toimg</code>
-    untuk merubah sticker/gif menjadi photo
-  
-perintah : <code>{0}tosticker</code>
-    untuk merubah foto menjadi sticker
-  
-perintah : <code>{0}togif</code>
-    untuk merubah sticker menjadi gif
-  
-perintah : <code>{0}toaudio</code>
-    untuk merubah video menjadi audio mp3</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}toanime</code>
+🦠 ᴋᴇᴛ : ᴜɴᴛᴜᴋ ᴍᴇʀᴜʙᴀʜ ᴘʜᴏᴛᴏ/ꜱᴛɪᴄᴋᴇʀ/ɢɪꜰ ᴍᴇɴᴊᴀᴅɪ ɢᴀᴍʙᴀʀ ᴀɴɪᴍᴇ.</b></blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}toimg</code>
+🦠 ᴋᴇᴛ : ᴜɴᴛᴜᴋ ᴍᴇʀᴜʙᴀʜ ꜱᴛɪᴄᴋᴇʀ/ɢɪꜰ ᴍᴇɴᴊᴀᴅɪ ᴘʜᴏᴛᴏ.</b></blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}tosticker</code>
+🦠 ᴋᴇᴛ : ᴜɴᴛᴜᴋ ᴍᴇʀᴜʙᴀʜ ꜰᴏᴛᴏ ᴍᴇɴᴊᴀᴅɪ ꜱᴛɪᴄᴋᴇʀ.</b></blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}togif</code>
+🦠 ᴋᴇᴛ : ᴜɴᴛᴜᴋ ᴍᴇʀᴜʙᴀʜ ꜱᴛɪᴄᴋᴇʀ ᴍᴇɴᴊᴀᴅɪ ɢɪꜰ.</b></blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}toaudio</code>
+🦠 ᴋᴇᴛ : ᴜɴᴛᴜᴋ ᴍᴇʀᴜʙᴀʜ ᴠɪᴅᴇᴏ ᴍᴇɴᴊᴀᴅɪ ᴀᴜᴅɪᴏ ᴍᴘ3.</b></blockquote>
 """
 
 

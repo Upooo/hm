@@ -1,5 +1,5 @@
 __MODULE__ = "owner"
-__HELP__ = f"""
+__HELP__ = """
 <blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴏᴡɴᴇʀ--</b></blockquote>
 
 <blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ : <code>{0}prem [reply/id/username]</code>
@@ -18,7 +18,7 @@ __HELP__ = f"""
 
 <blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ : <code>{0}addadmin [reply/id/username]</code>
 🦠 ᴋᴇᴛ : ᴜɴᴛᴜᴋ ᴍᴇᴍʙᴇʀɪ ᴀᴋꜱᴇꜱ ᴀᴅᴍɪɴ ᴜꜱᴇʀʙᴏᴛ.</b></blockquote>
-<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ : <code>{0}unadmin [reply/id/username]</code>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ : <code>{0}deladmin [reply/id/username]</code>
 🦠 ᴋᴇᴛ : ᴜɴᴛᴜᴋ ᴍᴇɴɢʜᴀᴘᴜꜱ ᴀᴋꜱᴇꜱ ᴀᴅᴍɪɴ ᴜꜱᴇʀʙᴏᴛ.</b></blockquote>
 <blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ : <code>{0}getadmin [reply/id/username]</code>
 🦠 ᴋᴇᴛ : ᴜɴᴛᴜᴋ ᴍᴇʟɪʜᴀᴛ ʟɪꜱᴛ ᴜꜱᴇʀ ᴀᴅᴍɪɴ ᴜꜱᴇʀʙᴏᴛ.</b></blockquote>
@@ -38,6 +38,7 @@ from IdolUbot.config import OWNER_ID
 from IdolUbot import *
 
 @PY.UBOT("prem")
+@PY.BOT("prem")
 async def _(client, message):
     prs = await EMO.PROSES(client)
     ggl = await EMO.GAGAL(client)
@@ -103,6 +104,7 @@ async def _(client, message):
 
 
 @PY.UBOT("unprem")
+@PY.BOT("unprem")
 async def _(client, message):
     prs = await EMO.PROSES(client)
     ggl = await EMO.GAGAL(client)
@@ -141,6 +143,7 @@ async def _(client, message):
         
 
 @PY.UBOT("getprem")
+@PY.BOT("getprem")
 async def _(client, message):
     prs = await EMO.PROSES(client)
     ggl = await EMO.GAGAL(client)
@@ -168,6 +171,7 @@ async def _(client, message):
 
 
 @PY.UBOT("seles")
+@PY.BOT("seles")
 async def _(client, message):
     user = message.from_user
     if user.id != OWNER_ID:
@@ -208,6 +212,7 @@ async def _(client, message):
 
 
 @PY.UBOT("unseles")
+@PY.BOT("unseles")
 async def _(client, message):
     user = message.from_user
     if user.id != OWNER_ID:
@@ -247,6 +252,7 @@ async def _(client, message):
 
 
 @PY.UBOT("getseles")
+@PY.BOT("getseles")
 async def _(client, message):
     user = message.from_user
     if user.id != OWNER_ID:
@@ -279,6 +285,7 @@ async def _(client, message):
 
 
 @PY.UBOT("time")
+@PY.BOT("time")
 async def _(client, message):
     user = message.from_user
     if user.id != OWNER_ID:
@@ -310,6 +317,7 @@ async def _(client, message):
 
 
 @PY.UBOT("cek")
+@PY.BOT("cek")
 async def _(client, message):
     user = message.from_user
     if user.id != OWNER_ID:
@@ -349,6 +357,7 @@ async def _(client, message):
 
 
 @PY.UBOT("addadmin")
+@PY.BOT("addadmin")
 async def _(client, message):
     user = message.from_user
     if user.id != OWNER_ID:
@@ -390,6 +399,7 @@ async def _(client, message):
 
 
 @PY.UBOT("unadmin")
+@PY.BOT("deladmin")
 async def _(client, message):
     user = message.from_user
     if user.id != OWNER_ID:
@@ -431,6 +441,7 @@ async def _(client, message):
 
 
 @PY.UBOT("getadmin")
+@PY.BOT("getadmin")
 async def _(client, message):
     prs = await EMO.PROSES(client)
     ggl = await EMO.GAGAL(client)
@@ -464,6 +475,7 @@ async def _(client, message):
         return await Sh.edit(f"<blockquote><b>{ggl} ᴛɪᴅᴀᴋ ᴅᴀᴘᴀᴛ ᴍᴇɴɢᴀᴍʙɪʟ ᴅᴀꜰᴛᴀʀ ᴀᴅᴍɪɴ.</b></blockquote>")
 
 @PY.UBOT("addultra")
+@PY.BOT("addultra")
 async def _(client, message):
     prs = await EMO.PROSES(client)
     brhsl = await EMO.BERHASIL(client)
@@ -508,6 +520,7 @@ async def _(client, message):
         return await msg.edit(error)
 
 @PY.UBOT("rmultra")
+@PY.BOT("rmultra")
 async def _(client, message):
     prs = await EMO.PROSES(client)
     brhsl = await EMO.BERHASIL(client)

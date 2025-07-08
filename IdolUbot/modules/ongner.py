@@ -57,28 +57,6 @@ from pyrogram import filters
 from httpx import AsyncClient, Timeout
 from IdolUbot import *
 
-@PY.IDOL("HALLO")
-async def padaonga(client, message):
-    await message.reply(
-        "‡‡‡‡‡‡‡‡‡‡‡‡▄▄▄▄\n"
-        "‡‡‡‡‡‡‡‡‡‡‡█‡‡‡‡█\n"
-        "‡‡‡‡‡‡‡‡‡‡‡█‡‡‡‡█\n"
-        "‡‡‡‡‡‡‡‡‡‡█‡‡‡‡‡█\n"
-        "‡‡‡‡‡‡‡‡‡█‡‡‡‡‡‡█\n"
-        "██████▄▄█‡‡‡‡‡‡████████▄\n"
-        "▓▓▓▓▓▓█‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡█\n"
-        "▓▓▓▓▓▓█‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡█\n"
-        "▓▓▓▓▓▓█‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡█\n"
-        "▓▓▓▓▓▓█‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡█\n"
-        "▓▓▓▓▓▓█‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡█\n"
-        "▓▓▓▓▓▓█████‡‡‡‡‡‡‡‡‡‡‡‡██\n"
-        "█████‡‡‡‡‡‡‡██████████\n")
-    
-@PY.IDOL("hai")
-async def moiregantenkga(client, message):
-    await message.reply(
-       "<blockquote><b>KENAPA GANTENG??</blockquote></b>")
-
 @PY.IDOL("devs")
 async def teson(client, message):
     await message.reply(
@@ -89,25 +67,15 @@ async def teson(client, message):
     await message.reply(
        "<b>MENYALA IDOL USERBOT!!!</b>")
 
+@PY.IDOL("ubots")
+async def teson(client, message):
+    await message.reply(
+       f"<blockquote><b> USERBOT GACOL IDAMAN CUMA @{bot.me.username} </blockquote></b>")
+       
 @PY.IDOL("cek")
 async def teson(client, message):
     await message.reply(
-       "<b>HADIR TUAN NATHAN!</b>")
-
-@PY.IDOL("nathan")
-async def teson(client, message):
-    await message.reply(
-       "<b>HALOO GANTENGG!!!</b>")
-
-@PY.IDOL("userbot")
-async def teson(client, message):
-    await message.reply(
-       "<blockquote><b> USERBOT GACOL IDAMAN CUMA @v1idolubot </blockquote></b>")
-       
-@PY.IDOL("tes")
-async def teson(client, message):
-    await message.reply(
-       "<blockquote><b>ALWAYS ON BANG NATHAN!!</blockquote></b>")
+       "<blockquote><b>ALWAYS ON TUAN NATHAN!!</blockquote></b>")
                   
 @PY.IDOL("kuda")
 async def _(client, message):

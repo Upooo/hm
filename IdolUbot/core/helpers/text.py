@@ -17,7 +17,7 @@ class MSG:
 <blockquote><b>👋🏻 ʜᴀʟᴏ <a href=tg://user?id={message.from_user.id}>{message.from_user.first_name} {message.from_user.last_name or ''}</a></b>❕</blockquote>
 
 <blockquote><b>{bot.me.mention} ᴀᴅᴀʟᴀʜ ʙᴏᴛ ʏᴀɴɢ ᴅᴀᴘᴀᴛ ᴍᴇᴍʙᴜᴀᴛ ᴜꜱᴇʀʙᴏᴛ ᴅᴇɴɢᴀɴ ᴍᴜᴅᴀʜ.</b>
-<b>ʙᴏᴛ ɪɴɪ ᴅɪ ᴋᴇᴍʙᴀɴɢɪɴ ꜱᴀᴍᴀ : <a href=tg://user?id={OWNER_ID}>nathann.</a>, ᴋᴀʟᴏ ᴀᴅᴀ ᴇʀᴏʀ ᴀᴛᴀᴜ ᴘʀᴏʙʟᴇᴍ ʟᴀɴɢꜱᴜɴɢ ᴅᴍ ᴏᴡɴᴇʀ ɴʏᴀ ᴀᴊᴀ.</b></blockquote>
+<b>ʙᴏᴛ ɪɴɪ ᴅɪ ᴋᴇᴍʙᴀɴɢɪɴ ꜱᴀᴍᴀ : <a href=tg://user?id={OWNER_ID}>ᴛᴇᴀᴍ ɪᴅᴏʟ</a>, ᴋᴀʟᴏ ᴀᴅᴀ ᴇʀᴏʀ ᴀᴛᴀᴜ ᴘʀᴏʙʟᴇᴍ ʟᴀɴɢꜱᴜɴɢ ᴅᴍ ᴏᴡɴᴇʀ ɴʏᴀ ᴀᴊᴀ.</b></blockquote>
 
 <blockquote><b>👉 ꜱᴇᴋᴀʀᴀɴɢ, ᴛɪɴɢɢᴀʟ ᴘɪʟɪʜ ʟᴀʟᴜ ᴛᴇᴋᴀɴ ᴛᴏᴍʙᴏʟ ᴅɪ ʙᴀᴡᴀʜ ɪɴɪ❗</b></blockquote>
 """

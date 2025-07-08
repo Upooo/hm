@@ -2,10 +2,10 @@ from IdolUbot import *
 
 __MODULE__ = "copy"
 __HELP__ = """
-<blockquote>Bantuan Untuk Copy
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴄᴏᴘʏ--</b></blockquote>
 
-perintah : <code>{0}copy</code> [link_konten_telegram]
-    untuk mengambil pesan dan postingan chanel telegram melalui link mereka</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}copy [link]</code>
+🦠 ᴋᴇᴛ : ᴜɴᴛᴜᴋ ᴍᴇɴɢᴀᴍʙɪʟ ᴘᴇꜱᴀɴ ᴅᴀɴ ᴘᴏꜱᴛɪɴɢᴀɴ ᴄʜᴀɴᴇʟ ᴛᴇʟᴇɢʀᴀᴍ ᴍᴇʟᴀʟᴜɪ ʟɪɴᴋ ᴍᴇʀᴇᴋᴀ.</b></blockquote>
 """
 import asyncio
 import os

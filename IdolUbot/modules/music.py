@@ -19,22 +19,22 @@ from youtubesearchpython import VideosSearch
 from pyrogram.enums import ChatType
 from IdolUbot import *
 
-__MODULE__ = "streaming"
-__HELP__ = f"""
-<blockquote>
-╭
-┊➤ᴘʟᴀʏ [ ᴜʀʟ,ᴛɪᴛʟᴇ,ʀᴇᴘʟʏ-ᴍᴘ3 ] 
-┊ᴘʟᴀʏ ᴍᴜsɪᴄ ɪɴ ᴏs
-┊➤ᴠᴘʟᴀʏ[ ᴜʀʟ,ᴛɪᴛʟᴇ,ʀᴇᴘʟʏ-ᴍᴘ4 ]
-┊ᴘʟᴀʏɪɴɢ ᴠɪᴅᴇᴏ ɪɴ ᴏs
-┊➤ᴇɴᴅ
-┊ᴇɴᴅᴇᴅ ᴏs
-┊➤ᴘᴀᴜsᴇ
-┊ᴘᴀᴜsᴇ ᴀᴜᴅɪᴏ ᴏʀ ᴠɪᴅᴇᴏ ᴏs
-┊➤ʀᴇsᴜᴍᴇ
-┊ʀᴇsᴜᴍᴇ ᴠɪᴅᴇᴏ ᴏʀ ᴀᴜᴅɪᴏ ᴏs
-╰</blockquote>
+__MODULE__ = "stream"
+__HELP__ = """
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ sᴛʀᴇᴀᴍɪɴɢ--</b></blockquote>
+
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}play</code> [url | judul | reply-audio]
+🦠 ᴋᴇᴛ : ᴍᴇᴍᴜᴛᴀʀ ʟᴀɢᴜ ᴅɪ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ (VC).</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}vplay</code> [url | judul | reply-video]
+🦠 ᴋᴇᴛ : ᴍᴇᴍᴜᴛᴀʀ ᴠɪᴅᴇᴏ ᴅɪ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ (VC).</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}pause</code>
+🦠 ᴋᴇᴛ : ᴍᴇɴᴊᴇᴅᴀ ᴘᴇᴍᴜᴛᴀʀᴀɴ ʟᴀɢᴜ/ᴠɪᴅᴇᴏ ᴅɪ VC.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}resume</code>
+🦠 ᴋᴇᴛ : ᴍᴇʟᴀɴᴊᴜᴛᴋᴀɴ ᴘᴇᴍᴜᴛᴀʀᴀɴ ʏᴀɴɢ ᴅɪᴊᴇᴅᴀ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}end</code>
+🦠 ᴋᴇᴛ : ᴍᴇɴʏᴇʟᴇsᴀɪᴋᴀɴ ᴘᴇᴍᴜᴛᴀʀᴀɴ ᴅɪ VC.</blockquote>
 """
+
 
 import os
 from yt_dlp import YoutubeDL

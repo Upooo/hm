@@ -1,20 +1,15 @@
-from IdolUbot.core.database import mongodb
-
-prefixes = mongodb["IdolUbot"]["prefix"]
+from IdolUbot.core.database import prefix_collection
 
 async def get_pref(user_id: int):
-    sh = await prefixes.find_one({"_id": user_id})
-    if sh:
-        return sh.get("prefixesi")
-    else:
-        return "."
+    pref = await prefix_collection.find_one({"_id": user_id})
+    return pref.get("prefixesi") if pref else "."
 
 async def set_pref(user_id: int, prefix: str):
-    await prefixes.update_one(
+    await prefix_collection.update_one(
         {"_id": user_id}, {"$set": {"prefixesi": prefix}}, upsert=True
     )
 
 async def rem_pref(user_id: int):
-    await prefixes.update_one(
+    await prefix_collection.update_one(
         {"_id": user_id}, {"$unset": {"prefixesi": ""}}, upsert=True
     )

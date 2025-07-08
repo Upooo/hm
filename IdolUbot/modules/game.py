@@ -1,14 +1,15 @@
 from IdolUbot import *
 
-__MODULE__ = "ɢᴀᴍᴇ"
+__MODULE__ = "game"
 __HELP__ = """
-<blockquote>Bantuan Untuk Game
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ɢᴀᴍᴇ--</b></blockquote>
 
-perintah : <code>{0}game</code>
-   untuk memunculkan game random
-perintah : <code>{0}catur</code>
-   untuk memunculkan catur random
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}game</code>
+🦠 ᴋᴇᴛ : ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ ɢᴀᴍᴇ ʀᴀɴᴅᴏᴍ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}catur</code>
+🦠 ᴋᴇᴛ : ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ ᴄᴀᴛᴜʀ ʀᴀɴᴅᴏᴍ.</blockquote>
 """
+
 
 
 @PY.UBOT("catur")

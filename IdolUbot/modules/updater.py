@@ -8,6 +8,7 @@ from io import BytesIO, StringIO
 from IdolUbot.config import OWNER_ID
 import psutil
 from IdolUbot import *
+from IdolUbot.modules.eval import send_large_output
 
 
 async def ngentod(client, message):

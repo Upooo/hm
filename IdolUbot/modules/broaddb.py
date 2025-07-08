@@ -21,7 +21,7 @@ __HELP__ = """
 🦠 ᴋᴇᴛ : ᴍᴇɴɢʜᴀᴘᴜꜱ ꜱᴇᴍᴜᴀ ᴅᴀᴛᴀʙᴀꜱᴇ ʙʀᴏᴀᴅᴄᴀꜱᴛ.</b></blockquote>    
 """
 
-@PY.UBOT("gikesdb")
+@PY.UBOT("bcdb")
 @PY.TOP_CMD
 async def _(client, message):
     prs = await EMO.PROSES(client)

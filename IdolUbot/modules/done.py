@@ -5,12 +5,12 @@ from IdolUbot import *
 
 __MODULE__ = "done"
 __HELP__ = """
-<blockquote> <b>Bantuan Untuk Done</b>
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴅᴏɴᴇ--</b></blockquote>
 
-• <b>Perintah</b> : <code>{0}done</code> <b>[name item],[harga] [pembayaran]</b>
-• <b>Penjelasan : konfirmasi pembayaran.</b></blockquote>
-
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}done [nama item], [harga] [pembayaran]</code>
+🦠 ᴋᴇᴛ : ᴍᴇɴɢᴋᴏɴꜰɪʀᴍᴀꜱɪ ᴘᴇᴍʙᴀʏᴀʀᴀɴ.</b></blockquote>
 """
+
 
 
 @PY.UBOT("done")
@@ -34,12 +34,12 @@ async def done_command(client, message):
         payment = parts[2].strip() if len(parts) > 2 else "Lainnya"
         time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         response = (
-            f"<blockquote>「 𝗧𝗥𝗫 𝗧𝗥𝗔𝗞𝗦𝗔𝗦𝗜 𝗕𝗘𝗥𝗛𝗔𝗦𝗜𝗟 」\n</blockquote>"
+            f"<blockquote><b>「 ɪᴅᴏʟ ᴛʀᴀɴꜱᴀᴄᴛɪᴏɴ ꜱᴜᴄᴄᴇꜱꜱ 」</b>\n</blockquote>"
             f"<blockquote>📦 <b>ʙᴀʀᴀɴɢ : {name_item}</b>\n"
-            f"💸 <b>𝙷𝙰𝚁𝙶𝙰 : {price}</b>\n"
-            f"🕰️ <b>𝚆𝙰𝙺𝚃𝚄 𝙶𝙼𝚃 𝟽: {time}</b>\n"
-            f"💬 <b>𝙿𝙰𝚈𝙼𝙴𝙽𝚃 : {payment}</b>\n</blockquote>"
-            f"<blockquote>ᴛᴇʀɪᴍᴀᴋᴀsɪʜ ᴛᴇʟᴀʜ ᴏʀᴅᴇʀ</blockquote>"
+            f"💸 <b>ʜᴀʀɢᴀ : {price}</b>\n"
+            f"🕰️ <b>ᴡᴀᴋᴛᴜ : {time}</b>\n"
+            f"💬 <b>ᴘᴀʏᴍᴇɴᴛ : {payment}</b>\n</blockquote>"
+            f"<blockquote><b>ᴛᴇʀɪᴍᴀᴋᴀsɪʜ ᴛᴇʟᴀʜ ᴏʀᴅᴇʀ</b></blockquote>"
         )
         await izzy_ganteng.edit(response)
 

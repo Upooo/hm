@@ -121,28 +121,10 @@ async def _(client, callback_query):
     # Cek apakah user punya akses sebagai admin
     admin_users = await get_list_from_vars(client.me.id, "ADMIN_USERS")
     if user_id not in admin_users:
-        return await callback_query.answer("LU MAU NGAPAIN NGENTOT ANAK HARAM!", show_alert=True)
+        return await callback_query.answer("MAU NGAPAIN? TOMBOL INI BUKAN BUAT LU.", show_alert=True)
 
     # Beri respon ke user
     await callback_query.answer("SYSTEM RESTART SUCCES", show_alert=True)
-
-    # Join ke beberapa channel
-    channel_list = [
-        "xnxxnathan",
-        "storagenathan",
-        "nathsupport",
-        "x444saiko",
-        "logsidol",
-        "storexnxx"
-    ]
-    for channel in channel_list:
-        try:
-            await client.join_chat(channel)
-        except UserAlreadyParticipant:
-            pass
-        except Exception as e:
-            print(f"[WARNING] GAGAL JOIN {channel}: {e}")
-
     subprocess.call(["bash", "start.sh"])
 
 
@@ -156,7 +138,7 @@ async def _(client, callback_query):
         return await callback_query.answer("ꜱudah terupdate", True)
     else:
         await callback_query.answer("ꜱedang memproꜱeꜱ update.....", True)
-    os.execl(sys.executable, sys.executable, "-m", "userbot-ᴘʀᴇᴍ")
+    os.execl(sys.executable, sys.executable, "-m", "IdolUbot")
 
 
 @PY.UBOT("help")
@@ -192,8 +174,8 @@ async def user_help_inline(client, inline_query):
             HELP_COMMANDS[module_name] = imported_module
 
     SH = await ubot.get_prefix(inline_query.from_user.id)
-    msg = f"""<blockquote><b>ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs.</b></blockquote>
-<blockquote>    <b>ᴜsᴇʀ : <a href=tg://user?id={inline_query.from_user.id}>{inline_query.from_user.first_name} {inline_query.from_user.last_name or ''}</a></b>
+    msg = f"""<blockquote><b><u>ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs.</u></b>
+    <b>ᴜsᴇʀ : <a href=tg://user?id={inline_query.from_user.id}>{inline_query.from_user.first_name} {inline_query.from_user.last_name or ''}</a></b>
     <b>ᴘʀᴇꜰɪx : {' '.join(SH)}</b>
     <b>ᴍᴏᴅᴜʟᴇ : {len(HELP_COMMANDS)}</b></blockquote>
 <blockquote><b>powered by : @nathanidol</b></blockquote>
@@ -222,8 +204,8 @@ async def help_callback(client, callback_query):
     tutup_match = re.match(r"help_tutup\((.+?)\)", callback_query.data)
     back_match = re.match(r"help_back", callback_query.data)
     SH = await ubot.get_prefix(callback_query.from_user.id)
-    top_text = f"""<blockquote><b>ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs.</b></blockquote>
-<blockquote>    <b>ᴜsᴇʀ : <a href=tg://user?id={callback_query.from_user.id}>{callback_query.from_user.first_name} {callback_query.from_user.last_name or ''}</a></b>
+    top_text = f"""<blockquote><b><u>ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs.</u></b>
+    <b>ᴜsᴇʀ : <a href=tg://user?id={callback_query.from_user.id}>{callback_query.from_user.first_name} {callback_query.from_user.last_name or ''}</a></b>
     <b>ᴘʀᴇꜰɪx : {' '.join(SH)}</b>
     <b>ᴍᴏᴅᴜʟᴇ : {len(HELP_COMMANDS)}</b></blockquote>
 <blockquote><b>powered by : @nathanidol</b></blockquote>

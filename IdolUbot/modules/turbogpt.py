@@ -5,13 +5,16 @@ from pyrogram.enums import ChatAction, ParseMode
 from pyrogram import filters
 from pyrogram.types import Message
 
-__MODULE__ = "ᴛᴜʀʙᴏ ɢᴘᴛ"
+__MODULE__ = "gpt"
 __HELP__ = """
-<blockquote><b>✮ Bantuan Untuk Turbo Gpt ✮
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴛᴜʀʙᴏ ɢᴘᴛ--</b></blockquote>
 
-perintah : <code>{0}turbo</code>
-    buat menjawab pertanyaan <code>{0}claude</code> haii</b></blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}turbo</code> [ᴘᴇʀᴛᴀɴʏᴀᴀɴ]
+🦠 ᴋᴇᴛ : ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ᴀɪ turbo ɢᴘᴛ ᴜɴᴛᴜᴋ ᴍᴇɴᴊᴀᴡᴀʙ ᴘᴇʀᴛᴀɴʏᴀᴀɴ ᴀᴛᴀᴜ ᴘᴇʀɪɴᴛᴀʜ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}claude</code> [ᴘᴇʀᴛᴀɴʏᴀᴀɴ]
+🦠 ᴋᴇᴛ : ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ Claude ᴀɪ ᴜɴᴛᴜᴋ ᴘᴇʀᴛᴀɴʏᴀᴀɴ/ᴘᴇɴᴊᴇʟᴀꜱᴀɴ ᴀᴋᴀɴ ᴛᴇᴋꜱ.</blockquote>
 """
+
 
 @PY.UBOT("turbo")
 @PY.TOP_CMD

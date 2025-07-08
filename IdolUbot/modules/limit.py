@@ -6,9 +6,12 @@ from IdolUbot import *
 
 __MODULE__ = "limit"
 __HELP__ = """
-perintah : <code>{0}limit</code>
-    mengecek status akun apakah terkena limit atau tidak
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ʟɪᴍɪᴛ--</b></blockquote>
+
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}limit</code>
+🦠 ᴋᴇᴛ : ᴍᴇɴɢᴇᴄᴇᴋ sᴛᴀᴛᴜs ᴀᴋᴜɴ ᴀᴘᴀᴋᴀʜ ᴛᴇʀᴋᴇɴᴀ ʟɪᴍɪᴛ ᴀᴛᴀᴜ ᴛɪᴅᴀᴋ.</blockquote>
 """
+
 
 @PY.UBOT("limit")
 @PY.IDOL("climit")

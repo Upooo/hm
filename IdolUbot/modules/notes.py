@@ -2,39 +2,32 @@ from pyrogram.types import *
 
 from IdolUbot import *
 
-__MODULE__ = "ɴᴏᴛᴇ"
+__MODULE__ = "note"
 __HELP__ = """
-<blockquote>Bantuan Untuk Notes
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ɴᴏᴛᴇ--</b></blockquote>
 
-perintah : <code>{0}addnote</code> [name]
-    menyimpan sebuah catatan
-
-perintah : <code>{0}addcb</code> [name]
-    menyimpan sebuah callback
-
-perintah : <code>{0}get</code> [name]
-    mendapatkan catatan yang di simpan
- 
-perintah : <code>{0}delnote</code> [name]
-    menghapus catatan yang di simpan
-
-perintah : <code>{0}delcb</code> [name]
-    menghapus callback yang di simpan
- 
-perintah : <code>{0}listnote</code>
-   melihat daftar catatan yang di simpan
-
-perintah : <code>{0}listcb</code>
-   melihat daftar callback yang di simpan
-
-for button:
-    format | nama tombol - url/callback |
-
-payment | dana - dana | | bank - bank # | 
-catatan : untuk membuat button menyamping adalah #
-
-contoh menggunakan callback/tombol : <a href='https://t.me/userbot/79'>tutorial</a></blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}addnote</code> [nama]
+🦠 ᴋᴇᴛ : ᴍᴇɴʏɪᴍᴘᴀɴ sᴇʙᴜᴀʜ ᴄᴀᴛᴀᴛᴀɴ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}addcb</code> [nama]
+🦠 ᴋᴇᴛ : ᴍᴇɴʏɪᴍᴘᴀɴ sᴇʙᴜᴀʜ ᴄᴀʟʟʙᴀᴄᴋ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}get</code> [nama]
+🦠 ᴋᴇᴛ : ᴍᴇɴɢᴀᴍʙɪʟ ᴄᴀᴛᴀᴛᴀɴ ʏᴀɴɢ ᴅɪsɪᴍᴘᴀɴ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}delnote</code> [nama]
+🦠 ᴋᴇᴛ : ᴍᴇɴɢʜᴀᴘᴜs ᴄᴀᴛᴀᴛᴀɴ ʏᴀɴɢ ᴅɪsɪᴍᴘᴀɴ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}delcb</code> [nama]
+🦠 ᴋᴇᴛ : ᴍᴇɴɢʜᴀᴘᴜs ᴄᴀʟʟʙᴀᴄᴋ ʏᴀɴɢ ᴅɪsɪᴍᴘᴀɴ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}listnote</code>
+🦠 ᴋᴇᴛ : ᴍᴇʟɪʜᴀᴛ ᴅᴀꜰᴛᴀʀ ᴄᴀᴛᴀᴛᴀɴ ʏᴀɴɢ ᴅɪsɪᴍᴘᴀɴ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}listcb</code>
+🦠 ᴋᴇᴛ : ᴍᴇʟɪʜᴀᴛ ᴅᴀꜰᴛᴀʀ ᴄᴀʟʟʙᴀᴄᴋ ʏᴀɴɢ ᴅɪsɪᴍᴘᴀɴ.</blockquote>
+<blockquote><b>📌 ᴄᴀᴛᴀᴛᴀɴ :</b>
+format ᴛᴏᴍʙᴏʟ : <code>| nama tombol - url/callback |</code><br>
+ᴘᴇᴍɪsᴀʜ ᴛᴏᴍʙᴏʟ ᴅᴇɴɢᴀɴ ʟɪɴᴇ ʙᴀʀᴜ : <code>|</code><br>
+ᴘᴇᴍɪsᴀʜ ᴛᴏᴍʙᴏʟ ᴅᴀʟᴀᴍ 1 ʙᴀʀɪs : <code>#</code></blockquote>
+<blockquote>🔗 <b>ᴄᴏɴᴛᴏʜ ᴛᴜᴛᴏʀɪᴀʟ :</b> 
+<a href='https://t.me/userbot/79'>ᴄᴀʟʟʙᴀᴄᴋ ᴅᴀɴ ᴛᴏᴍʙᴏʟ</a></blockquote>
 """
+
 
 
 @PY.UBOT("addnote|addcb")

@@ -3,13 +3,14 @@ import os
 from PIL import Image, ImageDraw, ImageFont
 from IdolUbot import *
 
-__MODULE__ = "ɴᴜʟɪs"
+__MODULE__ = "nulis"
 __HELP__ = """
-<blockquote><b>『 ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ɴᴜʟɪs 』</b>
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ɴᴜʟɪꜱ--</b></blockquote>
 
-  <b>• ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{0}nulis</code> [ʀᴇᴘʟʏ/ᴛᴇxᴛ]
-  <b>• ᴘᴇɴᴊᴇʟᴀsᴀɴ:</b> ᴜɴᴛᴜᴋ ɴᴜʟɪs sᴇsᴜᴀᴛᴜ ᴋᴀʟɪᴍᴀᴛ/ᴋᴀᴛᴀ ᴅɪ ʙᴜᴋᴜ</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}nulis</code> [ʀᴇᴘʟʏ/ᴛᴇxᴛ]
+🦠 ᴋᴇᴛ : ᴍᴇɴᴜʟɪs ᴋᴀᴛᴀ/ᴋᴀʟɪᴍᴀᴛ ᴅɪ ʙᴜᴋᴜ ʟᴀʏᴀᴋɴʏ ᴛᴜʟɪꜱᴀɴ ᴛᴀɴɢᴀɴ.</blockquote>
 """
+
 
 def text_set(text):
     lines = []

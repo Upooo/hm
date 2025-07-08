@@ -23,14 +23,14 @@ async def ReTrieveFile(input_file_name):
         stream=True,
     )
 
-__MODULE__ = "ʀᴇᴍᴏᴠᴇʙɢ"
+__MODULE__ = "removebg"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Remove BG
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ʀᴇᴍᴏᴠᴇ ʙɢ--</b></blockquote>
 
-perintah : <code>{0}rmbg</code> [replay gambarnya]
-    Untuk Menghapus Latar Belakang Gambarr</blockquote></b>
-
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}rmbg</code> [ʀᴇᴘʟʏ ɢᴀᴍʙᴀʀɴʏᴀ]
+🦠 ᴋᴇᴛ : ᴍᴇɴɢʜᴀᴘᴜs ʟᴀᴛᴀʀ ʙᴇʟᴀᴋᴀɴɢ ᴅᴀʀɪ ɢᴀᴍʙᴀʀ ʏᴀɴɢ ᴅɪ-ʀᴇᴘʟʏ.</blockquote>
 """
+
 
 @PY.UBOT("rmbg")
 async def rbg_cmd(client, message):

@@ -6,19 +6,18 @@ from pyrogram.errors import FloodWait
 from .. import *
 from IdolUbot import *
 
-__MODULE__ = "ꜱᴘᴀᴍ"
+__MODULE__ = "spam"
 __HELP__ = """
-<blockquote><b>『 bantuan spam 』</b>
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ sᴘᴀᴍ--</b></blockquote>
 
-<b>perintah:</b> <code>{0}spam</code>
-   <code>melakukan spam pesan</code>
-
-<b>perintah:</b> <code>{0}setdelay</code>
-   <code>mengatur delay setiap pesan yang di kirim</code>
-
-<b>perintah:</b> <code>{0}stopspam</code>
-   <code>memberhentikan spam pesan yang sedang berjalan</code></blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}spam</code>
+🦠 ᴋᴇᴛ : ᴍᴇʟᴀᴋᴜᴋᴀɴ sᴘᴀᴍ ᴘᴇsᴀɴ ʙᴇʀᴜʀᴜᴛᴀɴ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}setdelay</code>
+🦠 ᴋᴇᴛ : ᴍᴇɴɢᴀᴛᴜʀ ᴅᴇʟᴀʏ ᴀɴᴛᴀʀᴀ ᴘᴇsᴀɴ ʏᴀɴɢ ᴅɪᴋɪʀɪᴍ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}stopspam</code>
+🦠 ᴋᴇᴛ : ᴍᴇᴍʙᴇʀʜᴇɴᴛɪᴋᴀɴ ᴘʀᴏsᴇs sᴘᴀᴍ ʏᴀɴɢ sᴇᴅᴀɴɢ ʙᴇʀʟᴀɴɢsᴜɴɢ.</blockquote>
 """
+
 
 spam_progress = []
 

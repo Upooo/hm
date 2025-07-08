@@ -1,3 +1,21 @@
+__MODULE__ = "ᴛʀᴜᴛʜ & ᴅᴀʀᴇ"
+__HELP__ = """
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴛʀᴜᴛʜ & ᴅᴀʀᴇ--</b></blockquote>
+
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}dare</code>
+🦠 ᴋᴇᴛ : ᴍᴇɴᴄᴏʙᴀ ᴛᴀɴᴛᴀɴɢᴀɴ ᴀᴄᴀᴋ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}truth</code>
+🦠 ᴋᴇᴛ : ᴍᴇɴᴄᴏʙᴀ ᴘᴇʀᴛᴀɴʏᴀᴀɴ ᴋᴇᴊᴜᴊᴜʀᴀɴ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}apakah</code>
+🦠 ᴋᴇᴛ : ᴘᴇʀᴛᴀɴʏᴀᴀɴ ʏᴀɴɢ ᴀᴋᴀɴ ᴅɪᴊᴀᴡᴀʙ ʏᴀ/ᴛɪᴅᴀᴋ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}bagaimana</code>
+🦠 ᴋᴇᴛ : ᴘᴇʀᴛᴀɴʏᴀᴀɴ ᴅᴇɴɢᴀɴ ᴊᴀᴡᴀʙᴀɴ ᴀᴄᴀᴋ.</blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}kenapa</code>
+🦠 ᴋᴇᴛ : ᴘᴇʀᴛᴀɴʏᴀᴀɴ "ᴋᴇɴᴀᴘᴀ" ᴅᴇɴɢᴀɴ ᴊᴀᴡᴀʙᴀɴ ᴀᴄᴀᴋ.</blockquote>
+"""
+
+
+
 import asyncio
 import random
 
@@ -48,23 +66,3 @@ async def truth(client, message):
         pass
 
 
-__MODULE__ = "ᴛʀᴜᴛʜ & ᴅᴀʀᴇ"
-__HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴛʀᴜᴛʜ & ᴅᴀʀᴇ ⦫</b>
-
-<blockquote><b>⎆ perintah :
-ᚗ <code>{0}dare</code>
-⊷ coba aja
-
-ᚗ <code>{0}truth</code>
-⊷ coba aja
-
-ᚗ <code>{0}apakah</code>
-⊷ coba aja
-
-ᚗ <code>{0}bagaimana</code>
-⊷ coba aja
-
-ᚗ <code>{0}kenapa</code>
-⊷ coba aja</b></blockquote>
-  """

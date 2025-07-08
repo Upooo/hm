@@ -2,9 +2,12 @@ from IdolUbot import *
 
 __MODULE__ = "font"
 __HELP__ = """
-perintah : <code>{0}font</code>
-    reply text, merubah text menjadi berbeda</blockquote>
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ꜰᴏɴᴛ--</b></blockquote>
+
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}font</code>
+🦠 ᴋᴇᴛ : ʀᴇᴘʟʏ ᴛᴇxᴛ ᴜɴᴛᴜᴋ ᴍᴇʀᴜʙᴀʜ ᴛᴇxᴛ ᴍᴇɴᴊᴀᴅɪ ꜰᴏɴᴛ ʏᴀɴɢ ʙᴇʀʙᴇᴅᴀ.</blockquote>
 """
+
 
 @PY.UBOT("font")
 @PY.TOP_CMD

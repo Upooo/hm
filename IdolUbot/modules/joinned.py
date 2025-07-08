@@ -6,28 +6,24 @@ from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
 from pyrogram.errors.exceptions.not_acceptable_406 import ChannelPrivate
 from IdolUbot import *
 
-__MODULE__ = "ᴊᴏɪɴʟᴇᴀᴠᴇ"
+__MODULE__ = "joinleave"
 __HELP__ = """
-<blockquote>Bantuan Untuk Joinleave
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴊᴏɪɴ/ʟᴇᴀᴠᴇ--</b></blockquote>
 
-perintah : <code>{0}kickme</code>
-    keluar dari group telegram
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}kickme</code>
+🦠 ᴋᴇᴛ : ᴋᴇʟᴜᴀʀ ᴅᴀʀɪ ɢʀᴏᴜᴘ ᴛᴇʟᴇɢʀᴀᴍ.</blockquote>
 
-perintah : <code>{0}join</code>
-    join ke group melalui tautan atau username group
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}join</code>
+🦠 ᴋᴇᴛ : ᴊᴏɪɴ ᴋᴇ ɢʀᴏᴜᴘ ᴍᴇʟᴀʟᴜɪ ᴛᴀᴜᴛᴀɴ ᴀᴛᴀᴜ ᴜsᴇʀɴᴀᴍᴇ.</blockquote>
 
-perintah : <code>{0}leaveallgc</code>
-    keluar semua dari group telegram kecuali admin/owner
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}leaveallgc</code>
+🦠 ᴋᴇᴛ : ᴋᴇʟᴜᴀʀ ᴅᴀʀɪ sᴇᴍᴜᴀ ɢʀᴏᴜᴘ ᴛᴇʟᴇɢʀᴀᴍ ᴋᴇᴄᴜᴀʟɪ ᴀᴅᴍɪɴ/ᴏᴡɴᴇʀ.</blockquote>
 
-perintah : <code>{0}leaveallmute</code>
-    keluar dari grup yang membatasi anda
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}leavemute</code>
+🦠 ᴋᴇᴛ : ᴋᴇʟᴜᴀʀ ᴅᴀʀɪ ɢʀᴜᴘ ʏᴀɴɢ ᴍᴇᴍʙᴀᴛᴀsɪ ᴀᴋᴜɴ ᴀɴᴅᴀ.</blockquote>
 
-perintah : <code>{0}leaveallch</code>
-    kekuar semua dari channel kecuali admin/owner</blockquote>
-
-perintah : 
-ᚗ <code>{0}leaveallmute</code>
-ᚗ Untuk keluar dari grub yang membatasi anda</b></blockquote>
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}leaveallch</code>
+🦠 ᴋᴇᴛ : ᴋᴇʟᴜᴀʀ ᴅᴀʀɪ sᴇᴍᴜᴀ ᴄʜᴀɴɴᴇʟ ᴋᴇᴄᴜᴀʟɪ ᴀᴅᴍɪɴ/ᴏᴡɴᴇʀ.</blockquote>
 """
 
 
@@ -44,7 +40,7 @@ async def _(client, message):
     if message.chat.id in BLACKLIST_CHAT:
         return await xxnx.edit(f"{ggl}perintah ini dilarang digunakan di group ini")
     try:
-        await xxnx.edit_text(f"{client.me.first_name} telah meninggalkan grup ini, bye!!{sks}")
+        await xxnx.edit_text(f"{client.me.first_name} telah meninggalkan grup, dadahh!!{sks}")
         await client.leave_chat(Man)
     except Exception as ex:
         await xxnx.edit_text(f"{ggl}ERROR: \n\n{str(ex)}")
@@ -114,8 +110,8 @@ async def _(client, message):
         f"{sks}berhaꜱil keluar dari {done} channel\n{ggl}gagal keluar dari {er} channel"
     )
 
-@PY.UBOT("leaveallmute|lvallmute")
-@PY.IDOL("cleaveallmute")
+@PY.UBOT("lvmute|leavemute")
+@PY.IDOL("cleavemute")
 @PY.TOP_CMD
 async def _(client, message):
     sks = await EMO.BERHASIL(client)

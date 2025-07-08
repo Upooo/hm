@@ -1,5 +1,5 @@
 __MODULE__ = "alkitab"
-__HELP__ = f"""
+__HELP__ = """
 <blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴀʟ ᴋɪᴛᴀʙ--</b></blockquote>
 
 <blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ : <code>{0}alkitab [kejadian]</code>
