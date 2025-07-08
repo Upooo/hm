@@ -70,6 +70,10 @@ async def startvc_userbot(client, message: Message):
 
 from pyrogram.raw.functions.phone import EditGroupCallTitle
 
+from pyrogram.raw.functions.phone import GetGroupCall, EditGroupCallTitle
+from pyrogram.raw.types import InputGroupCall
+from pyrogram.errors import ChatAdminRequired
+
 @PY.UBOT("vctitle|judulos")
 @PY.TOP_CMD
 @PY.GROUP
@@ -85,16 +89,26 @@ async def change_vc_title(client, message: Message):
     msg = await message.reply(f"<blockquote><b>{prs}ᴍᴇɴɢɢᴀɴᴛɪ ᴊᴜᴅᴜʟ...</b></blockquote>")
 
     try:
+        # Ambil informasi panggilan grup dari chat
         chat = await client.get_chat(message.chat.id)
-        peer = await client.resolve_peer(message.chat.id)
-        group_call = await client.invoke(GetGroupCall(
-            peer=peer,
-            limit=1
+        full_chat = await client.get_full_chat(chat.id)
+        call = full_chat.full_chat.call
+
+        if not call:
+            return await msg.edit("❌ Tidak ada voice chat aktif di grup ini.")
+
+        group_call = InputGroupCall(id=call.id, access_hash=call.access_hash)
+
+        # Ubah judul voice chat
+        await client.invoke(EditGroupCallTitle(
+            call=group_call,
+            title=new_title
         ))
-        call_asu = group_call.call
-        await client.invoke(EditGroupCallTitle(call=call_asu, title=new_title))
 
         await msg.edit(f"<blockquote><b>{brhsl} ᴊᴜᴅᴜʟ ʙᴀʀᴜ : <code>{new_title}</code></b></blockquote>")
+
+    except ChatAdminRequired:
+        await msg.edit(f"❌ Bot/userbot perlu hak admin untuk mengubah judul voice chat.")
     except Exception as e:
         await msg.edit(f"<blockquote><b>{ggl}ɢᴀɢᴀʟ ᴍᴇɴɢɢᴀɴᴛɪ ᴊᴜᴅᴜʟ :</b></blockquote>\n<code>{e}</code>")
 
@@ -106,15 +120,25 @@ async def stopvc_userbot(client, message: Message):
     ggl = await EMO.GAGAL(client)
     prs = await EMO.PROSES(client)
 
-    msg = await message.reply(f"<blockquote><b>{prs}ʙᴇʀʜᴀꜱɪʟ ᴍᴇᴍᴜʟᴀɪ ᴍᴇɴɢʜᴇɴᴛɪᴋᴀɴ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ...</b></blockquote>")
+    msg = await message.reply(f"<blockquote><b>{prs}ᴍᴇɴɢʜᴇɴᴛɪᴋᴀɴ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ...</b></blockquote>")
 
     try:
-        # Dapatkan panggilan grup yang aktif
-        call = await client.call_py.get_call(message.chat.id)
-        await client.invoke(DiscardGroupCall(call=call))
-        await msg.edit(f"<blockquote><b>{brhsl}ʙᴇʀʜᴀꜱɪʟ ᴍᴇᴍᴜʟᴀɪ ᴍᴇɴɢʜᴇɴᴛɪᴋᴀɴ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ.</b></blockquote>")
+        # Ambil informasi voice chat aktif
+        chat = await client.get_chat(message.chat.id)
+        full_chat = await client.get_full_chat(chat.id)
+        call = full_chat.full_chat.call
+
+        if not call:
+            return await msg.edit("❌ Tidak ada voice chat aktif untuk dihentikan.")
+
+        group_call = InputGroupCall(id=call.id, access_hash=call.access_hash)
+
+        # Hentikan obrolan suara
+        await client.invoke(DiscardGroupCall(call=group_call))
+        await msg.edit(f"<blockquote><b>{brhsl} ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ʙᴇʀʜᴀꜱɪʟ ᴅɪʜᴇɴᴛɪᴋᴀɴ.</b></blockquote>")
+
     except Exception as e:
-        await msg.edit(f"<blockquote><b>{ggl}ɢᴀɢᴀʟ ᴍᴇɴɢʜᴇɴᴛɪᴋᴀɴ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ :\n</b></blockquote><blockquote><code>{e}</code></blockquote>")
+        await msg.edit(f"<blockquote><b>{ggl} ɢᴀɢᴀʟ ᴍᴇɴɢʜᴇɴᴛɪᴋᴀɴ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ :</b></blockquote>\n<code>{e}</code>")
 
 @PY.UBOT("jvc|naik|jvcs")
 @PY.IDOL("cjvc|cnaik|cjvcs")
