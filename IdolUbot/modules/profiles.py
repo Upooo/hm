@@ -13,7 +13,7 @@ from pyrogram.enums import ChatType
 from IdolUbot import *
 
 
-__MODULE__ = "ᴘʀᴏꜰɪʟᴇꜱ"
+__MODULE__ = "profiles"
 __HELP__ = """
 <blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴘʀᴏꜰɪʟᴇꜱ--</b></blockquote>
 

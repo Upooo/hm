@@ -324,11 +324,10 @@ async def _(client, callback_query):
         try:
             return await bot.send_message(
                 chat_id,
-                f"""
-        <b>❏ {bot.me.full_name} ᴅɪᴀᴋᴛɪғᴋᴀɴ</b>
-        <b>├ ᴀᴋᴜɴ:</b> <a href=tg://user?id={new_client.me.id}>{new_client.me.first_name} {new_client.me.last_name or ''}</a> 
-        <b>╰ ɪᴅ:</b> <code>{new_client.me.id}</code>
-        """,
+                f"""<b>❏ {bot.me.full_name} ᴅɪᴀᴋᴛɪғᴋᴀɴ</b>
+<b>├ ᴀᴋᴜɴ:</b> <a href=tg://user?id={new_client.me.id}>{new_client.me.first_name} {new_client.me.last_name or ''}</a> 
+<b>╰ ɪᴅ:</b> <code>{new_client.me.id}</code>
+""",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
