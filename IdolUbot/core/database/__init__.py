@@ -6,10 +6,10 @@ mongo_client = AsyncIOMotorClient(MONGO_URL)
 mongodb = mongo_client[NAMA_DB]
 
 # Koleksi (collections)
-user_expired_collection = mongodb["users"]
-prefix_collection = mongodb["prefix"]
-ubot_collection = mongodb["idol"]
-vars_collection = mongodb["varsX"]
+
+
+
+
 
 
 from IdolUbot.core.database.expired import *
