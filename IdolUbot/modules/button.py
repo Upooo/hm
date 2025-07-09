@@ -7,8 +7,7 @@ from pyrogram.types import (
     Message,
     InlineQuery,
 )
-from IdolUbot import *
-
+from IdolUbot import PY, bot
 import re
 
 __MODULE__ = "button"
@@ -22,17 +21,20 @@ __HELP__ = """
 </blockquote>
 """
 
+# Simpan pesan dengan kunci (chat_id, message_id)
 stored_messages = {}
 
 def store_message(message: Message):
-    stored_messages[id(message)] = {
+    key = (message.chat.id, message.id)
+    stored_messages[key] = {
         "text": message.text,
         "user_id": message.from_user.id if message.from_user else 0,
     }
 
-def get_message_by_id(msg_id: int):
-    return stored_messages.get(msg_id)
+def get_message_by_id(chat_id: int, msg_id: int):
+    return stored_messages.get((chat_id, msg_id))
 
+# Parsing tombol dari format [Label|URL]
 async def create_button(message: Message):
     try:
         full_text = message.text.split(None, 1)[1]
@@ -53,7 +55,7 @@ async def create_button(message: Message):
     except Exception as e:
         return None, f"❌ Gagal parsing tombol: {e}"
 
-# 🟩 Perintah utama: .button
+# Perintah utama: .button
 @PY.UBOT("button")
 async def cmd_button(client: Client, message: Message):
     if len(message.command) < 2 or "|" not in message.text:
@@ -61,12 +63,13 @@ async def cmd_button(client: Client, message: Message):
             "📌 Format salah!\nContoh:\n<code>.button Halo | [Tombol|https://link]</code>"
         )
 
+    # Simpan pesan
     store_message(message)
     await message.delete()
 
     try:
-        query = f"get_button {id(message)}"
-        print("🔍 Mencari inline:", query)
+        # Kirim query inline dengan chat_id dan message_id
+        query = f"get_button {message.chat.id} {message.id}"
         result = await client.get_inline_bot_results(bot.me.username, query)
 
         if not result.results:
@@ -83,16 +86,17 @@ async def cmd_button(client: Client, message: Message):
     except Exception as e:
         await message.reply(f"❌ Gagal kirim tombol: {e}")
 
-# 🟦 Inline handler diperbaiki regex-nya
+# Inline handler
 @PY.INLINE("^get_button ")
 async def inline_button(client: Client, inline_query: InlineQuery):
     try:
-        print("✅ Inline diterima:", inline_query.query)
-        get_id = int(inline_query.query.split(None, 1)[1])
-        m = get_message_by_id(get_id)
+        # Ambil chat_id dan message_id dari query
+        get_chat_id, get_msg_id = map(int, inline_query.query.split()[1:3])
+        m = get_message_by_id(get_chat_id, get_msg_id)
         if not m:
             raise ValueError("Pesan tidak ditemukan.")
 
+        # Dummy message untuk diparse kembali
         class DummyMessage:
             def __init__(self, text):
                 self.text = text
@@ -113,6 +117,7 @@ async def inline_button(client: Client, inline_query: InlineQuery):
                 )
             ],
         )
+
     except Exception as e:
         await client.answer_inline_query(
             inline_query.id,

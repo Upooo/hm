@@ -306,6 +306,25 @@ async def logs_toggle(client, message):
     await set_vars(client.me.id, "ON_LOGS", value)
     return await message.reply(f"{brhsl} Logs berhasil diatur ke: <b>{'Aktif' if value else 'Nonaktif'}</b>")
 
+@PY.UBOT("setlogs")
+@PY.TOP_CMD
+async def set_logs_group(client, message):
+    brhsl = await EMO.BERHASIL(client)
+    ggl = await EMO.GAGAL(client)
+
+    if len(message.command) < 2:
+        return await message.reply(f"{ggl}Gunakan: <code>{message.text.split()[0]} [chat_id]</code>")
+
+    try:
+        chat_id = int(message.command[1])
+        me = await client.get_me()
+        member = await client.get_chat_member(chat_id, me.id)
+
+        await set_vars(client.me.id, "LOG_CHANNEL_ID", chat_id)
+        await message.reply(f"{brhsl}Berhasil mengatur grup logs ke: <code>{chat_id}</code>")
+    except Exception as e:
+        await message.reply(f"{ggl}Gagal mengatur grup logs:\n<code>{e}</code>")
+
 
 async def send_log(client, message, is_dm=False):
     log_channel_id = await get_vars(client.me.id, "LOG_CHANNEL_ID")
@@ -412,21 +431,3 @@ async def logs_private(client, message):
 
     await send_log(client, message, is_dm=True)
 
-@PY.UBOT("setlogs")
-@PY.TOP_CMD
-async def set_logs_group(client, message):
-    brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
-
-    if len(message.command) < 2:
-        return await message.reply(f"{ggl}Gunakan: <code>{message.text.split()[0]} [chat_id]</code>")
-
-    try:
-        chat_id = int(message.command[1])
-        me = await client.get_me()
-        member = await client.get_chat_member(chat_id, me.id)
-
-        await set_vars(client.me.id, "LOG_CHANNEL_ID", chat_id)
-        await message.reply(f"{brhsl}Berhasil mengatur grup logs ke: <code>{chat_id}</code>")
-    except Exception as e:
-        await message.reply(f"{ggl}Gagal mengatur grup logs:\n<code>{e}</code>")

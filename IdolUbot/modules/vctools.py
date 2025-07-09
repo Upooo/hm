@@ -203,7 +203,7 @@ async def cekos_vc(client, message):
 
         text = (
             f"<blockquote><b>{brhsl} ᴘᴇꜱᴇʀᴛᴀ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ</b></blockquote>\n"
-            f"<blockquote><b>{gcr} ɢʀᴏᴜᴘ :</b> {title}</blockquote>\n"
+            f"<blockquote><b>{gcr} ɢʀᴏᴜᴘ :</b> {title}</blockquote>"
             f"<blockquote><b>{bbo} ᴛᴏᴛᴀʟ :</b> <code>{total_participants}</code> ᴏʀᴀɴɢ</blockquote>\n\n"
             f"<blockquote>{mentions_text}</blockquote>"
         )
@@ -296,7 +296,7 @@ async def leave_vc(client, message: Message):
         await client.call_py.leave_call(chat_id)
 
         await mex.edit(
-            f"<blockquote><b>{brhsl} ʙᴇʀʜᴀꜱɪʟ ᴋᴇʟᴜᴀʀ ᴅᴀʀɪ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ.</b></blockquote>"
+            f"<blockquote><b>{brhsl} ʙᴇʀʜᴀꜱɪʟ ᴋᴇʟᴜᴀʀ ᴅᴀʀɪ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ.</b></blockquote>\n"
             f"<blockquote><b>{gcr} ɴᴀᴍᴀ ɢᴄ : {chat_name}\n{bbo} ɪᴅ ɢᴄ : <code>{chat_id}</code></b></blockquote>"
         )
     except Exception as e:
