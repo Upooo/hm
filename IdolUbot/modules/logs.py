@@ -425,8 +425,6 @@ async def set_logs_group(client, message):
         chat_id = int(message.command[1])
         me = await client.get_me()
         member = await client.get_chat_member(chat_id, me.id)
-        if not member or not member.can_post_messages:
-            return await message.reply(f"{ggl}Bot tidak memiliki izin untuk mengirim pesan ke grup tersebut.")
 
         await set_vars(client.me.id, "LOG_CHANNEL_ID", chat_id)
         await message.reply(f"{brhsl}Berhasil mengatur grup logs ke: <code>{chat_id}</code>")
