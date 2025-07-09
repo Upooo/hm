@@ -301,16 +301,7 @@ async def logs_toggle(client, message):
                 await set_vars(client.me.id, "LOG_CHANNEL_ID", group_id)
 
             except Exception as e:
-                # Jika error karena USER_RESTRICTED maka fallback ke PV
-                if "USER_RESTRICTED" in str(e):
-                    fallback_id = bot.me.id
-                    await set_vars(client.me.id, "LOG_CHANNEL_ID", fallback_id)
-                    await message.reply(
-                        f"{ggl} Akun userbot kamu sedang dibatasi oleh Telegram.\n"
-                        f"📥 Logs akan dikirim ke <b>chat pribadi bot</b> sebagai gantinya."
-                    )
-                else:
-                    return await message.reply(f"{ggl} Gagal membuat grup log:\n<code>{e}</code>")
+                await message.reply(f"{ggl} Gagal membuat grup log :\n<code>{e}</code>")
 
     await set_vars(client.me.id, "ON_LOGS", value)
     return await message.reply(f"{brhsl} Logs berhasil diatur ke: <b>{'Aktif' if value else 'Nonaktif'}</b>")
@@ -410,7 +401,6 @@ async def logs_group(client, message):
 
     await send_log(client, message, is_dm=is_dm)
 
-
 @PY.NO_CMD_UBOT("LOGS_PRIVATE", ubot)
 async def logs_private(client, message):
     if message.chat.type != ChatType.PRIVATE:
@@ -421,3 +411,24 @@ async def logs_private(client, message):
         return
 
     await send_log(client, message, is_dm=True)
+
+@PY.UBOT("setlogs")
+@PY.TOP_CMD
+async def set_logs_group(client, message):
+    brhsl = await EMO.BERHASIL(client)
+    ggl = await EMO.GAGAL(client)
+
+    if len(message.command) < 2:
+        return await message.reply(f"{ggl}Gunakan: <code>{message.text.split()[0]} [chat_id]</code>")
+
+    try:
+        chat_id = int(message.command[1])
+        me = await client.get_me()
+        member = await client.get_chat_member(chat_id, me.id)
+        if not member or not member.can_post_messages:
+            return await message.reply(f"{ggl}Bot tidak memiliki izin untuk mengirim pesan ke grup tersebut.")
+
+        await set_vars(client.me.id, "LOG_CHANNEL_ID", chat_id)
+        await message.reply(f"{brhsl}Berhasil mengatur grup logs ke: <code>{chat_id}</code>")
+    except Exception as e:
+        await message.reply(f"{ggl}Gagal mengatur grup logs:\n<code>{e}</code>")

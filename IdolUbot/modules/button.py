@@ -9,6 +9,8 @@ from pyrogram.types import (
 )
 from IdolUbot import *
 
+import re
+
 __MODULE__ = "button"
 __HELP__ = """
 <blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ʙᴜᴛᴛᴏɴ--</b></blockquote>
@@ -20,7 +22,6 @@ __HELP__ = """
 </blockquote>
 """
 
-# Simpan pesan yang akan diakses via inline
 stored_messages = {}
 
 def store_message(message: Message):
@@ -32,8 +33,6 @@ def store_message(message: Message):
 def get_message_by_id(msg_id: int):
     return stored_messages.get(msg_id)
 
-# Fungsi parsing tombol dari format [Label|URL]
-import re
 async def create_button(message: Message):
     try:
         full_text = message.text.split(None, 1)[1]
@@ -44,7 +43,6 @@ async def create_button(message: Message):
         text = f"<b>{main_text.strip()}</b>"
         raw_buttons = rest[0] if rest else ""
 
-        # Parsing tombol dengan regex
         button_matches = re.findall(r"\[([^\[\]|]+)\|([^\[\]|]+)\]", raw_buttons)
         if not button_matches:
             return None, "❌ Tidak ada tombol valid ditemukan."
@@ -55,7 +53,7 @@ async def create_button(message: Message):
     except Exception as e:
         return None, f"❌ Gagal parsing tombol: {e}"
 
-# Perintah utama: .button
+# 🟩 Perintah utama: .button
 @PY.UBOT("button")
 async def cmd_button(client: Client, message: Message):
     if len(message.command) < 2 or "|" not in message.text:
@@ -63,14 +61,13 @@ async def cmd_button(client: Client, message: Message):
             "📌 Format salah!\nContoh:\n<code>.button Halo | [Tombol|https://link]</code>"
         )
 
-    # Simpan pesan
     store_message(message)
     await message.delete()
 
     try:
-        result = await client.get_inline_bot_results(
-            bot.me.username, f"get_button {id(message)}"
-        )
+        query = f"get_button {id(message)}"
+        print("🔍 Mencari inline:", query)
+        result = await client.get_inline_bot_results(bot.me.username, query)
 
         if not result.results:
             return await message.reply("❌ Gagal kirim tombol: hasil kosong.")
@@ -86,21 +83,21 @@ async def cmd_button(client: Client, message: Message):
     except Exception as e:
         await message.reply(f"❌ Gagal kirim tombol: {e}")
 
-# Inline Handler
-@PY.INLINE("^get_button")
+# 🟦 Inline handler diperbaiki regex-nya
+@PY.INLINE("^get_button ")
 async def inline_button(client: Client, inline_query: InlineQuery):
     try:
+        print("✅ Inline diterima:", inline_query.query)
         get_id = int(inline_query.query.split(None, 1)[1])
         m = get_message_by_id(get_id)
         if not m:
             raise ValueError("Pesan tidak ditemukan.")
 
-        # Buat dummy message dengan atribut text
         class DummyMessage:
             def __init__(self, text):
                 self.text = text
-        dm = DummyMessage(m["text"])
 
+        dm = DummyMessage(m["text"])
         buttons, text = await create_button(dm)
         if not buttons:
             raise ValueError("Gagal buat tombol.")
@@ -123,4 +120,3 @@ async def inline_button(client: Client, inline_query: InlineQuery):
             switch_pm_text=f"⚠️ Error: {e}",
             switch_pm_parameter="start"
         )
-# HMMM

@@ -19,13 +19,8 @@ __HELP__ = """
 """
 
 from random import randint
-from asyncio import sleep
 from typing import Optional
-from contextlib import suppress
 from pyrogram.types import Message
-
-from pyrogram.errors import UserBannedInChannel
-# from pytgcalls.exceptions import NotInCallError
 
 from pyrogram import Client, enums
 from pyrogram.raw.functions.channels import GetFullChannel
@@ -36,17 +31,14 @@ from pyrogram.types import Message
 from IdolUbot.core.helpers.txt_cmd import *
 from IdolUbot import *
 
-# Helper untuk parsing argumen
 def nat_argsvc(message):
     if len(message.command) > 1:
         return " ".join(message.command[1:])
     return None
 
 async def get_group_call(
-
-    client: Client, message: Message, err_msg: str = ""
-
-) -> Optional[InputGroupCall]:
+    client: Client, message: Message, err_msg: str = "") -> Optional[InputGroupCall]:
+    
     chat_peer = await client.resolve_peer(message.chat.id)
     if isinstance(chat_peer, (InputPeerChannel, InputPeerChat)):
         if isinstance(chat_peer, InputPeerChannel):
@@ -59,20 +51,26 @@ async def get_group_call(
             ).full_chat
         if full_chat is not None:
             return full_chat.call
-    await eor(message, f"**No group call Found** {err_msg}")
+    await eor(message, f"<blockquote><b>ᴛɪᴅᴀᴋ ᴀᴅᴀ ᴏꜱ ᴅɪ ᴛᴇᴍᴜᴋᴀɴ</b></blockquote>\n<blockquote><b>{err_msg}</b></blockquote>")
     return False
 
 @PY.UBOT("startvc")
 async def start_vctools(client, message):
     flags = " ".join(message.command[1:])
-    ky = await message.reply("<code>Processing....</code>")
+    brhsl = await EMO.BERHASIL(client)
+    ggl = await EMO.GAGAL(client)
+    prs = await EMO.PROSES(client)
+    gcr = await EMO.ALASAN(client)
+    bbo = await EMO.PING(client)
+    
+    mmk = await message.reply(f"<blockquote><b>{prs}ʙᴇɴᴛᴀʀ ɴɪʜ ᴏᴛᴡ...</b></blockquote>")
     vctitle = get_arg(message)
     if flags == enums.ChatType.CHANNEL:
         chat_id = message.chat.title
     else:
         chat_id = message.chat.id
     args = (
-        f"<b>• Obrolan Suara Aktif</b>\n<b>• Chat : </b><code>{message.chat.title}</code>"
+        f"<blockquote><b>{brhsl}ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ ᴀᴋᴛɪꜰ</b></blockquote>\n<blockquote><b>{gcr}ɢʀᴏᴜᴘ : </b>{message.chat.title}</blockquote>"
     )
     try:
         if not vctitle:
@@ -83,7 +81,7 @@ async def start_vctools(client, message):
                 )
             )
         else:
-            args += f"\n • <b>Title : </b> <code>{vctitle}</code>"
+            args += f"\n{bbo}<blockquote><b>ᴛɪᴛʟᴇ : </b>{vctitle}</blockquote>"
             await client.invoke(
                 CreateGroupCall(
                     peer=(await client.resolve_peer(chat_id)),
@@ -91,111 +89,128 @@ async def start_vctools(client, message):
                     title=vctitle,
                 )
             )
-        await ky.edit(args)
+        await mmk.edit(args)
     except Exception as e:
-        await ky.edit(f"<b>INFO:</b> `{e}`")
+        await mmk.edit(f"<b>INFO :\n</b> <blockquote><code>{e}</code></blockquote>")
 
 
 @PY.UBOT("stopvc")
 async def stop_vctools(client, message):
-    hi = await message.reply("<code>Processing....</code>")
+    brhsl = await EMO.BERHASIL(client)
+    ggl = await EMO.GAGAL(client)
+    prs = await EMO.PROSES(client)
+    gcr = await EMO.ALASAN(client)
+    
+    
+    hi = await message.reply(f"<blockquote><b>{prs}ʙᴇɴᴛᴀʀ ɴɪʜ ᴏᴛᴡ...</b></blockquote>")
     message.chat.id
     if not (
-        group_call := (await get_group_call(client, message, err_msg=", Kesalahan..."))
+        group_call := (await get_group_call(client, message, err_msg=", ᴋᴇꜱᴀʟᴀʜᴀɴ..."))
     ):
         return
     await client.invoke(DiscardGroupCall(call=group_call))
     await hi.edit(
-        f"<b>• Obrolan Suara Diakhiri</b>\n<b>• Chat : </b><code>{message.chat.title}</code>")
+        f"<blockquote><b>{brhsl}ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ ᴀᴋᴛɪꜰ</b></blockquote>\n<blockquote><b>{gcr}ɢʀᴏᴜᴘ : </b>{message.chat.title}</blockquote>"
+        )
     
 @PY.UBOT("vctitle")
 async def set_vctitle(client, message):
-    proses = await message.reply("<code>Processing....</code>")
+    brhsl = await EMO.BERHASIL(client)
+    ggl = await EMO.GAGAL(client)
+    prs = await EMO.PROSES(client)
+    gcr = await EMO.ALASAN(client)
+    bbo = await EMO.PING(client)
+
+    proses = await message.reply(
+        f"<blockquote><b>{prs}ʙᴇɴᴛᴀʀ ɴɪʜ ᴏᴛᴡ...</b></blockquote>"
+    )
 
     if len(message.command) < 2:
-        return await proses.edit("❌ Masukkan judul baru.\nContoh: <code>.vctitle Nongkrong Malam</code>")
+        return await proses.edit(
+            f"<blockquote><b>{ggl} ᴍᴀꜱᴜᴋᴋᴀɴ ᴊᴜᴅᴜʟ ʙᴀʀᴜ.</b></blockquote>\n"
+            f"<blockquote><b>{bbo} ᴄᴏɴᴛᴏʜ :</b> <code>.vctitle Nongkrong Malam</code></blockquote>"
+        )
 
     new_title = " ".join(message.command[1:])
 
-    group_call = await get_group_call(client, message, err_msg=", gagal mendapatkan obrolan suara.")
+    group_call = await get_group_call(client, message, err_msg=", ɢᴀɢᴀʟ ᴍᴇɴᴅᴀᴘᴀᴛᴋᴀɴ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ.")
     if not group_call:
         return
 
     try:
         await client.invoke(EditGroupCallTitle(call=group_call, title=new_title))
         await proses.edit(
-            f"<b>• Judul Obrolan Suara Diperbarui</b>\n"
-            f"<b>• Chat :</b> <code>{message.chat.title}</code>\n"
-            f"<b>• Judul Baru :</b> <code>{new_title}</code>"
+            f"<blockquote><b>{brhsl} ᴊᴜᴅᴜʟ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ ᴅɪᴘᴇʀʙᴀʀᴜɪ</b></blockquote>\n"
+            f"<blockquote><b>{gcr} ɢʀᴏᴜᴘ :</b> {message.chat.title}</blockquote>\n"
+            f"<blockquote><b>{bbo} ᴊᴜᴅᴜʟ ʙᴀʀᴜ :</b> <code>{new_title}</code></blockquote>"
         )
     except Forbidden:
-        await proses.edit("❌ Gagal mengubah judul: kamu tidak memiliki izin.")
+        await proses.edit(
+            f"<blockquote><b>{ggl} ɢᴀɢᴀʟ ᴍᴇɴɢᴜʙᴀʜ ᴊᴜᴅᴜʟ :</b></blockquote>\n"
+            f"<blockquote><b>{bbo} ᴋᴀᴍᴜ ᴛɪᴅᴀᴋ ᴍᴇᴍɪʟɪᴋɪ ɪᴢɪɴ.</b></blockquote>"
+        )
     except Exception as e:
-        await proses.edit(f"❌ Gagal mengubah judul:\n<code>{e}</code>")
+        await proses.edit(
+            f"<blockquote><b>{ggl} ɢᴀɢᴀʟ ᴍᴇɴɢᴜʙᴀʜ ᴊᴜᴅᴜʟ :</b></blockquote>\n"
+            f"<blockquote><code>{e}</code></blockquote>"
+        )
 
     
 @PY.UBOT("cekos")
 async def cekos_vc(client, message):
-    
-    x = await message.reply("<code>Processing....</code>")
+    brhsl = await EMO.BERHASIL(client)
+    ggl = await EMO.GAGAL(client)
+    prs = await EMO.PROSES(client)
+    gcr = await EMO.ALASAN(client)
+    bbo = await EMO.PING(client)
+
+    x = await message.reply(f"<blockquote><b>{prs}ʙᴇɴᴛᴀʀ ɴɪʜ ᴏᴛᴡ...</b></blockquote>")
 
     chat = message.command[1] if len(message.command) > 1 else message.chat.id
+
     try:
-        if isinstance(chat, int):
-            chat_id = chat
-        else:
-            chat_info = await client.get_chat(chat)
-            chat_id = chat_info.id
-
-        try:
-            info = await client.get_chat(chat_id)
-            title = info.title if info.title else f"{chat_id}"
-        except Exception:
-            title = f"{chat_id}"
-        group_call = await get_group_call(client, message, err_msg=", Error...")
-        if not group_call:
-            return await x.edit(
-                f"<b>Voice chat group not found in {title}</b>"
-            )
-        try:
-            participants = await client.call_py.get_participants(chat_id)
-            mentions = []
-            for participant in participants:
-                user_id = participant.user_id
-                try:
-                    user = await client.get_users(user_id)
-                    mention = user.mention
-                    status = "Unmuted" if participant.muted else "Muted"
-                    volume = participant.volume
-                    mentions.append(f"{mention}|Mic: {status}|Vol: {volume}%")
-                except Exception as e:
-                    logger.error(f"{e}")
-                    mentions.append(f"{user_id} Status Unknown")
-
-            total_participants = len(participants)
-            if total_participants == 0:
-                return await x.edit(
-                    f"<b>No someone in voice chat group!!</b>"
-                )
-            mentions_text = "\n".join(
-                [
-                    (f"• {mention}" if i < total_participants - 1 else f"• {mention}")
-                    for i, mention in enumerate(mentions)
-                ]
-            )
-            text = f"""
-<b>Voice Chat Listener:</b>
-Chat: <code>{title}</code>.
-Total: <code>{total_participants}</code> Listener.
-
-<b>People:</b>
-{mentions_text}
-"""
-            return await x.edit(f"<blockquote><b>{text}</b></blockquote>")
-        except Exception as e:
-            return await x.edit(f"EROR : {e}")
+        chat_info = await client.get_chat(chat)
+        chat_id = chat_info.id
+        title = chat_info.title or str(chat_id)
     except Exception as e:
-        return await x.edit(f"EROR : {e}")
+        return await x.edit(f"<blockquote><b>{ggl} ɢᴀɢᴀʟ ᴍᴇɴɢᴀᴍʙɪʟ ɪɴꜰᴏ ɢʀᴏᴜᴘ:</b></blockquote>\n<blockquote><code>{e}</code></blockquote>")
+
+    group_call = await get_group_call(client, message, err_msg=", ɢᴀɢᴀʟ ᴍᴇɴᴅᴀᴘᴀᴛᴋᴀɴ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ.")
+    if not group_call:
+        return
+
+    try:
+        participants = await client.call_py.get_participants(chat_id)
+        total_participants = len(participants)
+
+        if total_participants == 0:
+            return await x.edit(
+                f"<blockquote><b>{ggl} ᴛɪᴅᴀᴋ ᴀᴅᴀ ᴘᴇꜱᴇʀᴛᴀ ᴅɪ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ!</b></blockquote>"
+            )
+
+        mentions = []
+        for participant in participants:
+            try:
+                user = await client.get_users(participant.user_id)
+                mention = user.mention
+                mic_status = "🎙️ Unmuted" if participant.muted else "🔇 Muted"
+                volume = participant.volume
+                mentions.append(f"• {mention} | {mic_status} | 🔊 {volume}%")
+            except Exception as e:
+                mentions.append(f"• <code>{participant.user_id}</code> | ❓ Status Unknown")
+
+        mentions_text = "\n".join(mentions)
+
+        text = (
+            f"<blockquote><b>{brhsl} ᴘᴇꜱᴇʀᴛᴀ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ</b></blockquote>\n"
+            f"<blockquote><b>{gcr} ɢʀᴏᴜᴘ :</b> {title}</blockquote>\n"
+            f"<blockquote><b>{bbo} ᴛᴏᴛᴀʟ :</b> <code>{total_participants}</code> ᴏʀᴀɴɢ</blockquote>\n\n"
+            f"<blockquote>{mentions_text}</blockquote>"
+        )
+        await x.edit(text)
+
+    except Exception as e:
+        await x.edit(f"<blockquote><b>{ggl} ᴋᴇꜱᴀʟᴀʜᴀɴ :</b></blockquote>\n<blockquote><code>{e}</code></blockquote>")
 
 @PY.UBOT("jvc|naik|jvcs")
 @PY.IDOL("cjvc|cnaik|cjvcs")
@@ -205,6 +220,8 @@ async def join_vc(client, message: Message):
     brhsl = await EMO.BERHASIL(client)
     ggl = await EMO.GAGAL(client)
     prs = await EMO.PROSES(client)
+    gcr = await EMO.ALASAN(client)
+    bbo = await EMO.PING(client)
 
     try:
         mex = await message.reply(f"<blockquote><b>{prs}ʙᴇɴᴛᴀʀ ɴɪʜ ᴏᴛᴡ ɴᴀɪᴋ...</b></blockquote>")
@@ -239,7 +256,7 @@ async def join_vc(client, message: Message):
 
         await mex.edit(
             f"<blockquote><b>{brhsl} ʙᴇʀʜᴀꜱɪʟ ɴᴀɪᴋ ᴋᴇ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ.</b></blockquote>\n"
-            f"<blockquote><b>ɴᴀᴍᴀ ɢᴄ : {chat_name}\nɪᴅ ɢᴄ: <code>{chat_id}</code></b></blockquote>"
+            f"<blockquote><b>{gcr} ɴᴀᴍᴀ ɢᴄ : {chat_name}\n{bbo} ɪᴅ ɢᴄ: <code>{chat_id}</code></b></blockquote>"
         )
 
     except Exception as e:
@@ -253,6 +270,8 @@ async def leave_vc(client, message: Message):
     brhsl = await EMO.BERHASIL(client)
     ggl = await EMO.GAGAL(client)
     prs = await EMO.PROSES(client)
+    gcr = await EMO.ALASAN(client)
+    bbo = await EMO.PING(client)
 
     try:
         mex = await message.reply(f"<blockquote><b>{prs}ʙᴇɴᴛᴀʀ ɴɪʜ ᴏᴛᴡ ᴛᴜʀᴜɴ...</b></blockquote>")
@@ -278,7 +297,7 @@ async def leave_vc(client, message: Message):
 
         await mex.edit(
             f"<blockquote><b>{brhsl} ʙᴇʀʜᴀꜱɪʟ ᴋᴇʟᴜᴀʀ ᴅᴀʀɪ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ.</b></blockquote>"
-            f"<blockquote><b>ɴᴀᴍᴀ ɢᴄ : {chat_name}\nɪᴅ ɢᴄ : <code>{chat_id}</code></b></blockquote>"
+            f"<blockquote><b>{gcr} ɴᴀᴍᴀ ɢᴄ : {chat_name}\n{bbo} ɪᴅ ɢᴄ : <code>{chat_id}</code></b></blockquote>"
         )
     except Exception as e:
         await mex.edit(f"<blockquote><b>{ggl} ɢᴀɢᴀʟ :</b></blockquote>\n<blockquote><code>{e}</code></blockquote>")
