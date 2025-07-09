@@ -61,7 +61,7 @@ async def start_vctools(client, message):
     ggl = await EMO.GAGAL(client)
     prs = await EMO.PROSES(client)
     gcr = await EMO.ALASAN(client)
-    bbo = await EMO.PING(client)
+    bbo = await EMO.PUTARAN(client)
     
     mmk = await message.reply(f"<blockquote><b>{prs}ʙᴇɴᴛᴀʀ ɴɪʜ ᴏᴛᴡ...</b></blockquote>")
     vctitle = get_arg(message)
@@ -119,7 +119,7 @@ async def set_vctitle(client, message):
     ggl = await EMO.GAGAL(client)
     prs = await EMO.PROSES(client)
     gcr = await EMO.ALASAN(client)
-    bbo = await EMO.PING(client)
+    bbo = await EMO.PUTARAN(client)
 
     proses = await message.reply(
         f"<blockquote><b>{prs}ʙᴇɴᴛᴀʀ ɴɪʜ ᴏᴛᴡ...</b></blockquote>"
@@ -162,7 +162,7 @@ async def cekos_vc(client, message):
     ggl = await EMO.GAGAL(client)
     prs = await EMO.PROSES(client)
     gcr = await EMO.ALASAN(client)
-    bbo = await EMO.PING(client)
+    bbo = await EMO.PUTARAN(client)
 
     x = await message.reply(f"<blockquote><b>{prs}ʙᴇɴᴛᴀʀ ɴɪʜ ᴏᴛᴡ...</b></blockquote>")
 
@@ -221,7 +221,7 @@ async def join_vc(client, message: Message):
     ggl = await EMO.GAGAL(client)
     prs = await EMO.PROSES(client)
     gcr = await EMO.ALASAN(client)
-    bbo = await EMO.PING(client)
+    bbo = await EMO.PUTARAN(client)
 
     try:
         mex = await message.reply(f"<blockquote><b>{prs}ʙᴇɴᴛᴀʀ ɴɪʜ ᴏᴛᴡ ɴᴀɪᴋ...</b></blockquote>")
@@ -271,7 +271,7 @@ async def leave_vc(client, message: Message):
     ggl = await EMO.GAGAL(client)
     prs = await EMO.PROSES(client)
     gcr = await EMO.ALASAN(client)
-    bbo = await EMO.PING(client)
+    bbo = await EMO.PUTARAN(client)
 
     try:
         mex = await message.reply(f"<blockquote><b>{prs}ʙᴇɴᴛᴀʀ ɴɪʜ ᴏᴛᴡ ᴛᴜʀᴜɴ...</b></blockquote>")
