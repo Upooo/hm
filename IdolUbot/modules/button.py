@@ -69,8 +69,7 @@ async def cmd_button(client: Client, message: Message):
 
     try:
         # Kirim query inline dengan chat_id dan message_id
-        query = f"get_button {message.chat.id} {message.id}"
-        result = await client.get_inline_bot_results(bot.me.username, query)
+        result = await client.get_inline_bot_results(bot.me.username, "get_button")
 
         if not result.results:
             return await message.reply("❌ Gagal kirim tombol: hasil kosong.")
@@ -87,7 +86,7 @@ async def cmd_button(client: Client, message: Message):
         await message.reply(f"❌ Gagal kirim tombol: {e}")
 
 # Inline handler
-@PY.INLINE("^get_button ")
+@PY.INLINE("^get_button")
 async def inline_button(client: Client, inline_query: InlineQuery):
     try:
         # Ambil chat_id dan message_id dari query

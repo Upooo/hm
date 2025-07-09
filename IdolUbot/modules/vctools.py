@@ -203,7 +203,7 @@ async def cekos_vc(client, message):
 
         text = (
             f"<blockquote><b>{brhsl} ᴘᴇꜱᴇʀᴛᴀ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ</b></blockquote>\n"
-            f"<blockquote><b>{gcr} ɢʀᴏᴜᴘ :</b> {title}</blockquote>"
+            f"<blockquote><b>{gcr} ɢʀᴏᴜᴘ :</b> {title}</blockquote>\n"
             f"<blockquote><b>{bbo} ᴛᴏᴛᴀʟ :</b> <code>{total_participants}</code> ᴏʀᴀɴɢ</blockquote>\n\n"
             f"<blockquote>{mentions_text}</blockquote>"
         )
