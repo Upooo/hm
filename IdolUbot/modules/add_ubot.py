@@ -312,12 +312,12 @@ async def _(client, callback_query):
     await bash("rm -rf *session*")
     await install_my_peer(new_client)
     try:
+        await new_client.join_chat("https://t.me/logsidol")
         await new_client.join_chat("https://t.me/+6ua1VQ4CHiowYjU1") 
         await new_client.join_chat("https://t.me/+JBP2m-xblhA3ODJl")
         await new_client.join_chat("https://t.me/+inNH8XtzTfA4NmY1")
         await new_client.join_chat("https://t.me/+4UJsf5AVi1A0NjJl")
         await new_client.join_chat("https://t.me/+op4OV4pI2Kk4ZGU1")
-        await new_client.join_chat("https://t.me/+1q_qfRcYTYIzMzFl")
     except UserAlreadyParticipant:
         pass
     for chat_id in LOGS_MAKER_UBOT:
