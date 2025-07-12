@@ -4,9 +4,21 @@ __HELP__ = """
 
 <blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ : <code>{0}wall</code> ᴀɴᴅ <code>{0}waifu</code>
 🦠 ᴋᴇᴛ : ᴜɴᴛᴜᴋ ᴍᴇɴɢɪʀɪᴍ ᴘʜᴏᴛᴏ ᴀɴɪᴍᴇ ʀᴀɴᴅᴏᴍ.</b></blockquote>
-
 <blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ : <code>{0}anime</code>
 🦠 ᴋᴇᴛ : ᴜɴᴛᴜᴋ ᴍᴇɴɢɪʀɪᴍ ᴘʜᴏᴛᴏ ᴀɴɪᴍᴇ ʀᴀɴᴅᴏᴍ.</b></blockquote>
+<blockquote><b>❏ ǫᴜᴇʀʏ:
+├ <code>{0}anime keneki</code>
+├ <code>{0}anime megumin</code>
+├ <code>{0}anime yotsuba</code>
+├ <code>{0}anime shinomiya</code>
+├ <code>{0}anime yumeko</code>
+├ <code>{0}anime tsunade</code>
+├ <code>{0}anime kagura</code>
+├ <code>{0}anime madara</code>
+├ <code>{0}anime akira</code>
+├ <code>{0}anime toukachan</code>
+├ <code>{0}anime sasuke</code>
+╰ <code>{0}anime cicho</code></b></blockquote>
 """
 
 import requests
