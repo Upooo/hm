@@ -7,7 +7,7 @@ __HELP__ = """
 <blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ɴᴀʀᴜᴛᴏ--</b></blockquote>
 
 <blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}ns [query]</code>
-🦠 ᴋᴇᴛ : ᴍᴇɴɢɪʀɪᴍ ᴠɪᴅᴇᴏ ᴀꜱᴜᴘᴀɴ ʀᴀɴᴅᴏᴍ.</b></blockquote>
+🦠 ᴋᴇᴛ : ᴍᴇɴᴄᴀʀɪ ꜰᴏᴛᴏ ᴀɴɪᴍᴀꜱɪ ɴᴀʀᴜᴛᴏ ꜱᴇꜱᴜᴀɪ ǫᴜᴇʀʏ.</b></blockquote>
 <blockquote><b>❏ ǫᴜᴇʀʏ:
 ├ <code>{0}ns naruto</code>
 ├ <code>{0}ns boruto</code>

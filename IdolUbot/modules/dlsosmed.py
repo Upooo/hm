@@ -4,12 +4,12 @@ from pyrogram.types import Message
 import os
 from IdolUbot import *
 
-__MODULE__ = "dl"
+__MODULE__ = "download"
 __HELP__ = """
-<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ɴᴀʀᴜᴛᴏ--</b></blockquote>
+<blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴅᴏᴡɴʟᴏᴀᴅ--</b></blockquote>
 
-<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}ns [query]</code>
-🦠 ᴋᴇᴛ : ᴍᴇɴɢɪʀɪᴍ ᴠɪᴅᴇᴏ ᴀꜱᴜᴘᴀɴ ʀᴀɴᴅᴏᴍ.</b></blockquote>"""
+<blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}dl [link]</code>
+🦠 ᴋᴇᴛ : ᴍᴇɴᴅᴏᴡɴʟᴏᴀᴅ ᴠɪᴅᴇᴏ ꜱᴏꜱᴍᴇᴅ ᴠɪᴀ ʟɪɴᴋ.</b></blockquote>"""
 
 @PY.UBOT("dl")
 @PY.TOP_CMD
