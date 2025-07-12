@@ -9,7 +9,7 @@ __HELP__ = """
 <blockquote><b>🚦 ᴘᴇʀɪɴᴛᴀʜ :</b> <code>{0}ns [query]</code>
 🦠 ᴋᴇᴛ : ᴍᴇɴɢɪʀɪᴍ ᴠɪᴅᴇᴏ ᴀꜱᴜᴘᴀɴ ʀᴀɴᴅᴏᴍ.</b></blockquote>
 <blockquote><b>❏ ǫᴜᴇʀʏ:
-├ <code>{0}ns naruoto</code>
+├ <code>{0}ns naruto</code>
 ├ <code>{0}ns boruto</code>
 ├ <code>{0}ns hiruka</code>
 ├ <code>{0}ns tsunade</code>
@@ -30,7 +30,7 @@ async def gambar_asupan(client, message):
 
     # Mapping query ke channel-channel anime
     CHANNEL_MAP = {
-        "naruoto": "@naruotoidol",
+        "naruto": "@narutoidol",
         "boruto": "@borutoahah",
         "hiruka": "@hirukaidol",
         "tsunade": "@tsunadebahenol",

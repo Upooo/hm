@@ -4,7 +4,7 @@ from pyrogram.types import Message
 import os
 from IdolUbot import *
 
-__MODULE__ = "naruto"
+__MODULE__ = "dl"
 __HELP__ = """
 <blockquote><b>--ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ɴᴀʀᴜᴛᴏ--</b></blockquote>
 
